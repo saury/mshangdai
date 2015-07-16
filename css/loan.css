@@ -1,0 +1,311 @@
+* {
+  font-family: "Microsoft YaHei", Arial;
+  color: #666;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-smoothing: subpixel-antialiased;
+  text-decoration: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+select,
+textarea {
+  -moz-user-select: auto;
+  -webkit-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+}
+
+.loan_main {
+  text-align: center;
+  width: 100%;
+}
+.loan_main_img {
+  width: 22%;
+  margin: 30px auto 20px;
+}
+.loan_main p {
+  font-size: .8em;
+}
+.loan_main > span {
+  color: #fc9c69;
+  font-size: 1.6em;
+  line-height: 1.8em;
+  display: block;
+}
+.loan_main hr {
+  height: 1px;
+  border: none;
+  border-top: 1px dashed #e4e4e4;
+  width: 83%;
+  margin: 35px auto 10px;
+}
+.loan_main_credit {
+  color: #9b9b9b;
+  margin-bottom: 50px;
+}
+.loan_main_credit span {
+  color: #0f8fda;
+}
+.loan_main_btn {
+  background: #0d8fdb;
+  border: 2px solid #0d8fdb;
+  padding: 0;
+  color: #fff;
+  height: 36px;
+  line-height: 32px;
+  display: block;
+  width: 84%;
+  border-radius: 5px;
+  margin: 0 auto 12px;
+}
+.loan_main_btn_hollow {
+  background: #fff;
+  color: #0d8fdb;
+}
+.loan_main form {
+  letter-spacing: normal;
+  text-align: left;
+  width: 88%;
+  margin: 10px auto;
+}
+.loan_main form p {
+  font-size: 1em;
+}
+.loan_main form div {
+  margin-top: 7px;
+  line-height: 1.8em;
+}
+.loan_main form p.ft_red {
+  margin: 6px 0;
+}
+.loan_main form .loan_main_btn {
+  width: 100%;
+}
+.loan_main form .ft_xs {
+  font-size: .7em;
+  color: #bfbfbf;
+  margin: 5px 3px 28px;
+}
+.loan_main form .ft_xxs {
+  font-size: .65em;
+  color: #bfbfbf;
+  margin-bottom: 1.8em;
+}
+.loan_main form label {
+  font-size: .74em;
+}
+.loan_main form label.lab_finance {
+  margin-bottom: 1em;
+}
+.loan_main form mark {
+  background: transparent;
+  font-size: .7em;
+  color: #fe8f86;
+  margin-bottom: 4px;
+  width: 100%;
+}
+.loan_main_table {
+  border: 1px solid #0d8fdb;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.loan_main_table table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+.loan_main_table thead {
+  background: transparent;
+}
+.loan_main_table th,
+.loan_main_table td {
+  padding: 0;
+  text-align: center;
+  border: none;
+}
+.loan_main_table th {
+  font-size: .9em;
+  height: 30px;
+  font-weight: normal;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.loan_main_table th:last-child {
+  border-right: none;
+}
+.loan_main_table td {
+  font-size: .8em;
+  height: 44px;
+  color: #fe8f86;
+  border-right: 1px solid #ddd;
+}
+.loan_main_table td:last-child {
+  border-right: none;
+}
+.loan_main_doubleInput {
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  width: 100%;
+  margin: 12px 0 !important;
+}
+.loan_main_doubleInput div {
+  margin: 0 !important;
+}
+.loan_main_doubleInput hr {
+  height: 1px;
+  border: none;
+  border-top: 1px solid #e4e4e4;
+  width: 98%;
+  margin: 0 auto;
+}
+.loan_main_doubleInput label {
+  display: inline-block;
+  float: left;
+  font-size: .9em;
+  font-weight: bold;
+  margin: .4em 0 .2em .5em;
+}
+.loan_main_doubleInput input {
+  width: 83%;
+  border: none !important;
+  box-shadow: none !important;
+}
+.loan_main_banks {
+  margin: -20px 10px 40px !important;
+}
+.loan_main_instr {
+  font-size: .72em;
+  line-height: 1.7em;
+  padding: 1em .3em;
+  margin-top: 1.2em;
+}
+.loan_main_instr dt {
+  color: #44bbdb;
+  margin-bottom: .25em;
+}
+.loan_main_instr dt:before {
+  height: 8px;
+  width: 8px;
+  content: " ";
+  background: #0d8fdb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.loan_main_comfirmA {
+  font-size: 1.2em;
+  letter-spacing: 1.2px;
+  line-height: 1.4em;
+  padding: .9em;
+  padding-bottom: .5em;
+}
+.loan_main_comfirmA > span {
+  color: #9b9b9b;
+  font-size: .6em;
+  line-height: 1.8em;
+  display: block;
+  margin: .3em 0 0 0;
+}
+.loan_main_comfirmB {
+  text-align: left;
+  padding: .5em 1.9em;
+  line-height: 1.2em;
+}
+.loan_main_comfirmB label, .loan_main_comfirmB span {
+  color: #9b9b9b;
+  font-size: .75em;
+  margin: 0;
+}
+.loan_main_comfirmB span:after {
+  content: "";
+  display: block;
+}
+.loan_main_comfirmC {
+  text-align: left;
+  padding: .5em 1.9em;
+}
+.loan_main_comfirmC ol {
+  padding: .2em .8em;
+}
+.loan_main_comfirmC li {
+  list-style: none;
+  font-size: .75em;
+  margin: .4em 0;
+}
+.loan_main_comfirmC li a {
+  color: #0d8fdb;
+}
+.loan_main_checkbox {
+  font-size: .75em;
+  color: #666;
+  padding-left: 22px;
+  background: url(../img/checkbox.jpg) no-repeat;
+  background-position: 0px -15px;
+  background-size: 15px 30px;
+}
+.loan_main_checkbox_on {
+  background-position: 0px 0px;
+}
+
+.ft_red {
+  color: #fe8f86;
+}
+
+.ft_xs {
+  font-size: .7em;
+}
+
+.ft_md {
+  font-size: .8em;
+}
+
+.input-u-1-9 {
+  height: 32px;
+  width: 90%;
+  float: left;
+  margin-right: 8px;
+}
+
+.pure-input-1,
+.pure-u-1 select {
+  height: 32px;
+}
+
+.pure-u-1 select {
+  padding: .2em .3em;
+  margin-bottom: .3em;
+}
+
+.span-croci {
+  color: #fe8d53;
+}
+
+.span-liteblue {
+  color: #81d7f0;
+}
+
+.pure-button.loan_main_btn.ab_bottom {
+  position: absolute;
+  bottom: 1.3em;
+  left: 0;
+  width: 88%;
+  margin: 0 6%;
+}
+
+hr.hr-liteblue {
+  margin: 0 auto;
+  height: 2px;
+  border: none;
+  border-top: 2px dashed #44bbdb;
+  width: 92%;
+}

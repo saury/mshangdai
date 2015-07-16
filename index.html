@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>马上贷</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header id="slide" class="slide">
+        <ul>
+            <li>
+                <a href="#"><img src="img/slider1.jpg" alt="slider1"></a>
+            </li>
+            <li>
+                <a href="#"><img src="img/slider2.jpg" alt="slider2"></a>
+            </li>
+            <li>
+                <a href="#"><img src="img/slider3.jpg" alt="slider3"></a>
+            </li>
+        </ul>
+        <!-- <div class="dot">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> hide the dots-->
+    </header>
+    <div id="marquee0">
+        <div id="marquee1">
+            <ul>
+                <li><span>杨**</span>于
+                    <time>2015-06-12 09:26</time> 借款 ￥<span>5000</span>元</li>
+                <li><span>杨**</span>于
+                    <time>2015-06-12 09:26</time> 借款 ￥<span>5000</span>元</li>
+                <li><span>杨**</span>于
+                    <time>2015-06-12 09:26</time> 借款 ￥<span>5000</span>元</li>
+            </ul>
+        </div>
+        <div id="marquee2">
+        </div>
+    </div>
+    <div class="pure-g msd_entrance">
+        <div data-href="#" class="pure-u-1-2">
+            <div class="msd_entrance_wrap">
+                <div data-img="马上理财" class="msd_entrance_inner">
+                    马上理财
+                    <span>21天快速理财随存随取</span>
+                </div>
+            </div>
+        </div>
+        <div data-href="#" class="pure-u-1-2">
+            <div class="msd_entrance_wrap">
+                <div data-img="马上借款" class="msd_entrance_inner">
+                    马上借款
+                    <span>小额借贷60秒快速放款</span>
+                </div>
+            </div>
+        </div>
+        <div data-href="#" class="pure-u-1-2">
+            <div class="msd_entrance_wrap">
+                <div data-img="我的理财" class="msd_entrance_inner">
+                    我的理财
+                    <span class="loan-revenue" data-loan-revenue="23.41">今日收益 ￥<em></em>元</span>
+                    <!-- 动态获取收益，当数目为0时自动隐藏 -->
+                </div>
+            </div>
+        </div>
+        <div data-href="#" class="pure-u-1-2">
+            <div class="msd_entrance_wrap">
+                <div data-img="我的借款" class="msd_entrance_inner">
+                    我的借款
+                </div>
+            </div>
+            <div class="loan-num" data-loan-num="1"></div>
+            <!-- 动态获取借款条数，当数目为0时自动隐藏 -->
+        </div>
+        <div data-href="#" class="pure-u-1-2">
+            <div class="msd_entrance_wrap">
+                <div data-img="马上邀请" class="msd_entrance_inner">
+                    马上邀请
+                </div>
+            </div>
+            <div class="cash-token">现金</div>
+        </div>
+        <div data-href="#" class="pure-u-1-2">
+            <div class="msd_entrance_wrap">
+                <div data-img="我的账户" class="msd_entrance_inner">
+                    我的账户
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/swipeSlide.min.js"></script>
+    <script>
+    // init the height of msd_entrance
+    var header_height = document.getElementById('slide').offsetHeight,
+        body_height = window.document.body.offsetHeight;
+    $(".msd_entrance").css("height", body_height - header_height);
+    // init the datas
+    $("*").tap(function() {
+        var linkHref = $(this).attr("data-href");
+        if (linkHref) window.location.href = linkHref;
+    });
+    $(".loan-num").html($(".loan-num").attr("data-loan-num"));
+    $(".loan-revenue em").html($(".loan-revenue").attr("data-loan-revenue"));
+    // Carousel 
+    $(function() {
+        $('#slide').swipeSlide({
+            continuousScroll: true,
+            speed: 5000,
+            transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+            callback: function(i) {
+                $('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+            }
+        });
+    });
+    // Marquee
+    var Mymarquee = {
+        speed: 80,
+        marquee0: document.getElementById('marquee0'),
+        marquee1: document.getElementById('marquee1'),
+        marquee2: document.getElementById('marquee2')
+    }
+    Mymarquee.marquee2.innerHTML = Mymarquee.marquee1.innerHTML
+
+    function marqueeRun() {
+        if (Mymarquee.marquee2.offsetHeight - Mymarquee.marquee0.scrollTop <= 0)
+            Mymarquee.marquee0.scrollTop -= Mymarquee.marquee1.offsetHeight
+        else {
+            Mymarquee.marquee0.scrollTop++
+        }
+    }
+    var MyMar1 = setInterval(marqueeRun, Mymarquee.speed);
+    </script>
+</body>
+
+</html>

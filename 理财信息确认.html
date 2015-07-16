@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>理财信息确认</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/loan.css">
+</head>
+
+<body>
+    <div class="loan_main">
+        <div class="loan_main_comfirmA">
+            <p>理财金额 : <span class="span-croci" id="data-loan-sum" data-loan-sum="5000"></span> 元</p>
+            <p>预计获得收益 : <span class="span-croci" id="data-loan-expect" data-loan-expect="28.77"></span> 元</p>
+            <span>若未匹配成功，理财资金将返还至理财账户<br>若理财匹配成功，理财周期为21天</span>
+        </div>
+        <hr class="hr-liteblue">
+        <div class="loan_main_comfirmB">
+            <label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名 : </label><span>杨善平</span>
+            <label>储蓄卡号 : </label><span>6226********8484</span>
+            <label>开户银行 : </label><span>中国工商银行</span>
+        </div>
+        <hr class="hr-liteblue">
+        <div class="loan_main_comfirmC">
+            <div class="loan_main_checkbox">我同意以下协议</div>
+            <ol>
+                <li><a href="#">《代扣服务协议》</a></li>
+                <li><a href="#">《出借服务协议》</a></li>
+            </ol>
+        </div>
+        <a class="pure-button loan_main_btn ab_bottom" href="javascript:void(0);" disabled>提交</a>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var data_loan_list = ["sum", "expect"];
+        for (var i = 0; i < data_loan_list.length; i++) {
+            $("#data-loan-" + data_loan_list[i]).html(new Number($("#data-loan-" + data_loan_list[i]).attr("data-loan-" + data_loan_list[i])).toFixed(2));
+        }
+        $(".loan_main_checkbox").on("click", function() {
+            if ($(this).attr("class") == "loan_main_checkbox") {
+
+                $(this).addClass("loan_main_checkbox_on");
+                $(".ab_bottom").removeAttr("disabled");
+            } else {
+                $(this).removeClass("loan_main_checkbox_on");
+                $(".ab_bottom").attr("disabled", "");
+            }
+        })
+    });
+    </script>
+</body>
+
+</html>

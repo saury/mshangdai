@@ -1,0 +1,345 @@
+html {
+    height: 100%;
+}
+
+* {
+    font-family: "Microsoft YaHei", "Arial";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-smoothing: subpixel-antialiased;
+    text-decoration: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+body {
+    height: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+.slide {
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slide:after {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 50%;
+}
+
+.slide ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide li {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* 解决js阻塞页面显示首屏 */
+
+.slide li:first-child {
+    z-index: 0;
+}
+
+.slide li img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.slide .dot {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 0;
+}
+
+.slide .dot span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-left: 5px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.slide .dot .cur {
+    background-color: #fff;
+}
+
+#marquee0 {
+    position: relative;
+    z-index: 9999;
+    margin-top: -22px;
+    overflow: hidden;
+    width: 100%;
+    float: left;
+    display: inline;
+    height: 22px;
+    background: #000;
+    opacity: .5;
+}
+
+#marquee0 ul {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+#marquee0 ul li {
+    display: block;
+    font-size: .8em;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+}
+
+.msd_entrance {
+    background: #fff;
+}
+
+.msd_entrance>div {
+    height: 33.33%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.msd_entrance>div:nth-child(2n-1) {
+    border-bottom: 1px solid #ddd;
+}
+
+.msd_entrance>div:nth-child(2n) {
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.msd_entrance_wrap {
+    position: relative;
+    top: 50%;
+    height: 60%;
+}
+
+.msd_entrance_inner {
+    box-sizing: border-box;
+    background: #fff no-repeat center top;
+    background-size: auto 60%;
+    padding-top: 28%;
+    font-size: 1.15em;
+    color: #757575;
+    text-align: center;
+    position: relative;
+    top: -50%;
+    height: 100%;
+}
+
+.msd_entrance_inner[data-img="马上理财"] {
+    background-image: url(../img/cai.png);
+}
+
+.msd_entrance_inner[data-img="马上借款"] {
+    background-image: url(../img/jie.png);
+}
+
+.msd_entrance_inner[data-img="我的理财"] {
+    background-image: url(../img/coins.png);
+}
+
+.msd_entrance_inner[data-img="我的借款"] {
+    background-image: url(../img/visa.png);
+}
+
+.msd_entrance_inner[data-img="马上邀请"] {
+    background-image: url(../img/invititation.png);
+}
+
+.msd_entrance_inner[data-img="我的账户"] {
+    background-image: url(../img/account.png);
+}
+
+.msd_entrance_inner span {
+    display: block;
+    font-size: 0.65em;
+}
+
+.msd_entrance_inner em {
+    font-style: normal;
+    color: #ff3333;
+}
+
+.loan-num {
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    background: #ff3333;
+    border-radius: 50%;
+    height: 24px;
+    line-height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 18%;
+    right: 30%;
+}
+
+.loan-revenue[data-loan-revenue="0"],
+.loan-num[data-loan-num="0"] {
+    display: none;
+}
+
+.cash-token {
+    text-align: center;
+    padding: 0 10px;
+    line-height: 24px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    height: 32px;
+    background: url(../img/cash.png) no-repeat center;
+    background-size: auto 100%;
+    position: absolute;
+    top: 6%;
+    right: 16%;
+    -webkit-animation: cashPulse 1.5s infinite;
+    -o-animation: cashPulse 1.5s infinite;
+    -ms-animation: cashPulse 1.5s infinite;
+    -moz-animation: cashPulse 1.5s infinite;
+    animation: cashPulse 1.5s infinite;
+}
+
+@-webkit-keyframes cashPulse {
+    0% {
+        -webkit-transform: scale(.95, .95);
+    }
+    20% {
+        -webkit-transform: scale(.9, .9);
+    }
+    30% {
+        -webkit-transform: scale(1, 1);
+    }
+    45% {
+        -webkit-transform: scale(.9, .9);
+    }
+    60% {
+        -webkit-transform: scale(.98, .98);
+    }
+    100% {
+        -webkit-transform: scale(.95, .95);
+    }
+}
+
+@-o-keyframes cashPulse {
+    0% {
+        -o-transform: scale(.95, .95);
+    }
+    20% {
+        -o-transform: scale(.9, .9);
+    }
+    30% {
+        -o-transform: scale(1, 1);
+    }
+    45% {
+        -o-transform: scale(.9, .9);
+    }
+    60% {
+        -o-transform: scale(.98, .98);
+    }
+    100% {
+        -o-transform: scale(.95, .95);
+    }
+}
+
+@-ms-keyframes cashPulse {
+    0% {
+        -ms-transform: scale(.95, .95);
+    }
+    20% {
+        -ms-transform: scale(.9, .9);
+    }
+    30% {
+        -ms-transform: scale(1, 1);
+    }
+    45% {
+        -ms-transform: scale(.9, .9);
+    }
+    60% {
+        -ms-transform: scale(.98, .98);
+    }
+    100% {
+        -ms-transform: scale(.95, .95);
+    }
+}
+
+@-moz-keyframes cashPulse {
+    0% {
+        -moz-transform: scale(.95, .95);
+    }
+    20% {
+        -moz-transform: scale(.9, .9);
+    }
+    30% {
+        -moz-transform: scale(1, 1);
+    }
+    45% {
+        -moz-transform: scale(.9, .9);
+    }
+    60% {
+        -moz-transform: scale(.98, .98);
+    }
+    100% {
+        -moz-transform: scale(.95, .95);
+    }
+}
+
+@keyframes cashPulse {
+    0% {
+        transform: scale(.95, .95);
+    }
+    20% {
+        transform: scale(.9, .9);
+    }
+    30% {
+        transform: scale(1, 1);
+    }
+    45% {
+        transform: scale(.9, .9);
+    }
+    60% {
+        transform: scale(.98, .98);
+    }
+    100% {
+        transform: scale(.95, .95);
+    }
+}
+
+@media screen and (max-height: 500px) {
+    /*当屏幕高度小于500px时，应用下面的CSS样式*/
+    
+    body {
+        font-size: 14px;
+    }
+    .msd_entrance_inner {
+        padding-top: 22%;
+    }
+}

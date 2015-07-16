@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>借款额度</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/loan.css">
+</head>
+
+<body>
+    <div class="loan_main">
+        <div class="loan_main_img">
+            <img class="pure-img" src="img/logo.jpg" alt="logo">
+        </div>
+        <p>你当前的借款额度为</p>
+        <span id="data-loan-amount" data-loan-amount="5000"></span>
+        <hr>
+        <p class="loan_main_credit">您的授信额度已超越了<span data-credit-percentage="65"></span>的小伙伴</p>
+        <a class="pure-button loan_main_btn" href="#">立即借款</a>
+        <a class="pure-button loan_main_btn loan_main_btn_hollow" href="#">继续提升额度</a>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+    $("#data-loan-amount").html(new Number($("#data-loan-amount").attr("data-loan-amount")).toFixed(2) + "元");
+    $(".loan_main_credit span").html($(".loan_main_credit span").attr("data-credit-percentage") + "%");
+    </script>
+</body>
+
+</html>
