@@ -45,6 +45,7 @@
         </div>
     </div>
     <div class="pure-g msd_entrance">
+        <!-- 跳转链接输入在data-href属性中 -->
         <div data-href="#" class="pure-u-1-2">
             <div class="msd_entrance_wrap">
                 <div data-img="马上理财" class="msd_entrance_inner">
@@ -63,40 +64,28 @@
         </div>
         <div data-href="#" class="pure-u-1-2">
             <div class="msd_entrance_wrap">
-                <div data-img="我的理财" class="msd_entrance_inner">
-                    我的理财
-                    <span class="loan-revenue" data-loan-revenue="23.41">今日收益 ￥<em></em>元</span>
-                    <!-- 动态获取收益，当数目为0时自动隐藏 -->
+                <div data-img="任务中心" class="msd_entrance_inner">
+                    任务中心
                 </div>
             </div>
         </div>
         <div data-href="#" class="pure-u-1-2">
             <div class="msd_entrance_wrap">
-                <div data-img="我的借款" class="msd_entrance_inner">
-                    我的借款
-                </div>
-            </div>
-            <div class="loan-num" data-loan-num="1"></div>
-            <!-- 动态获取借款条数，当数目为0时自动隐藏 -->
-        </div>
-        <div data-href="#" class="pure-u-1-2">
-            <div class="msd_entrance_wrap">
-                <div data-img="马上邀请" class="msd_entrance_inner">
-                    马上邀请
-                </div>
-            </div>
-            <div class="cash-token">现金</div>
-        </div>
-        <div data-href="#" class="pure-u-1-2">
-            <div class="msd_entrance_wrap">
-                <div data-img="我的账户" class="msd_entrance_inner">
-                    我的账户
+                <div data-img="个人中心" class="msd_entrance_inner">
+                    个人中心
                 </div>
             </div>
         </div>
+        <div class="pure-u-1-1">
+            <div class="msd_entrance_visa">
+                <div data-img="银联" class="msd_entrance_inner">
+                    由中国银联提供安全支付服务
+                </div>
+            </div>
+        </div>
+        
     </div>
     <script src="js/zepto.min.js"></script>
-    <script src="js/touch.js"></script>
     <script src="js/swipeSlide.min.js"></script>
     <script>
     // init the height of msd_entrance
@@ -104,12 +93,12 @@
         body_height = window.document.body.offsetHeight;
     $(".msd_entrance").css("height", body_height - header_height);
     // init the datas
-    $("*").tap(function() {
+    $("*").click(function() {
         var linkHref = $(this).attr("data-href");
         if (linkHref) window.location.href = linkHref;
     });
-    $(".loan-num").html($(".loan-num").attr("data-loan-num"));
-    $(".loan-revenue em").html($(".loan-revenue").attr("data-loan-revenue"));
+    /*$(".loan-num").html($(".loan-num").attr("data-loan-num"));
+    $(".loan-revenue em").html($(".loan-revenue").attr("data-loan-revenue"));*/
     // Carousel 
     $(function() {
         $('#slide').swipeSlide({

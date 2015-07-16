@@ -128,14 +128,17 @@ body {
     overflow: hidden;
 }
 
-.msd_entrance>div:nth-child(2n-1) {
-    border-bottom: 1px solid #ddd;
+.msd_entrance>div:first-child {
+    border-top: 3px solid #fff;
+    border-right: 2px solid #fff;
+    background: #fd9c35;
+}
+.msd_entrance>div:nth-child(2) {
+    border-top: 3px solid #fff;
+    border-left: 2px solid #fff;
+    background: #22aff6;
 }
 
-.msd_entrance>div:nth-child(2n) {
-    border-left: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-}
 
 .msd_entrance_wrap {
     position: relative;
@@ -146,7 +149,7 @@ body {
 .msd_entrance_inner {
     box-sizing: border-box;
     background: #fff no-repeat center top;
-    background-size: auto 60%;
+    background-size: auto 50%;
     padding-top: 28%;
     font-size: 1.15em;
     color: #757575;
@@ -157,180 +160,40 @@ body {
 }
 
 .msd_entrance_inner[data-img="马上理财"] {
-    background-image: url(../img/cai.png);
+    background-image: url(../img/cai.jpg);
+    background-color: #fd9c35;
+    color: #fff;
 }
 
 .msd_entrance_inner[data-img="马上借款"] {
-    background-image: url(../img/jie.png);
+    background-image: url(../img/jie.jpg);
+    background-color: #22aff6;
+    color: #fff;
 }
 
-.msd_entrance_inner[data-img="我的理财"] {
-    background-image: url(../img/coins.png);
+.msd_entrance_inner[data-img="任务中心"] {
+    background-image: url(../img/task.jpg);
 }
 
-.msd_entrance_inner[data-img="我的借款"] {
-    background-image: url(../img/visa.png);
+.msd_entrance_inner[data-img="个人中心"] {
+    background-image: url(../img/account.jpg);
 }
 
-.msd_entrance_inner[data-img="马上邀请"] {
-    background-image: url(../img/invititation.png);
-}
-
-.msd_entrance_inner[data-img="我的账户"] {
-    background-image: url(../img/account.png);
+.msd_entrance_inner[data-img="银联"] {
+    background-image: url(../img/union_pay.jpg);
+    background-position-y: 65%;
+    background-size: auto 30%;
 }
 
 .msd_entrance_inner span {
     display: block;
     font-size: 0.65em;
+    font-weight: lighter;
 }
 
 .msd_entrance_inner em {
     font-style: normal;
     color: #ff3333;
-}
-
-.loan-num {
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    background: #ff3333;
-    border-radius: 50%;
-    height: 24px;
-    line-height: 24px;
-    width: 24px;
-    position: absolute;
-    top: 18%;
-    right: 30%;
-}
-
-.loan-revenue[data-loan-revenue="0"],
-.loan-num[data-loan-num="0"] {
-    display: none;
-}
-
-.cash-token {
-    text-align: center;
-    padding: 0 10px;
-    line-height: 24px;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    height: 32px;
-    background: url(../img/cash.png) no-repeat center;
-    background-size: auto 100%;
-    position: absolute;
-    top: 6%;
-    right: 16%;
-    -webkit-animation: cashPulse 1.5s infinite;
-    -o-animation: cashPulse 1.5s infinite;
-    -ms-animation: cashPulse 1.5s infinite;
-    -moz-animation: cashPulse 1.5s infinite;
-    animation: cashPulse 1.5s infinite;
-}
-
-@-webkit-keyframes cashPulse {
-    0% {
-        -webkit-transform: scale(.95, .95);
-    }
-    20% {
-        -webkit-transform: scale(.9, .9);
-    }
-    30% {
-        -webkit-transform: scale(1, 1);
-    }
-    45% {
-        -webkit-transform: scale(.9, .9);
-    }
-    60% {
-        -webkit-transform: scale(.98, .98);
-    }
-    100% {
-        -webkit-transform: scale(.95, .95);
-    }
-}
-
-@-o-keyframes cashPulse {
-    0% {
-        -o-transform: scale(.95, .95);
-    }
-    20% {
-        -o-transform: scale(.9, .9);
-    }
-    30% {
-        -o-transform: scale(1, 1);
-    }
-    45% {
-        -o-transform: scale(.9, .9);
-    }
-    60% {
-        -o-transform: scale(.98, .98);
-    }
-    100% {
-        -o-transform: scale(.95, .95);
-    }
-}
-
-@-ms-keyframes cashPulse {
-    0% {
-        -ms-transform: scale(.95, .95);
-    }
-    20% {
-        -ms-transform: scale(.9, .9);
-    }
-    30% {
-        -ms-transform: scale(1, 1);
-    }
-    45% {
-        -ms-transform: scale(.9, .9);
-    }
-    60% {
-        -ms-transform: scale(.98, .98);
-    }
-    100% {
-        -ms-transform: scale(.95, .95);
-    }
-}
-
-@-moz-keyframes cashPulse {
-    0% {
-        -moz-transform: scale(.95, .95);
-    }
-    20% {
-        -moz-transform: scale(.9, .9);
-    }
-    30% {
-        -moz-transform: scale(1, 1);
-    }
-    45% {
-        -moz-transform: scale(.9, .9);
-    }
-    60% {
-        -moz-transform: scale(.98, .98);
-    }
-    100% {
-        -moz-transform: scale(.95, .95);
-    }
-}
-
-@keyframes cashPulse {
-    0% {
-        transform: scale(.95, .95);
-    }
-    20% {
-        transform: scale(.9, .9);
-    }
-    30% {
-        transform: scale(1, 1);
-    }
-    45% {
-        transform: scale(.9, .9);
-    }
-    60% {
-        transform: scale(.98, .98);
-    }
-    100% {
-        transform: scale(.95, .95);
-    }
 }
 
 @media screen and (max-height: 500px) {
