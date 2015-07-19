@@ -9,7 +9,7 @@ $font_red: #fe8f86;
 
 @import "compass/css3";
 @import "compass";
-
+@include font-face("Pixel Font", font-files("XPDR_02.ttf"));
 
 * {
     font-family: "Microsoft YaHei", Arial;

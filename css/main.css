@@ -1,3 +1,4 @@
+@font-face { font-family: "Pixel Font"; src: url('../fonts/XPDR_02.ttf?1008550186') format('truetype'); }
 html {
     height: 100%;
 }
@@ -194,6 +195,65 @@ body {
 .msd_entrance_inner em {
     font-style: normal;
     color: #ff3333;
+}
+/* 马壕总动员 */
+.slide_banner_img{
+    top: -24px !important;
+}
+.count_down{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    height: 42px;
+    line-height: 42px;
+    font-size: .9em;
+    padding: 0 14px;
+    color: #fff;
+    background: #ffc887;
+    width: 100%;
+}
+.count_down div{
+    float: right;
+}
+.pixel_time{
+    font-family: "Pixel Font";
+    letter-spacing: 1.4px;
+    font-size: .95em;
+    color: #ff5255;
+}
+.rank_table{
+    border: none;
+}
+.rank_table th,
+.rank_table td{
+    border: none;
+    height: 42px;
+    padding: 0;
+    text-align: center;
+    font-weight: normal;
+    color:#666;
+    vertical-align: middle;
+}
+.rank_table th{
+    background: #fcf2e6;
+    font-size: .8em;
+}
+.rank_table td{
+    font-size: .775em;
+}
+.pure-table-odd td{
+    background: #f4f4f4;
+}
+.pure-table-highlight td{
+    color: #ff5255;
+}
+.pure-table-highlight span{
+    display: block;
+    font-size: .75em;
+    height: 14px;
+    line-height: 14px;
+    color: #999;
 }
 
 @media screen and (max-height: 500px) {

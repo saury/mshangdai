@@ -1,6 +1,7 @@
-* { font-family: "Microsoft YaHei", Arial; color: #666; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; text-decoration: none; margin: 0; border: 0; padding: 0; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; }
+@font-face { font-family: "Pixel Font"; src: url('../fonts/XPDR_02.ttf?1008550186') format('truetype'); }
+* { font-family: "Microsoft YaHei", Arial; color: #666; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; text-decoration: none; margin: 0; border: 0; padding: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
 
-input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms-user-select: auto; user-select: auto; }
+input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit-user-select: auto; user-select: auto; }
 
 .loan_main { text-align: center; width: 100%; }
 .loan_main_img { width: 22%; margin: 30px auto 20px; }
