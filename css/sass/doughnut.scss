@@ -1,19 +1,16 @@
 @charset "utf-8";
-
 ///*init*/
-
 $font_color: #666;
 $btn_blue: #0d8fdb;
 $btn_liteblue: #44bbdb;
 $font_red: #fe8f86;
-
+$donut: #ffd35c;
 @import "compass/css3";
 @import "compass";
 @include font-face("Pixel Font", font-files("XPDR_02.ttf"));
-
+//@import "loan.scss";
 * {
     font-family: "Microsoft YaHei", Arial;
-    color: $font_color;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
@@ -24,60 +21,239 @@ $font_red: #fe8f86;
     @include user-select(none);
 }
 
+html,
+body {
+    height: 100%;
+}
+
 input,
 select,
 textarea {
     @include user-select(auto);
 }
 
-.chart {
+.doughnut {
+    &_header {
+        background: #0d8fdb;
+        height: 48%;
+        padding-top: 45%;
+        @include box-sizing("border-box");
+        min-height:250px;
+        *{color: #fff}
+    }
+    &_title{
+        position: absolute;
+        top:10px;
+        left:6%;
+        font-size:.65em;
+        em{
+            display: block;
+            font-style:normal;
+            font-size:1.4em;
+        }
+        &_right{
+            position: absolute;
+            top:10px;
+            right:6%;
+            font-size:.65em;
+        }
+    }
+    &_description{
+        position: absolute;
+        top:23%;
+        right:6%;
+        font-size:.75em;
+        span{
+            font-size:1.4em;
+        }
+    }
+}
+
+.doughnut_Chart {
     position: absolute;
-    width: 50%;
-    height: 30%;
+    width: 42%;
+    height: 28%;
     top: 0;
     left: 50%;
-    margin-left: -25%;
+    margin-left: -21%;
 }
 
 .doughnutSummary {
     position: absolute;
     top: 50%;
     left: 50%;
+    margin-left: -25%;
     color: #000;
     text-align: center;
-    /* text-shadow: 0 -1px 0 #111; */
+    text-shadow: 1px 1px 2px #111;
 }
 
 .doughnutSummaryNumber {
     position: absolute;
     top: 25%;
     width: 100%;
-    font-size: 1.75em;
-    font-weight: bold;
+    font-size: 2em;
+    font-weight: lighter;
+    color: #fff;
+    &:after {
+        content: "%";
+        font-size: .5em;
+    }
 }
 
-.bar-wrap{
-    width:200px;
-    display:inline-block;
-    border:1px solid #0D7E68;
-    border-radius:9px;
-    padding:0;
-    height:18px;
+.bar-wrap {
+    width: 100px;
+    display: inline-block;
+    //border:1px solid #0D7E68;
+    border-radius: 9px;
+    padding: 0;
+    height: 14px;
+    background: #fff;
+    vertical-align: top;
 }
 
-.bar{
-    height:18px;
-    width:0%;
-    position:relative;
-    border-radius:8px;
-    display:inline-block;
+.bar {
+    height: 14px;
+    width: 0%;
+    position: relative;
+    border-radius: 8px;
+    display: block;
+    &-parameter {
+        color: $donut;
+    }
+    &-main{
+        height:14px;
+        margin: 25px 6% 0;
+        text-align: center;
+        &:first-child{
+            margin-top: 0;
+        }
+        &>span {
+            font-size: .75em;
+            height: 14px;
+            display: inline-block;
+            line-height: 14px;
+            vertical-align: top;
+            &:after {
+                content: "%";
+            }
+        }
+        label{
+            font-size:.75em;
+            float: left;
+            height:14px;
+            display:inline-block;
+            line-height:14px;
+        }
+        em{
+            font-style:normal;
+            font-size: .55em;
+            float: right;
+            height:14px;
+            display:inline-block;
+            line-height:14px;
+
+        }
+
+    }
 }
 
-.bar.active{
+.bar.active {
     @include transition(width 2s);
 }
 
-.bar.mint{
-    background-color:yellow;
+.bar.mint {
+    background-color: $donut;
+}
 
+.loan_main {
+    &_btn {
+        background: $btn_blue;
+        border: 2px solid $btn_blue;
+        padding: 0;
+        color: #fff;
+        height: 36px;
+        line-height: 32px;
+        display: block;
+        width: 84%;
+        border-radius: 5px;
+        margin: 0 auto 12px;
+    }
+    form {
+        color:#666;
+        letter-spacing: normal;
+        text-align: left;
+        width: 88%;
+        margin: 10px auto;
+        div {
+            line-height: 1.8em;
+        }
+        .loan_main_btn {
+            width: 100%;
+        }
+        mark {
+            background: transparent;
+            font-size: .65em;
+            color: $font_red;
+            margin: 8px 0;
+            width: 100%;
+        }
+    }
+    &_singleInput {
+        border: 2px solid #0d8fdb;
+        border-radius: 8px;
+        width: 100%;
+        div {
+            margin: 0 !important;
+        }
+        label {
+            display: inline-block;
+            float: left;
+            font-size: .9em;
+            margin: .4em 0 .2em .8em;
+        }
+        input {
+            width: 60%;
+            display:inline-block !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+    }
+    &_predict{
+        margin: 0;
+        padding: 8px 0;
+        text-align: center;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        h3{
+            color: #0d8fdb;
+            font-size:.95em;
+        }
+        p{
+            color: #aaa;
+            font-weight:lighter;
+            font-size:.6em;
+            line-height: 1.8em;
+        }
+    }
+    &_shield{
+        margin: 0;
+        padding: 8px 0;
+        text-align: center;
+        h3{
+            margin:0 auto;
+            width:40%;
+            color: #0d8fdb;
+            font-size:.95em;
+            padding-left: 15px;
+            background: image-url("shield.jpg") no-repeat  center left;
+            background-size: auto 80%;
+        }
+        p{
+            color: #aaa;
+            font-weight:lighter;
+            font-size:.6em;
+            line-height: 1.8em;
+        }
+    }
 }

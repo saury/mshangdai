@@ -15,12 +15,12 @@
       PI = Math.PI,
       settings = $.extend({
         segmentShowStroke : true,
-        segmentStrokeColor : "yellow",
-        segmentStrokeWidth : 10,
-        baseColor: "rgba(0,0,0,0.1)",
+        segmentStrokeColor : "#ffd35c",
+        segmentStrokeWidth : 8,
+        baseColor: "#fff",
         baseOffset: 4,
         edgeOffset : 10,//offset from edge of $this
-        percentageInnerCutout : 80,
+        percentageInnerCutout : 85,
         animation : true,
         animationSteps : 90,
         animationEasing : "easeInOutExpo",
@@ -191,7 +191,7 @@
     function drawDoughnutText(animationDecimal, segmentTotal) {
       $summaryNumber
         .css({opacity: animationDecimal})
-        .text((segmentTotal * animationDecimal).toFixed(1)+"%");
+        .text((segmentTotal * animationDecimal).toFixed(1));
     }
     function animateFrame(cnt, drawData) {
       var easeAdjustedAnimationPercent =(settings.animation)? CapValue(easingFunction(cnt), null, 0) : 1;
