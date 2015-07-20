@@ -1,45 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
+
 <head>
-<title>用html5的canvas画布绘制贝塞尔曲线-柯乐义</title>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/doughnut.css" media="screen" type="text/css" />
 </head>
+
 <body>
-<div>
-<a href="http://keleyi.com/a/bjac/j77m9131.htm" target="_blank">原文</a></div>
+    <div id="doughnutChart" class="chart"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="bar-main">
+        <span class="bar-parameter">7.0</span>
+        <div class="bar-wrap">
+            <span class="bar mint" data-percent="8"></span>
+        </div>
+        <span>8.0</span>
+    </div>
+    <div class="bar-main">
+        <span class="bar-parameter">1.5</span>
+        <div class="bar-wrap">
+            <span class="bar mint" data-percent="2.5"></span>
+        </div>
+        <span>2.5</span>
+    </div>
+    <div class="bar-main">
+        <span class="bar-parameter">2.0</span>
+        <div class="bar-wrap">
+            <span class="bar mint" data-percent="2.5"></span>
+        </div>
+        <span>2.5</span>
+    </div>
+    <script src='js/zepto.min.js'></script>
+    <script src="js/doughnut.js"></script>
+    <script>
+    $(function() {
+        /*doughnut*/
+        $("#doughnutChart").drawDoughnutChart([{
+            title: "percentage",
+            value: parseFloat($(".bar-parameter").eq(0).html()) + parseFloat($(".bar-parameter").eq(1).html()) + parseFloat($(".bar-parameter").eq(2).html()),
+            color: "yellow"
+        }]);
+        /*bar width*/
+        $(".bar-main").each(function() {
+            $(this).children().children(".bar").addClass("active");
+            var numerator = $(this).children(".bar-parameter").html();
+            //console.log(numerator);
+            var percentage = (numerator / $(this).children().children(".bar").attr("data-percent") * 100).toFixed(1) + "%";
+            //console.log(percentage);
+            $(this).children().children(".bar").css("width", percentage);
+        });
+    });
 
-<canvas id="keleyi_com" height="300" width="400"></canvas>
-<script type="text/javascript">
-function draw(id)
-{
-var canvas=document.getElementById(id);
-if(canvas==null)
-return false;
-var context=canvas.getContext('2d');
-context.fillStyle="#eeeeff";
-context.fillRect(0,0,400,300);
-var n=0;
-var dx=150;
-var dy=150;
-var s=100;
-context.beginPath();
-context.globalCompositeOperation='and';
-context.fillStyle='rgb(100,255,100)';
-context.strokeStyle='rgb(0,0,100)';
-var x=Math.sin(0);
-var y=Math.cos(0);
-var dig=Math.PI/15*11;
-for(var i=0;i<30;i++)
-{
-var x=Math.sin(i*dig);
-var y=Math.cos(i*dig);
-context.bezierCurveTo(dx+x*s,dy+y*s-100,dx+x*s+100,dy+y*s,dx+x*s,dy+y*s);
-}
-context.closePath();
-context.fill();
-context.stroke();
-}
+    /*bar parameter*/
+    var t = 20,
+        Num = [0, 0, 0],
+        maxDom = [$(".bar-parameter").eq(0), $(".bar-parameter").eq(1), $(".bar-parameter").eq(2)],
+        max = [$(".bar-parameter").eq(0).html(), $(".bar-parameter").eq(1).html(), $(".bar-parameter").eq(2).html()];
+    window.onload = function() {
+        t = [setInterval("Refresh1(" + 0 + ");", t), setInterval("Refresh1(" + 1 + ");", t), setInterval("Refresh1(" + 2 + ");", t)]
+    };
 
-draw("keleyi_com");
-</script>
+    function Refresh1(i) {
+        Num[i] += 0.1;
+        maxDom[i].html(Num[i].toFixed(1));
+        var num2 = Num[i].toFixed(1);
+        if (num2 == max[i]) {
+            //console.log("123");
+            clearInterval(t[i]);
+        };
+    }
+    </script>
+    </div>
 </body>
+
 </html>

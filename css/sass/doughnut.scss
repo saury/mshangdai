@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+///*init*/
+
+$font_color: #666;
+$btn_blue: #0d8fdb;
+$btn_liteblue: #44bbdb;
+$font_red: #fe8f86;
+
+@import "compass/css3";
+@import "compass";
+@include font-face("Pixel Font", font-files("XPDR_02.ttf"));
+
+* {
+    font-family: "Microsoft YaHei", Arial;
+    color: $font_color;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-smoothing: subpixel-antialiased;
+    text-decoration: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    @include user-select(none);
+}
+
+input,
+select,
+textarea {
+    @include user-select(auto);
+}
+
+.chart {
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    top: 0;
+    left: 50%;
+    margin-left: -25%;
+}
+
+.doughnutSummary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #000;
+    text-align: center;
+    /* text-shadow: 0 -1px 0 #111; */
+}
+
+.doughnutSummaryNumber {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.bar-wrap{
+    width:200px;
+    display:inline-block;
+    border:1px solid #0D7E68;
+    border-radius:9px;
+    padding:0;
+    height:18px;
+}
+
+.bar{
+    height:18px;
+    width:0%;
+    position:relative;
+    border-radius:8px;
+    display:inline-block;
+}
+
+.bar.active{
+    @include transition(width 2s);
+}
+
+.bar.mint{
+    background-color:yellow;
+
+}
