@@ -1,16 +1,13 @@
 @charset "utf-8";
-
 ///*init*/
-
 $font_color: #666;
 $btn_blue: #0d8fdb;
 $btn_liteblue: #44bbdb;
 $font_red: #fe8f86;
-
 @import "compass/css3";
 @import "compass";
-@include font-face("Pixel Font", font-files("XPDR_02.ttf"));
-
+//import pixeled font face
+//@include font-face("Pixel Font", font-files("XPDR_02.ttf"));
 * {
     font-family: "Microsoft YaHei", Arial;
     color: $font_color;
@@ -30,39 +27,137 @@ textarea {
     @include user-select(auto);
 }
 
-.loan_main {
-    //background: url(../img/理财信息确认.jpg) no-repeat center -65px;
-    //background-size: 100% auto;
-    text-align: center;
-    width: 100%;
-    &_img {
-        width: 22%;
-        margin: 30px auto 20px;
+//clear fix
+.cf {
+    *zoom: 1;
+    &:before, &:after {
+        content: " ";
+        display: table;
     }
-    p {
-        font-size: .8em;
+    &:after {
+        clear: both;
     }
-    >span {
-        color: #fc9c69;
-        font-size: 1.6em;
-        line-height: 1.8em;
-        display: block;
-    }
-    hr {
-        height: 1px;
-        border: none;
-        border-top: 1px dashed #e4e4e4;
-        width: 83%;
-        margin: 35px auto 10px;
-    }
-    &_credit {
-        color: #9b9b9b;
-        margin-bottom: 50px;
-        span {
-            color: #0f8fda;
+}
+
+
+//body{
+//background: url(../img/xxx.jpg) no-repeat center -65px;
+//background-size: 100% auto;
+//}
+html,
+body {
+    height: 100%;
+}
+
+.user {
+    /* avatar sec */
+    &_avatar{
+        width: 25%;
+        margin:0 auto;
+        padding: 10px 0;
+        .pure-img{
+            border: 2px solid #fff;
+            @include border-radius(50%);
+        }
+        h3{
+            font-weight: normal;
         }
     }
-    &_btn {
+    /* banner section */
+    &_banner {
+        background: image-url("banner_bg.jpg") no-repeat 0 0;
+        background-size: 100% auto;
+        height: 30%;
+        position: relative;
+
+        /* param list */
+        ul {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height:30%;
+            background: rgba(0,0,0,0.5);
+            color:#fff;
+            li{
+                width: 25%;
+                float: left;
+                list-style: none;
+            }
+        }
+    }
+    /* main body */
+    &_main {
+        text-align: center;
+        width: 100%;
+        background: #ddd;
+        height:70%;
+        padding: 5% 0;
+    }
+    /* sections under main body */
+    &_sec {
+        text-align: left;
+        width: 90%;
+        background: #fff;
+        margin: 0 auto 5%;
+        @include border-radius(5px);
+        div{
+            border-top: 1px solid #ddd;
+            color: #666;
+            &:first-child{
+                border-top:none;
+            }
+            span{
+                color:#ddd;
+                em{
+                    color: $font_red;
+                }
+            }
+        }
+    }
+    /* bankcards list section*/
+    &_main_cards{
+        padding: 10px 0;
+        height:100%;
+    }
+    /* bankcard single item */
+    %card{
+        width:95%;
+        height:60px;
+        margin:5px auto;
+        padding: 5px;
+        @include border-radius(2px);
+        @include box-sizing(border-box);
+    }
+    &_card{
+        @extend %card;
+        position: relative;
+        color: #fff;
+        button{
+            position: absolute;
+            right:5px;
+            bottom:10px;
+            border: 1px solid #fff;
+            @include border-radius(8px);
+            &.option1{
+                
+            }
+            &.option1{
+
+            }
+            &.active{
+                background: #ddd;
+            }
+        }
+        &_add{
+            @extend %card;
+            color: $btn_blue;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+    }
+    /* normal and hollowed button with ab_bottom to locate at the bottom of the page*/
+    &_main_btn {
         background: $btn_blue;
         border: 2px solid $btn_blue;
         padding: 0;
@@ -77,246 +172,12 @@ textarea {
             background: #fff;
             color: $btn_blue;
         }
-    }
-    form {
-        letter-spacing: normal;
-        text-align: left;
-        width: 88%;
-        margin: 10px auto;
-        p {
-            font-size: 1em;
-        }
-        div {
-            margin-top: 7px;
-            line-height: 1.8em;
-        }
-        p.ft_red {
-            margin: 6px 0;
-        }
-        .loan_main_btn {
-            width: 100%;
-        }
-        .ft_xs {
-            font-size: .7em;
-            color: #bfbfbf;
-            margin: 5px 3px 28px;
-        }
-        .ft_xxs {
-            font-size: .65em;
-            color: #bfbfbf;
-            margin-bottom: 1.8em;
-        }
-        label {
-            font-size: .74em;
-            &.lab_finance {
-                margin-bottom: 1em;
-            }
-        }
-        mark {
-            background: transparent;
-            font-size: .7em;
-            color: $font_red;
-            margin-bottom: 4px;
-            width: 100%;
+        &.ab_bottom {
+            position: absolute;
+            bottom: 1.3em;
+            left: 0;
+            width: 88%;
+            margin: 0 6%;
         }
     }
-    &_table {
-        border: 1px solid $btn_blue;
-        border-radius: 5px;
-        width: 100%;
-        padding: 5px;
-        box-sizing: border-box;
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: none;
-        }
-        thead {
-            background: transparent;
-        }
-        th,
-        td {
-            padding: 0;
-            text-align: center;
-            border: none;
-        }
-        th {
-            font-size: .9em;
-            height: 30px;
-            font-weight: normal;
-            border-bottom: 1px solid #ddd;
-            border-right: 1px solid #ddd;
-            &:last-child {
-                border-right: none;
-            }
-        }
-        td {
-            font-size: .8em;
-            height: 44px;
-            color: $font_red;
-            border-right: 1px solid #ddd;
-            &:last-child {
-                border-right: none;
-            }
-        }
-    }
-    &_doubleInput {
-        border: 1px solid #aaa;
-        border-radius: 8px;
-        width: 100%;
-        margin: 12px 0 !important;
-        div {
-            margin: 0 !important;
-        }
-        hr {
-            height: 1px;
-            border: none;
-            border-top: 1px solid #e4e4e4;
-            width: 98%;
-            margin: 0 auto;
-        }
-        label {
-            display: inline-block;
-            float: left;
-            font-size: .9em;
-            font-weight: bold;
-            margin: .4em 0 .2em .5em;
-        }
-        input {
-            width: 83%;
-            border: none !important;
-            box-shadow: none !important;
-        }
-    }
-    &_banks {
-        margin: -20px 10px 40px !important;
-    }
-    &_instr {
-        font-size: .72em;
-        line-height: 1.7em;
-        padding: 1em .3em;
-        margin-top: 1.2em;
-        dt {
-            color: $btn_liteblue;
-            margin-bottom: .25em;
-            &:before {
-                height: 8px;
-                width: 8px;
-                content: " ";
-                background: $btn_blue;
-                border-radius: 50%;
-                display: inline-block;
-                margin-right: 5px;
-            }
-        }
-    }
-    &_comfirmA {
-        font-size: 1.2em;
-        letter-spacing: 1.2px;
-        line-height: 1.4em;
-        padding: .9em;
-        padding-bottom: .5em;
-        >span {
-            color: #9b9b9b;
-            font-size: .6em;
-            line-height: 1.8em;
-            display: block;
-            margin: .3em 0 0 0;
-        }
-    }
-    &_comfirmB {
-        text-align: left;
-        //width: 80%;
-        padding: .5em 1.9em;
-        line-height: 1.2em;
-        label, span {
-            color: #9b9b9b;
-            font-size: .75em;
-            margin: 0;
-        }
-        span:after {
-            content: "";
-            display: block;
-        }
-    }
-    &_comfirmC {
-        text-align: left;
-        //width: 80%;
-        padding: .5em 1.9em;
-        ol {
-            padding: .2em .8em;
-        }
-        li {
-            list-style: none;
-            font-size: .75em;
-            margin: .4em 0;
-            a {
-                color: $btn_blue;
-            }
-        }
-    }
-    &_checkbox {
-        font-size: .75em;
-        color: #666;
-        padding-left: 22px;
-        background: url(../img/checkbox.jpg) no-repeat;
-        background-position: 0px -15px;
-        background-size: 15px 30px;
-    }
-    &_checkbox_on {
-        background-position: 0px 0px;
-    }
-}
-
-.ft_red {
-    color: $font_red;
-}
-
-.ft_xs {
-    font-size: .7em;
-}
-
-.ft_md {
-    font-size: .8em;
-}
-
-.input-u-1-9 {
-    height: 32px;
-    width: 90%;
-    float: left;
-    margin-right: 8px;
-}
-
-.pure-input-1,
-.pure-u-1 select {
-    height: 32px;
-}
-
-.pure-u-1 select {
-    padding: .2em .3em;
-    margin-bottom: .3em;
-}
-
-.span-croci {
-    color: #fe8d53;
-}
-
-.span-liteblue {
-    color: #81d7f0;
-}
-
-.pure-button.loan_main_btn.ab_bottom {
-    position: absolute;
-    bottom: 1.3em;
-    left: 0;
-    width: 88%;
-    margin: 0 6%;
-}
-
-hr.hr-liteblue {
-    margin: 0 auto;
-    height: 2px;
-    border: none;
-    border-top: 2px dashed $btn_liteblue;
-    width: 92%;
 }
