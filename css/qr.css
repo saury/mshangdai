@@ -1,0 +1,112 @@
+html,
+body {
+    height: 100%;
+}
+
+* {
+    font: normal 16px/24px "Microsoft YaHei", Arial;
+    color: #eae2df;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-smoothing: subpixel-antialiased;
+    text-decoration: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+body {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.qr2 {
+    background: url(../img/qr2_bg.jpg) repeat-y top center;
+    background-size: 100% auto;
+}
+
+.qr_banner img {
+    max-width: 100%;
+    height: auto;
+    display: block
+}
+
+.qr2_main {
+    text-align: center;
+}
+
+.qr1_main {
+    background: #2d3e50;
+    text-align: center;
+}
+
+.qr_section {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 5%;
+    width: 50%;
+    display: inline-block;
+    height: 100%;
+}
+
+.qr2_main .qr_section img {
+    height: 80%;
+}
+
+.qr_section p {
+    font-size: .8em;
+}
+
+.qr_section span {
+    color: #ff7159;
+    font-weight: bold;
+}
+
+.fl {
+    float: left;
+}
+
+.qr1_footer {
+    height: 35%;
+    background: #ff7159;
+}
+
+.qr1_footer img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+    display: block
+}
+
+.qr2_footer {
+    height: 20%;
+}
+
+.qr2_footer img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+    display: block
+}
+
+.qr2_main {
+    height: 24%;
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>理财信息确认</title>
+    <!-- <link rel="stylesheet" href="css/pure-min.css"> -->
+    <link rel="stylesheet" href="css/qr.css">
+</head>
+
+<body>
+    <header class="qr_banner">
+        <img src="img/qr1_banner.jpg">
+    </header>
+    <div class="qr1_main">
+        <div class="qr_section fl">
+            <img src="img/qr_mockup.jpg">
+            <p>邀请码: <span>7713</span></p>
+        </div>
+        <div class="qr_section fl">
+            <img src="img/qr1_finger.jpg" class="fr">
+            <p>长按指纹扫描二维码</p>
+        </div>
+    </div>
+    <footer class="qr1_footer">
+        <img src="img/qr1_footer.jpg">
+    </footer>
+    <script src="js/zepto.min.js"></script>
+    <script>
+        var banner_height = $(".qr_banner").height(),
+            footer_height = $(".qr1_footer").height(),
+            body_height = window.document.body.offsetHeight;
+        $(".qr1_main").css("height", body_height - banner_height - footer_height);
+        $(".qr_section").css("height","100%");
+        $(".qr_section img").css("height","80%");
+    </script>
+</body>
+
+</html>
