@@ -6,36 +6,38 @@
     <meta content="yes" name="apple-touch-fullscreen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="UTF-8">
-    <title>理财信息确认</title>
-    <!-- <link rel="stylesheet" href="css/pure-min.css"> -->
+    <title>邀请理财</title>
     <link rel="stylesheet" href="css/qr.css">
 </head>
 
 <body>
-    <header class="qr_banner">
+    <header class="qr_banner1" id="qr_banner1">
         <img src="img/qr1_banner.jpg">
+        <img src="img/msd_logo.png" class="qr_logo" alt="">
     </header>
-    <div class="qr1_main">
-        <div class="qr_section fl">
-            <img src="img/qr_mockup.jpg">
+    <div class="qr1_main" id="qr1_main">
+        <div class="qr_section fl" id="qr_section1">
+            <img src="img/qr_mockup.jpg" id="qr_img1"><!-- 二维码 -->
             <p>邀请码: <span>7713</span></p>
         </div>
-        <div class="qr_section fl">
-            <img src="img/qr1_finger.jpg" class="fr">
+        <div class="qr_section fl" id="qr_section2">
+            <img src="img/qr_finger.png" id="qr_img2">
             <p>长按指纹扫描二维码</p>
         </div>
     </div>
-    <footer class="qr1_footer">
+    <footer class="qr1_footer" id="qr1_footer">
         <img src="img/qr1_footer.jpg">
     </footer>
-    <script src="js/zepto.min.js"></script>
     <script>
-        var banner_height = $(".qr_banner").height(),
-            footer_height = $(".qr1_footer").height(),
-            body_height = window.document.body.offsetHeight;
-        $(".qr1_main").css("height", body_height - banner_height - footer_height);
-        $(".qr_section").css("height","100%");
-        $(".qr_section img").css("height","80%");
+    window.onload=function(){
+    var banner_height = document.getElementById("qr_banner1").offsetHeight,
+        footer_height = document.getElementById("qr1_footer").offsetHeight,
+        body_height = window.document.body.offsetHeight;
+    document.getElementById("qr1_main").style.height = (body_height - banner_height - footer_height) + "px";
+    document.getElementById("qr_section1").style.height = "100%";
+    document.getElementById("qr_section2").style.height = "100%";
+    document.getElementById("qr_img1").style.height = "80%";
+    document.getElementById("qr_img2").style.height = "80%";}
     </script>
 </body>
 

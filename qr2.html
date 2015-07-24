@@ -6,31 +6,34 @@
     <meta content="yes" name="apple-touch-fullscreen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="UTF-8">
-    <title>理财信息确认</title>
+    <title>邀请借款</title>
     <!-- <link rel="stylesheet" href="css/pure-min.css"> -->
     <link rel="stylesheet" href="css/qr.css">
 </head>
 
 <body class="qr2">
-    <header class="qr_banner">
-        <img src="img/qr2_banner.jpg">
+    <header class="qr_banner2" id="qr_banner2">
+        <img src="img/qr2_banner.png">
+        <img src="img/msd_logo.png" class="qr_logo" alt="">
     </header>
-    <div class="qr2_main">
+    <div class="qr2_main" id="qr2_main">
         <div class="qr_section">
-            <img src="img/qr_mockup.jpg">
+            <img src="img/qr_mockup.jpg"><!-- 二维码 -->
             <p>邀请码: <span>7713</span></p>
         </div>
     </div>
-    <footer class="qr2_footer">
-        <img src="img/qr2_footer.png">
+    <footer class="qr2_footer" id="qr2_footer">
+        <div class="qr_section">
+            <img src="img/qr_finger.png" id="qr2_footer_img">
+            <p>长按指纹扫描二维码直接领钱</p>
+        </div>
     </footer>
-    <script src="js/zepto.min.js"></script>
     <script>
-        var banner_height = $(".qr_banner").height(),
-            main_height = $(".qr2_main").height(),
-            body_height = window.document.body.offsetHeight;
-        $(".qr2_footer").css("height", body_height - banner_height - main_height);
-        $(".qr2_footer img").css("height","100%");
+    /*var banner_height = document.getElementById("qr_banner2").offsetHeight,
+        main_height = document.getElementById("qr2_main").offsetHeight,
+        body_height = window.document.body.offsetHeight;
+    document.getElementById("qr2_footer").style.height = (body_height - banner_height - main_height) + "px";
+    document.getElementById("qr2_footer_img").style.height = "100%";*/
     </script>
 </body>
 
