@@ -1,0 +1,177 @@
+$secred:#FF5254;
+$secpur:#CA92FF;
+$use-mozilla-ellipsis-binding: true;
+@import "compass/typography/text/ellipsis";
+@import "normalize";
+@import "compass/css3";
+@import "compass";
+$fragment-layout:smart;
+@import "fragment/*.png";
+@include all-fragment-sprites;
+.cf {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+:focus {
+    outline: 0 none;
+}
+
+body {
+    font: normal 16px/24px "Microsoft YaHei", Arial;
+    background: #fec52d;
+}
+
+.main {
+    width: 1190px;
+    margin: 0 auto;
+    color: #fff;
+    letter-spacing: 1.4px;
+    img {
+        vertical-align: top;
+    }
+}
+.fragment_sec{
+    position: relative;
+}
+.fragment_sec *{
+    position: absolute;
+}
+@mixin lr($l,$t){
+    left:$l;
+    top:$t;
+}
+.banner_bg{
+    height:1120px;
+    background: image-url("banner_bg.png") no-repeat center top;
+    width:100%;
+    position: absolute;
+    @include lr(0,0);
+}
+.fragment {
+    &_bg{
+        height:830px;
+        background: image-url("fragment_bg.png") no-repeat center 50px;
+        width:100%;
+        position: absolute;
+        @include lr(0,0);
+    }
+    &_title{
+        background: image-url("title.png") no-repeat center top;
+        width: 923px;
+        height: 444px;
+        @include lr(186px,256px);
+        z-index:28;
+        transform:scale(1,1);
+        transform: perspective(200px) translateZ(0px);
+    }
+    &-0 {
+        width: 333px;
+        height: 118px;
+        @include lr(596px,125px);
+        z-index:27;
+    }
+    &-1 {
+        width: 140px;
+        height: 99px;
+        @include lr(155px,175px);
+        z-index:26;
+    }
+    &-2 {
+        width: 311px;
+        height: 109px;
+        @include lr(167px,183px);
+        z-index:25;
+    }
+    &-3 {
+        width: 387px;
+        height: 151px;
+        @include lr(804px,475px);
+        z-index:24;
+    }
+    &-4 {
+        width: 287px;
+        height: 137px;
+        @include lr(619px,475px);
+        z-index:23;
+    }
+    &-5 {
+        width: 244px;
+        height: 124px;
+        @include lr(402px,472px);
+        z-index:22;
+    }
+    &-6 {
+        width: 694px;
+        height: 250px;
+        @include lr(480px,301px);
+        z-index:21;
+    }
+    &-7 {
+        width: 340px;
+        height: 179px;
+        @include lr(402px,460px);
+        z-index:20;
+    }
+    &-8 {
+        width: 300px;
+        height: 206px;
+        @include lr(253px,373px);
+        z-index:19;
+    }
+    &-9 {
+        width: 669px;
+        height: 317px;
+        @include lr(153px,229px);
+        z-index:18;
+    }
+    &-10 {
+        width: 291px;
+        height: 190px;
+        @include lr(134px,298px);
+        z-index:17;
+    }
+    &-11 {
+        width: 576px;
+        height: 218px;
+        @include lr(315px,183px);
+        z-index:16;
+    }
+    &-12 {
+        width: 371px;
+        height: 305px;
+        @include lr(619px,310px);
+        z-index:15;
+    }
+    &-13 {
+        width: 454px;
+        height: 179px;
+        @include lr(709px,255px);
+        z-index:14;
+    }
+    &-14 {
+        width: 552px;
+        height: 287px;
+        @include lr(10px,344px);
+        z-index:13;
+    }
+    &-15 {
+        width: 520px;
+        height: 247px;
+        @include lr(87px,420px);
+        z-index:12;
+    }
+    &-16 {
+        width: 434px;
+        height: 275px;
+        @include lr(543px,223px);
+        z-index:11;
+    }
+}
