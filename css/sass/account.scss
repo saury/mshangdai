@@ -47,10 +47,6 @@ a:active {
     }
 }
 
-//body{
-//background: url(../img/xxx.jpg) no-repeat center -65px;
-//background-size: 100% auto;
-//}
 html,
 body {
     height: 100%;
@@ -91,6 +87,20 @@ body {
         min-height: 187px;
         position: relative;
         color: #fff;
+        @at-root %labelnh2 {
+            padding: 14px 0 0 20px;
+            display: block;
+        }
+        &>label {
+            @extend %labelnh2;
+            font-size: .8em;
+        }
+        &>h2 {
+            @extend %labelnh2;
+            font-size: 2em;
+            font-weight: lighter;
+            line-height: 1em;
+        }
         /* param list */
         ul {
             position: absolute;
@@ -98,6 +108,12 @@ body {
             width: 100%;
             height: 30%;
             background: rgba(0, 0, 0, 0.2);
+            /* account in usr center */
+            &.pure-g {
+                background: none;
+                height: 40px;
+                bottom: 12px;
+            }
             li {
                 width: 25%;
                 height: 100%;
@@ -123,6 +139,37 @@ body {
                 @at-root .param-activity {
                     background-image: image-url("icon4.png");
                 }
+                /* account in usr center */
+                @at-root %pureinbannerlist {
+                    padding: 0 0 0 20px;
+                    text-align: left;
+                    p {
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+                &.pure-u-13-24 {
+                    @extend %pureinbannerlist;
+                    width: 54.1667%;
+                }
+                &.pure-u-11-24 {
+                    @extend %pureinbannerlist;
+                    width: 45.8333%;
+                    border-left: 1px solid rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+        /* dashi logo */
+        @at-root .promote_logo {
+            height: 100%;
+            @include box-sizing(border-box);
+            text-align: center;
+            padding: 5% 0;
+            img {
+                height: 100%;
+                width: auto;
+                display: block;
+                margin: 0 auto;
             }
         }
     }
@@ -130,7 +177,7 @@ body {
     &_main {
         text-align: center;
         width: 100%;
-        background: #ddd;
+        background: #f4f4f4;
         height: 67%;
         min-height: 360px;
         padding: 5% 0;
@@ -145,7 +192,7 @@ body {
         margin: 0 auto 5%;
         @include border-radius(5px);
         div {
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #f4f4f4;
             color: #666;
             height: 36px;
             line-height: 36px;
@@ -198,6 +245,13 @@ body {
                     color: $font_red;
                     font-style: normal;
                 }
+            }
+            label {
+                color: #ddd;
+            }
+            p {
+                display: inline;
+                padding-left: 20px;
             }
         }
     }
@@ -296,6 +350,9 @@ body {
         width: 84%;
         border-radius: 5px;
         margin: 0 auto 12px;
+        &:hover {
+            color: #fff;
+        }
         &_hollow {
             background: #fff;
             color: $btn_blue;
