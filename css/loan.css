@@ -30,10 +30,12 @@ input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms
 .loan_main_table td { font-size: .8em; height: 44px; color: #fe8f86; border-right: 1px solid #ddd; }
 .loan_main_table td:last-child { border-right: none; }
 .loan_main_doubleInput { border: 1px solid #aaa; border-radius: 8px; width: 100%; margin: 12px 0 !important; }
-.loan_main_doubleInput div { margin: 0 !important; }
+.loan_main_doubleInput div { margin: 0 !important; position: relative; }
 .loan_main_doubleInput hr { height: 1px; border: none; border-top: 1px solid #e4e4e4; width: 98%; margin: 0 auto; }
 .loan_main_doubleInput label { display: inline-block; float: left; font-size: .9em; font-weight: bold; margin: .4em 0 .2em .5em; }
 .loan_main_doubleInput input { width: 83%; border: none !important; box-shadow: none !important; }
+.loan_main_doubleInput input.short_input { width: 53%; }
+.identity_btn { background: #0d8fdb; color: #fff; font-size: .74em; position: absolute; top: .4em; right: .5em; }
 .loan_main_banks { margin: -20px 10px 40px !important; }
 .loan_main_instr { font-size: .72em; line-height: 1.7em; padding: 1em .3em; margin-top: 1.2em; }
 .loan_main_instr dt { color: #44bbdb; margin-bottom: .25em; }
@@ -47,7 +49,7 @@ input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms
 .loan_main_comfirmC ol { padding: .2em .8em; }
 .loan_main_comfirmC li { list-style: none; font-size: .75em; margin: .4em 0; }
 .loan_main_comfirmC li a { color: #0d8fdb; }
-.loan_main_checkbox { font-size: .75em; color: #666; padding-left: 22px; background: url(../img/checkbox.jpg) no-repeat; background-position: 0px -15px; background-size: 15px 30px; }
+.loan_main_checkbox { font-size: .75em; color: #666; padding-left: 22px; background: url(../img/checkbox.jpg) no-repeat; background-position: 0px -14px; background-size: 14px 28px; height: 16px; line-height: 16px; }
 .loan_main_checkbox_on { background-position: 0px 0px; }
 
 .ft_red { color: #fe8f86; }

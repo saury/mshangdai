@@ -36,9 +36,9 @@ textarea {
     &_header {
         background: #0d8fdb;
         height: 48%;
+        min-height:272px;
         padding-top: 45%;
         @include box-sizing("border-box");
-        min-height:250px;
         *{color: #fff}
     }
     &_title{
@@ -68,11 +68,18 @@ textarea {
         }
     }
 }
+@media screen and (max-height: 480px) {
+    /*当屏幕高度小于500px时，应用下面的CSS样式*/
+    .doughnut_description{
+        top:130px;
+    }
+}
 
 .doughnut_Chart {
     position: absolute;
     width: 42%;
     height: 28%;
+    min-height:160px;
     top: 0;
     left: 50%;
     margin-left: -21%;

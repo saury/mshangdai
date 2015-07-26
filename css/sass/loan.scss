@@ -1,13 +1,9 @@
 @charset "utf-8";
-
 ///*init*/
-
 $font_color: #666;
 $btn_blue: #0d8fdb;
 $btn_liteblue: #44bbdb;
 $font_red: #fe8f86;
-
-
 * {
     font-family: "Microsoft YaHei", Arial;
     color: $font_color;
@@ -170,6 +166,7 @@ textarea {
         margin: 12px 0 !important;
         div {
             margin: 0 !important;
+            position: relative;
         }
         hr {
             height: 1px;
@@ -189,6 +186,17 @@ textarea {
             width: 83%;
             border: none !important;
             box-shadow: none !important;
+            &.short_input {
+                width: 53%;
+            }
+        }
+        @at-root .identity_btn {
+            background: $btn_blue;
+            color: #fff;
+            font-size: .74em;
+            position: absolute;
+            top: .4em;
+            right: .5em;
         }
     }
     &_banks {
@@ -232,7 +240,8 @@ textarea {
         //width: 80%;
         padding: .5em 1.9em;
         line-height: 1.2em;
-        label, span {
+        label,
+        span {
             color: #9b9b9b;
             font-size: .75em;
             margin: 0;
@@ -263,8 +272,10 @@ textarea {
         color: #666;
         padding-left: 22px;
         background: url(../img/checkbox.jpg) no-repeat;
-        background-position: 0px -15px;
-        background-size: 15px 30px;
+        background-position: 0px -14px;
+        background-size: 14px 28px;
+        height: 16px;
+        line-height: 16px;
     }
     &_checkbox_on {
         background-position: 0px 0px;

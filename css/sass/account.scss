@@ -10,7 +10,6 @@ $font_red: #fe8f86;
 //@include font-face("Pixel Font", font-files("XPDR_02.ttf"));
 * {
     font-family: "Microsoft YaHei", Arial;
-    color: $font_color;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: subpixel-antialiased;
     font-smoothing: subpixel-antialiased;
@@ -27,10 +26,19 @@ textarea {
     @include user-select(auto);
 }
 
+a,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
 //clear fix
 .cf {
     *zoom: 1;
-    &:before, &:after {
+    &:before,
+    &:after {
         content: " ";
         display: table;
     }
@@ -38,7 +46,6 @@ textarea {
         clear: both;
     }
 }
-
 
 //body{
 //background: url(../img/xxx.jpg) no-repeat center -65px;
@@ -51,37 +58,71 @@ body {
 
 .user {
     /* avatar sec */
-    &_avatar{
+    &_avatar {
         width: 25%;
-        margin:0 auto;
+        margin: 0 auto;
         padding: 10px 0;
-        .pure-img{
+        color: #fff;
+        .pure-img {
             border: 2px solid #fff;
             @include border-radius(50%);
+            @include box-sizing(border-box);
         }
-        h3{
+        & h3,
+        p {
             font-weight: normal;
+            text-align: center;
+            width: 200%;
+            margin-left: -50%;
+        }
+        h3 {
+            margin-top: 2%;
+            font-size: .95em;
+        }
+        p {
+            font-size: .75em;
         }
     }
     /* banner section */
     &_banner {
         background: image-url("banner_bg.jpg") no-repeat 0 0;
-        background-size: 100% auto;
-        height: 30%;
+        background-size: 100% 100%;
+        height: 33%;
+        min-height: 187px;
         position: relative;
-
+        color: #fff;
         /* param list */
         ul {
             position: absolute;
             bottom: 0;
             width: 100%;
-            height:30%;
-            background: rgba(0,0,0,0.5);
-            color:#fff;
-            li{
+            height: 30%;
+            background: rgba(0, 0, 0, 0.2);
+            li {
                 width: 25%;
+                height: 100%;
                 float: left;
                 list-style: none;
+                background-repeat: no-repeat;
+                background-position: center 20%;
+                background-size: auto 40%;
+                vertical-align: bottom;
+                text-align: center;
+                font-size: .8em;
+                padding-top: 10%;
+                @include box-sizing(border-box);
+                @at-root .param-basic {
+                    background-image: image-url("icon1.png");
+                }
+                @at-root .param-vip {
+                    background-image: image-url("icon2.png");
+                }
+                @at-root .param-privilege {
+                    background-image: image-url("icon3.png");
+                }
+                @at-root .param-activity {
+                    background-image: image-url("icon4.png");
+                }
             }
         }
     }
@@ -90,71 +131,158 @@ body {
         text-align: center;
         width: 100%;
         background: #ddd;
-        height:70%;
+        height: 67%;
+        min-height: 360px;
         padding: 5% 0;
+        @include box-sizing(border-box);
+        position: relative;
     }
     /* sections under main body */
     &_sec {
         text-align: left;
-        width: 90%;
+        width: 88%;
         background: #fff;
         margin: 0 auto 5%;
         @include border-radius(5px);
-        div{
+        div {
             border-top: 1px solid #ddd;
             color: #666;
-            &:first-child{
-                border-top:none;
+            height: 36px;
+            line-height: 36px;
+            padding: 0px 10px;
+            font-size: .95em;
+            position: relative;
+            &:first-child {
+                border-top: none;
             }
-            span{
-                color:#ddd;
-                em{
+            i {
+                height: 36px;
+                width: 30px;
+                background-repeat: no-repeat;
+                background-position: 0 center;
+                background-size: auto 60%;
+                display: inline-block;
+                vertical-align: top;
+                @at-root .icon-finance {
+                    background-image: image-url("icon8.png");
+                }
+                @at-root .icon-loan {
+                    background-image: image-url("icon9.png");
+                }
+                @at-root .icon-card {
+                    background-image: image-url("icon5.png");
+                }
+                @at-root .icon-parameter {
+                    background-image: image-url("icon6.png");
+                }
+                @at-root .icon-setting {
+                    background-image: image-url("icon7.png");
+                }
+                @at-root .icon-about {
+                    background-image: image-url("icon10.png");
+                }
+                &:after {
+                    content: ">";
+                    font-style: normal;
+                    font-family: "simsun";
+                    color: #ddd;
+                    position: absolute;
+                    right: 8px;
+                }
+            }
+            span {
+                color: #ddd;
+                padding-left: 20%;
+                font-size: .8em;
+                em {
                     color: $font_red;
+                    font-style: normal;
                 }
             }
         }
     }
     /* bankcards list section*/
-    &_main_cards{
+    &_main_cards {
         padding: 10px 0;
-        height:100%;
+        height: 100%;
+        @include box-sizing(border-box);
     }
     /* bankcard single item */
-    %card{
-        width:95%;
-        height:60px;
-        margin:5px auto;
-        padding: 5px;
+    @at-root %card {
+        width: 92%;
+        height: 65px;
+        margin: 5px auto 12px;
+        padding: 5px 8px;
+        font-size: 0.8em;
         @include border-radius(2px);
         @include box-sizing(border-box);
     }
-    &_card{
+    &_card {
         @extend %card;
         position: relative;
         color: #fff;
-        button{
+        background: #f55f60 image-url("bankcard_bg1.jpg") no-repeat 0 0;
+        background-size: 100% auto;
+        @include border-radius(2px);
+        i {
+            height: 28px;
+            width: 28px;
+            margin-right: 3px;
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: 100% auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        @at-root .bank-zs {
+            background-image: image-url("bankcard_logo.jpg");
+        }
+        &_series {
             position: absolute;
-            right:5px;
-            bottom:10px;
+            left: 8px;
+            top: 36px;
+        }
+        button {
+            position: absolute;
+            right: 8px;
+            top: 36px;
             border: 1px solid #fff;
+            background: transparent;
+            width: 46px;
+            height: 20px;
+            line-height: 20px;
             @include border-radius(8px);
-            &.option1{
-                
+            &.option1 {
+                top: 10px;
+                right: 63px;
             }
-            &.option1{
-
+            &.option2 {
+                top: 10px;
             }
-            &.active{
-                background: #ddd;
+            &.active {
+                background: rgba(255, 255, 255, 0.4);
             }
         }
-        &_add{
+        &_add {
             @extend %card;
-            color: $btn_blue;
+            @include border-radius(2px);
+            color: #24aff6;
             text-align: center;
-            border: 1px solid #333;
+            border: 1px dashed #333;
+            line-height: 53px;
+            font-weight: bold;
+            span {
+                font-size: 2em;
+                vertical-align: top;
+                height: 53px;
+                display: inline-block;
+                line-height: 53px;
+            }
         }
-
+        &_tip {
+            @extend %card;
+            padding: 5px 0;
+        }
     }
     /* normal and hollowed button with ab_bottom to locate at the bottom of the page*/
     &_main_btn {

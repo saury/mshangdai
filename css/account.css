@@ -1,6 +1,8 @@
-* { font-family: "Microsoft YaHei", Arial; color: #666; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; text-decoration: none; margin: 0; border: 0; padding: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
+* { font-family: "Microsoft YaHei", Arial; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; text-decoration: none; margin: 0; border: 0; padding: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
 
 input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit-user-select: auto; user-select: auto; }
+
+a, a:visited, a:hover, a:active { color: inherit; text-decoration: none; }
 
 .cf { *zoom: 1; }
 .cf:before, .cf:after { content: " "; display: table; }
@@ -9,24 +11,45 @@ input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit
 html, body { height: 100%; }
 
 .user { /* avatar sec */ /* banner section */ /* main body */ /* sections under main body */ /* bankcards list section*/ /* bankcard single item */ /* normal and hollowed button with ab_bottom to locate at the bottom of the page*/ }
-.user_avatar { width: 25%; margin: 0 auto; padding: 10px 0; }
-.user_avatar .pure-img { border: 2px solid #fff; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; }
-.user_avatar h3 { font-weight: normal; }
-.user_banner { background: url('../img/banner_bg.jpg?1437354571') no-repeat 0 0; background-size: 100% auto; height: 30%; position: relative; /* param list */ }
-.user_banner ul { position: absolute; bottom: 0; width: 100%; height: 30%; background: rgba(0, 0, 0, 0.5); color: #fff; }
-.user_banner ul li { width: 25%; float: left; list-style: none; }
-.user_main { text-align: center; width: 100%; background: #ddd; height: 70%; padding: 5% 0; }
-.user_sec { text-align: left; width: 90%; background: #fff; margin: 0 auto 5%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
-.user_sec div { border-top: 1px solid #ddd; color: #666; }
+.user_avatar { width: 25%; margin: 0 auto; padding: 10px 0; color: #fff; }
+.user_avatar .pure-img { border: 2px solid #fff; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.user_avatar h3, .user_avatar p { font-weight: normal; text-align: center; width: 200%; margin-left: -50%; }
+.user_avatar h3 { margin-top: 2%; font-size: .95em; }
+.user_avatar p { font-size: .75em; }
+.user_banner { background: url('../img/banner_bg.jpg?1436874808') no-repeat 0 0; background-size: 100% 100%; height: 33%; min-height: 187px; position: relative; color: #fff; /* param list */ }
+.user_banner ul { position: absolute; bottom: 0; width: 100%; height: 30%; background: rgba(0, 0, 0, 0.2); }
+.user_banner ul li { width: 25%; height: 100%; float: left; list-style: none; background-repeat: no-repeat; background-position: center 20%; background-size: auto 40%; vertical-align: bottom; text-align: center; font-size: .8em; padding-top: 10%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.param-basic { background-image: url('../img/icon1.png?1436876037'); }
+.param-vip { background-image: url('../img/icon2.png?1436876066'); }
+.param-privilege { background-image: url('../img/icon3.png?1436876098'); }
+.param-activity { background-image: url('../img/icon4.png?1436876139'); }
+.user_main { text-align: center; width: 100%; background: #ddd; height: 67%; min-height: 360px; padding: 5% 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; position: relative; }
+.user_sec { text-align: left; width: 88%; background: #fff; margin: 0 auto 5%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+.user_sec div { border-top: 1px solid #ddd; color: #666; height: 36px; line-height: 36px; padding: 0px 10px; font-size: .95em; position: relative; }
 .user_sec div:first-child { border-top: none; }
-.user_sec div span { color: #ddd; }
-.user_sec div span em { color: #fe8f86; }
-.user_main_cards { padding: 10px 0; height: 100%; }
-.user .user_card, .user .user_card_add { width: 95%; height: 60px; margin: 5px auto; padding: 5px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-.user_card { position: relative; color: #fff; }
-.user_card button { position: absolute; right: 5px; bottom: 10px; border: 1px solid #fff; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
-.user_card button.active { background: #ddd; }
-.user_card_add { color: #0d8fdb; text-align: center; border: 1px solid #333; }
+.user_sec div i { height: 36px; width: 30px; background-repeat: no-repeat; background-position: 0 center; background-size: auto 60%; display: inline-block; vertical-align: top; }
+.icon-finance { background-image: url('../img/icon8.png?1436876483'); }
+.icon-loan { background-image: url('../img/icon9.png?1436876515'); }
+.icon-card { background-image: url('../img/icon5.png?1436876200'); }
+.icon-parameter { background-image: url('../img/icon6.png?1436876240'); }
+.icon-setting { background-image: url('../img/icon7.png?1436876263'); }
+.icon-about { background-image: url('../img/icon10.png?1436876541'); }
+.user_sec div i:after { content: ">"; font-style: normal; font-family: "simsun"; color: #ddd; position: absolute; right: 8px; }
+.user_sec div span { color: #ddd; padding-left: 20%; font-size: .8em; }
+.user_sec div span em { color: #fe8f86; font-style: normal; }
+.user_main_cards { padding: 10px 0; height: 100%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.user_card, .user_card_add, .user_card_tip { width: 92%; height: 65px; margin: 5px auto 12px; padding: 5px 8px; font-size: 0.8em; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.user_card { position: relative; color: #fff; background: #f55f60 url('../img/bankcard_bg1.jpg?1437874985') no-repeat 0 0; background-size: 100% auto; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }
+.user_card i { height: 28px; width: 28px; margin-right: 3px; background-repeat: no-repeat; background-position: 0 center; background-size: 100% auto; display: inline-block; vertical-align: middle; }
+.bank-zs { background-image: url('../img/bankcard_logo.jpg?1437891155'); }
+.user_card_series { position: absolute; left: 8px; top: 36px; }
+.user_card button { position: absolute; right: 8px; top: 36px; border: 1px solid #fff; background: transparent; width: 46px; height: 20px; line-height: 20px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+.user_card button.option1 { top: 10px; right: 63px; }
+.user_card button.option2 { top: 10px; }
+.user_card button.active { background: rgba(255, 255, 255, 0.4); }
+.user_card_add { -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; color: #24aff6; text-align: center; border: 1px dashed #333; line-height: 53px; font-weight: bold; }
+.user_card_add span { font-size: 2em; vertical-align: top; height: 53px; display: inline-block; line-height: 53px; }
+.user_card_tip { padding: 5px 0; }
 .user_main_btn { background: #0d8fdb; border: 2px solid #0d8fdb; padding: 0; color: #fff; height: 36px; line-height: 32px; display: block; width: 84%; border-radius: 5px; margin: 0 auto 12px; }
 .user_main_btn_hollow { background: #fff; color: #0d8fdb; }
 .user_main_btn.ab_bottom { position: absolute; bottom: 1.3em; left: 0; width: 88%; margin: 0 6%; }

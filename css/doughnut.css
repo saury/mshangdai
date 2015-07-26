@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face { font-family: "Pixel Font"; src: url('../fonts/XPDR_02.ttf?1008550186') format('truetype'); }
 * { font-family: "Microsoft YaHei", Arial; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; text-decoration: none; margin: 0; border: 0; padding: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
 
@@ -5,7 +6,7 @@ html, body { height: 100%; }
 
 input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit-user-select: auto; user-select: auto; }
 
-.doughnut_header { background: #0d8fdb; height: 48%; padding-top: 45%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; min-height: 250px; }
+.doughnut_header { background: #0d8fdb; height: 48%; min-height: 272px; padding-top: 45%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .doughnut_header * { color: #fff; }
 .doughnut_title { position: absolute; top: 10px; left: 6%; font-size: .65em; }
 .doughnut_title em { display: block; font-style: normal; font-size: 1.4em; }
@@ -13,7 +14,9 @@ input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit
 .doughnut_description { position: absolute; top: 23%; right: 6%; font-size: .75em; }
 .doughnut_description span { font-size: 1.4em; }
 
-.doughnut_Chart { position: absolute; width: 42%; height: 28%; top: 0; left: 50%; margin-left: -21%; }
+@media screen and (max-height: 480px) { /*当屏幕高度小于500px时，应用下面的CSS样式*/
+  .doughnut_description { top: 130px; } }
+.doughnut_Chart { position: absolute; width: 42%; height: 28%; min-height: 160px; top: 0; left: 50%; margin-left: -21%; }
 
 .doughnutSummary { position: absolute; top: 50%; left: 50%; margin-left: -25%; color: #000; text-align: center; text-shadow: 1px 1px 2px #111; }
 
