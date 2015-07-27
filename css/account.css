@@ -34,17 +34,29 @@ html, body { height: 100%; }
 .promote_logo { height: 100%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; text-align: center; padding: 5% 0; }
 .promote_logo img { height: 100%; width: auto; display: block; margin: 0 auto; }
 .user_main { text-align: center; width: 100%; background: #f4f4f4; height: 67%; min-height: 360px; padding: 5% 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; position: relative; }
+.user_main nav { margin-top: -5%; height: 42px; line-height: 42px; background: #fff; color: #999; }
+.user_main nav li.active { color: #0d8fdb; }
+.user_main nav li.active span { color: #fe8f86; }
+.user_main .pure-table-horizontal { border-top: none; width: 100%; font-size: 0.7em; color: #666; }
+.user_main .pure-table-horizontal td { width: 33.3333%; }
+.user_main .pure-table-horizontal span { color: #ddd; display: block; }
+.user_about { height: 100%; }
 .user_sec { text-align: left; width: 88%; background: #fff; margin: 0 auto 5%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
-.user_sec div { border-top: 1px solid #f4f4f4; color: #666; height: 36px; line-height: 36px; padding: 0px 10px; font-size: .95em; position: relative; }
+.user_sec div { border-top: 1px solid #f4f4f4; color: #666; height: 36px; line-height: 36px; padding: 0px 10px; font-size: .95em; position: relative; background: url('../img/right_arrow.jpg?1438010328') no-repeat 95% center; background-size: auto 40%; }
 .user_sec div:first-child { border-top: none; }
-.user_sec div i { height: 36px; width: 30px; background-repeat: no-repeat; background-position: 0 center; background-size: auto 60%; display: inline-block; vertical-align: top; }
+.user_sec div i { height: 36px; width: 30px; background-repeat: no-repeat; background-position: 0 center; background-size: auto 60%; display: inline-block; vertical-align: top; /* &:after { content: ">"; font-style: normal; font-family: "simsun"; color: #ddd; position: absolute; right: 8px;
+} */ }
 .icon-finance { background-image: url('../img/icon8.png?1436876483'); }
 .icon-loan { background-image: url('../img/icon9.png?1436876515'); }
 .icon-card { background-image: url('../img/icon5.png?1436876200'); }
 .icon-parameter { background-image: url('../img/icon6.png?1436876240'); }
 .icon-setting { background-image: url('../img/icon7.png?1436876263'); }
 .icon-about { background-image: url('../img/icon10.png?1436876541'); }
-.user_sec div i:after { content: ">"; font-style: normal; font-family: "simsun"; color: #ddd; position: absolute; right: 8px; }
+.icon-aboutmsd { background-image: url('../img/icon-aboutmsd.jpg?1438007043'); }
+.icon-service { background-image: url('../img/icon-service.jpg?1438006975'); }
+.icon-advice { background-image: url('../img/icon-advice.jpg?1438006910'); }
+.icon-faq { background-image: url('../img/icon-faq.jpg?1438006792'); }
+.icon-history { background-image: url('../img/icon-history.jpg?1438006696'); }
 .user_sec div span { color: #ddd; padding-left: 20%; font-size: .8em; }
 .user_sec div span em { color: #fe8f86; font-style: normal; }
 .user_sec div label { color: #ddd; }

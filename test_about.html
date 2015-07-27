@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>账户中心</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body>
+    <div class="user_main user_about">
+        <section class="user_sec">
+            <div data-href="#"><i class="icon-history"></i>历史活动</div>
+            <div data-href="#"><i class="icon-faq"></i>常见问题</div>
+            <div data-href="#"><i class="icon-advice"></i>意见建议</div>
+        </section>
+        <section class="user_sec">
+            <div data-href="#"><i class="icon-service"></i>微信客服</div>
+            <div data-href="#"><i class="icon-aboutmsd"></i>关于马上贷</div>
+        </section>
+        <a class="pure-button user_main_btn user_main_btn_hollow ab_bottom" href="javascript:void(0);">返回</a>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+        // init the datas
+    $("*").click(function() {
+        var linkHref = $(this).attr("data-href");
+        if (linkHref) window.location.href = linkHref;
+    });
+    </script>
+</body>
+
+</html>

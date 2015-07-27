@@ -183,6 +183,35 @@ body {
         padding: 5% 0;
         @include box-sizing(border-box);
         position: relative;
+        nav{
+            margin-top: -5%;
+            height: 42px;
+            line-height:42px;
+            background: #fff;
+            color:#999;
+            li.active{
+                color:$btn_blue;
+                span{
+                    color:$font_red;
+                }
+            }
+        }
+        .pure-table-horizontal{
+            border-top:none;
+            width:100%;
+            font-size:0.7em;
+            color:#666;
+            td{
+                width: 33.3333%;
+            }
+            span{
+                color:#ddd;
+                display:block;
+            }
+        }
+    }
+    &_about{
+        height:100%;
     }
     /* sections under main body */
     &_sec {
@@ -199,6 +228,8 @@ body {
             padding: 0px 10px;
             font-size: .95em;
             position: relative;
+            background: image-url("right_arrow.jpg") no-repeat 95% center;
+            background-size: auto 40%;
             &:first-child {
                 border-top: none;
             }
@@ -228,14 +259,29 @@ body {
                 @at-root .icon-about {
                     background-image: image-url("icon10.png");
                 }
-                &:after {
+                @at-root .icon-aboutmsd {
+                    background-image: image-url("icon-aboutmsd.jpg");
+                }
+                @at-root .icon-service {
+                    background-image: image-url("icon-service.jpg");
+                }
+                @at-root .icon-advice {
+                    background-image: image-url("icon-advice.jpg");
+                }
+                @at-root .icon-faq {
+                    background-image: image-url("icon-faq.jpg");
+                }
+                @at-root .icon-history {
+                    background-image: image-url("icon-history.jpg");
+                }
+                /* &:after {
                     content: ">";
                     font-style: normal;
                     font-family: "simsun";
                     color: #ddd;
                     position: absolute;
                     right: 8px;
-                }
+                } */
             }
             span {
                 color: #ddd;
