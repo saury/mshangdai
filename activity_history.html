@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>历史活动</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body>
+    <div class="user_main user_about">
+        <section data-href="#" class="user_history">
+            <img class="pure-img" src="img/slider3.jpg" alt="">
+            <p>马壕总动员冲榜拿好礼</p>
+        </section>
+        <section data-href="#" class="user_history">
+            <img class="pure-img" src="img/slider2.jpg" alt="">
+            <p>马壕总动员冲榜拿好礼</p>
+        </section>
+        <section data-href="#" class="user_history">
+            <img class="pure-img" src="img/slider1.jpg" alt="">
+            <p>马壕总动员冲榜拿好礼</p>
+        </section>
+        <a class="pure-button user_main_btn user_main_btn_hollow" href="javascript:void(0);">返回</a>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+        // init the datas
+    $("*").click(function() {
+        var linkHref = $(this).attr("data-href");
+        if (linkHref) window.location.href = linkHref;
+    });
+    </script>
+</body>
+
+</html>
