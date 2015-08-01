@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta charset="UTF-8">
+    <title>我的理财</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body class="bg_gray">
+    <header class="finance_banner">
+        <section class="finance_banner_title">
+            <div>昨日收益（元）<span>28.13</span></div>
+            <div><div class="finance_banner_tal">年化收益率<span>15%</span></div></div>
+        </section>
+        <section class="finance_banner_cell">
+            <div>理财中<span>50000</span></div>
+            <div class="auto_toggle"><div class="finance_banner_tac">自动续投<div><i></i></div>享受特权收益</div></div>
+        </section>
+        <section class="finance_banner_cell">
+            <div class="cell_with_border">匹配中<span>50000</span></div>
+            <div class="cell_with_border">总资产<span>104173.42</span></div>
+        </section>
+    </header>
+    <div class="user_main user_reset">
+        <section class="user_sec">
+            <div data-href="#"><i class="icon-finance"></i>全部理财</div>
+            <div data-href="#"><i class="icon-profit"></i>收益明细</div>
+            <div data-href="#"><i class="icon-detail"></i>匹配明细</div>
+        </section>
+    </div>
+        <a class="pure-button user_main_btn user_main_btn_hollow ab_bottom" href="javascript:void(0);">返回</a>
+    <script src="js/zepto.min.js"></script>
+    <script>
+    // init the datas
+    $("*").click(function() {
+        var linkHref = $(this).attr("data-href");
+        if (linkHref) window.location.href = linkHref;
+    });
+    /*toggle btn*/
+    $(".finance_banner_tac").click(function(){
+        $('.finance_banner_tac div').toggleClass("disabled");
+    })
+    </script>
+    <script src="http://192.168.1.4:8082/target/target-script-min.js#anonymous"></script>
+</body>
+
+</html>

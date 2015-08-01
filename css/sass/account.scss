@@ -52,6 +52,10 @@ body {
     height: 100%;
 }
 
+.bg_gray{
+    background: #f4f4f4;
+}
+
 .user {
     /* avatar sec */
     &_avatar {
@@ -87,6 +91,160 @@ body {
         min-height: 187px;
         position: relative;
         color: #fff;
+        /* finance page */
+        @at-root .finance_banner {
+            height: 230px;
+            margin-bottom: 5%;
+            &_title {
+                padding: 20px 5%;
+                height: 110px;
+                background: #20aff4;
+                font-size: .95em;
+                color: #fff;
+                @include box-sizing(border-box);
+                div {
+                    width: 45%;
+                    display: inline-block;
+                    &:nth-child(2) {
+                        text-align: right;
+                    }
+                    &.finance_banner_tal {
+                        width: auto;
+                        text-align: left;
+                    }
+                    @at-root .auto_toggle {
+                        vertical-align: top;
+                        text-align: right;
+                        .finance_banner_tac {
+                            width: auto;
+                            text-align: center;
+                            div {
+                                width: 56px;
+                                height: 18px;
+                                display: block;
+                                background: #20aff4;
+                                margin: 0 auto;
+                                position: relative;
+                                @include box-shadow(0px 0px 5px #d4d3d3 inset);
+                                &.disabled {
+                                    background: #fff;
+                                    i {
+                                        left: 0;
+                                        @include transition(all .5s);
+                                    }
+                                }
+                                i {
+                                    width: 50%;
+                                    height: 18px;
+                                    background: #d4d3d3;
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 28px;
+                                    @include transition(all .5s);
+                                }
+                            }
+                        }
+                    }
+                }
+                span {
+                    font-size: 2.65em;
+                    display: block;
+                    line-height: 65px;
+                }
+            }
+            &_cell {
+                color: #666;
+                padding: 8px 5%;
+                background: #fff;
+                height: 60px;
+                font-size: .7em;
+                border-bottom: 1px solid #f4f4f4;
+                @include box-sizing(border-box);
+                div {
+                    width: 45%;
+                    display: inline-block;
+                }
+                span {
+                    font-size: 1.5em;
+                    display: block;
+                    color: #333;
+                    line-height: 35px;
+                }
+            }
+        }
+        /* invite page */
+        &_invite {
+            background: #fd9c35 image-url("invite_banner1.jpg") no-repeat center 10px;
+            background-size: 245px auto;
+            height: 197px;
+            padding-top: 156px;
+            @include box-sizing(border-box);
+            @include transition(all 1s);
+            &_blue {
+                background: #22aff6 image-url("invite_banner2.jpg") no-repeat center 10px;
+                background-size: 245px auto;
+                @include transition(all 1s);
+            }
+            img {
+                margin: 0 auto;
+                display: block;
+            }
+            @at-root .invite_code {
+                width: (193px/2);
+                height: (50px/2);
+                line-height: (50px/2);
+                margin: 0 auto;
+                background: image-url("invite_bg.png") no-repeat center;
+                background-size: 100% auto;
+                @at-root %invite-fs {
+                    font-size: .825em;
+                    color: #a3a3a3;
+                }
+                @extend %invite-fs;
+                text-align: center;
+                span {
+                    color: #ff7159;
+                    font-weight: bold;
+                }
+            }
+            @at-root .invite_btn {
+                @at-root %invite_btn {
+                    width: 43.75%;
+                    height: 76px;
+                    line-height: 76px;
+                    color: #fff;
+                    font-size: 1.2em;
+                    margin: 5% 0;
+                    @include box-sizing(border-box);
+                    @include transition(width .5s);
+                    &:active {
+                        width: 48%;
+                    }
+                }
+                &_l {
+                    @extend %invite_btn;
+                    @include border-right-radius(36px);
+                    float: left;
+                    background: #fd9c35;
+                }
+                &_r {
+                    @extend %invite_btn;
+                    @include border-left-radius(36px);
+                    float: right;
+                    background: #22aff6;
+                }
+            }
+            @at-root .invite_record {
+                @extend %invite-fs;
+                margin-bottom: 60px;
+                dt {
+                    color: $btn_blue;
+                    vertical-align: top;
+                    margin-top: 10px;
+                }
+            }
+        }
         @at-root %labelnh2 {
             padding: 14px 0 0 20px;
             display: block;
@@ -183,53 +341,59 @@ body {
         padding: 5% 0;
         @include box-sizing(border-box);
         position: relative;
-        nav{
+        nav {
             margin-top: -5%;
             height: 42px;
-            line-height:42px;
+            line-height: 42px;
             background: #fff;
-            color:#999;
-            li.active{
-                color:$btn_blue;
-                span{
-                    color:$font_red;
+            color: #999;
+            li.active {
+                color: $btn_blue;
+                span {
+                    color: $font_red;
                 }
             }
         }
-        .pure-table-horizontal{
-            border-top:none;
-            width:100%;
-            font-size:0.7em;
-            color:#666;
-            td{
+        .pure-table-horizontal {
+            border-top: none;
+            width: 100%;
+            font-size: 0.7em;
+            color: #666;
+            td {
                 width: 33.3333%;
             }
-            span{
-                color:#ddd;
-                display:block;
+            span {
+                color: #ddd;
+                display: block;
             }
         }
     }
-    &_about{
-        height:100%;
+    &_about {
+        height: 100%;
+    }
+    &_reset {
+        height: auto;
+        min-height: inherit;
+        padding: 0;
+        //background: #fff;
     }
     /* activity history sections under main body */
-    &_history{
-        font-size:.9em;
+    &_history {
+        font-size: .9em;
         text-align: left;
         @include box-sizing(border-box);
-        padding:1.5%;
-        width:92%;
+        padding: 1.5%;
+        width: 92%;
         @include box-shadow(0px 0px 3px #666);
-        margin:0 auto 3%;
+        margin: 0 auto 3%;
         color: #666;
-        p{
+        p {
             margin-top: 1.5%;
         }
     }
     /* sections under main body */
     &_sec {
-        font-size:.9em;
+        font-size: .9em;
         text-align: left;
         width: 88%;
         background: #fff;
@@ -288,6 +452,15 @@ body {
                 }
                 @at-root .icon-history {
                     background-image: image-url("icon-history.jpg");
+                }
+                @at-root .icon-finance {
+                    background-image: image-url("icon-finance.jpg");
+                }
+                @at-root .icon-profit {
+                    background-image: image-url("icon-profit.jpg");
+                }
+                @at-root .icon-detail {
+                    background-image: image-url("icon-detail.jpg");
                 }
                 /* &:after {
                     content: ">";
@@ -428,5 +601,30 @@ body {
             width: 88%;
             margin: 0 6%;
         }
+    }
+}
+
+
+/* triangle */
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid $btn_blue;
+}
+
+.triangle-down {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 16px solid $btn_blue;
+    @include transition(all .5s linear);
+    &.rotate {
+        @include transition(all .5s);
+        @include transform(rotateZ(-180deg));
     }
 }

@@ -10,13 +10,42 @@ a, a:visited, a:hover, a:active { color: inherit; text-decoration: none; }
 
 html, body { height: 100%; }
 
+.bg_gray { background: #f4f4f4; }
+
 .user { /* avatar sec */ /* banner section */ /* main body */ /* activity history sections under main body */ /* sections under main body */ /* bankcards list section*/ /* bankcard single item */ /* normal and hollowed button with ab_bottom to locate at the bottom of the page*/ }
 .user_avatar { width: 25%; margin: 0 auto; padding: 10px 0; color: #fff; }
 .user_avatar .pure-img { border: 2px solid #fff; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .user_avatar h3, .user_avatar p { font-weight: normal; text-align: center; width: 200%; margin-left: -50%; }
 .user_avatar h3 { margin-top: 2%; font-size: .95em; }
 .user_avatar p { font-size: .75em; }
-.user_banner { background: url('../img/banner_bg.jpg?1436874808') no-repeat 0 0; background-size: 100% 100%; height: 33%; min-height: 187px; position: relative; color: #fff; /* param list */ /* dashi logo */ }
+.user_banner { background: url('../img/banner_bg.jpg?1436874808') no-repeat 0 0; background-size: 100% 100%; height: 33%; min-height: 187px; position: relative; color: #fff; /* finance page */ /* invite page */ /* param list */ /* dashi logo */ }
+.finance_banner { height: 230px; margin-bottom: 5%; }
+.finance_banner_title { padding: 20px 5%; height: 110px; background: #20aff4; font-size: .95em; color: #fff; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.finance_banner_title div { width: 45%; display: inline-block; }
+.finance_banner_title div:nth-child(2) { text-align: right; }
+.finance_banner_title div.finance_banner_tal { width: auto; text-align: left; }
+.auto_toggle { vertical-align: top; text-align: right; }
+.auto_toggle .finance_banner_tac { width: auto; text-align: center; }
+.auto_toggle .finance_banner_tac div { width: 56px; height: 18px; display: block; background: #20aff4; margin: 0 auto; position: relative; -moz-box-shadow: 0px 0px 5px #d4d3d3 inset; -webkit-box-shadow: 0px 0px 5px #d4d3d3 inset; box-shadow: 0px 0px 5px #d4d3d3 inset; }
+.auto_toggle .finance_banner_tac div.disabled { background: #fff; }
+.auto_toggle .finance_banner_tac div.disabled i { left: 0; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+.auto_toggle .finance_banner_tac div i { width: 50%; height: 18px; background: #d4d3d3; display: block; position: absolute; top: 0; left: 28px; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+.finance_banner_title span { font-size: 2.65em; display: block; line-height: 65px; }
+.finance_banner_cell { color: #666; padding: 8px 5%; background: #fff; height: 60px; font-size: .7em; border-bottom: 1px solid #f4f4f4; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.finance_banner_cell div { width: 45%; display: inline-block; }
+.finance_banner_cell span { font-size: 1.5em; display: block; color: #333; line-height: 35px; }
+.user_banner_invite { background: #fd9c35 url('../img/invite_banner1.jpg?1438407637') no-repeat center 10px; background-size: 245px auto; height: 197px; padding-top: 156px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-transition: all 1s; -o-transition: all 1s; -webkit-transition: all 1s; transition: all 1s; }
+.user_banner_invite_blue { background: #22aff6 url('../img/invite_banner2.jpg?1438410697') no-repeat center 10px; background-size: 245px auto; -moz-transition: all 1s; -o-transition: all 1s; -webkit-transition: all 1s; transition: all 1s; }
+.user_banner_invite img { margin: 0 auto; display: block; }
+.invite_code { width: 96.5px; height: 25px; line-height: 25px; margin: 0 auto; background: url('../img/invite_bg.png?1438421176') no-repeat center; background-size: 100% auto; text-align: center; }
+.invite_code, .invite_record { font-size: .825em; color: #a3a3a3; }
+.invite_code span { color: #ff7159; font-weight: bold; }
+.invite_btn_l, .invite_btn_r { width: 43.75%; height: 76px; line-height: 76px; color: #fff; font-size: 1.2em; margin: 5% 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-transition: width 0.5s; -o-transition: width 0.5s; -webkit-transition: width 0.5s; transition: width 0.5s; }
+.invite_btn_l:active, .invite_btn_r:active { width: 48%; }
+.invite_btn_l { -moz-border-radius-topright: 36px; -webkit-border-top-right-radius: 36px; border-top-right-radius: 36px; -moz-border-radius-bottomright: 36px; -webkit-border-bottom-right-radius: 36px; border-bottom-right-radius: 36px; float: left; background: #fd9c35; }
+.invite_btn_r { -moz-border-radius-topleft: 36px; -webkit-border-top-left-radius: 36px; border-top-left-radius: 36px; -moz-border-radius-bottomleft: 36px; -webkit-border-bottom-left-radius: 36px; border-bottom-left-radius: 36px; float: right; background: #22aff6; }
+.invite_record { margin-bottom: 60px; }
+.invite_record dt { color: #0d8fdb; vertical-align: top; margin-top: 10px; }
 .user_banner > label, .user_banner > h2 { padding: 14px 0 0 20px; display: block; }
 .user_banner > label { font-size: .8em; }
 .user_banner > h2 { font-size: 2em; font-weight: lighter; line-height: 1em; }
@@ -41,6 +70,7 @@ html, body { height: 100%; }
 .user_main .pure-table-horizontal td { width: 33.3333%; }
 .user_main .pure-table-horizontal span { color: #ddd; display: block; }
 .user_about { height: 100%; }
+.user_reset { height: auto; min-height: inherit; padding: 0; }
 .user_history { font-size: .9em; text-align: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 1.5%; width: 92%; -moz-box-shadow: 0px 0px 3px #666; -webkit-box-shadow: 0px 0px 3px #666; box-shadow: 0px 0px 3px #666; margin: 0 auto 3%; color: #666; }
 .user_history p { margin-top: 1.5%; }
 .user_sec { font-size: .9em; text-align: left; width: 88%; background: #fff; margin: 0 auto 5%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
@@ -59,6 +89,9 @@ html, body { height: 100%; }
 .icon-advice { background-image: url('../img/icon-advice.jpg?1438006910'); }
 .icon-faq { background-image: url('../img/icon-faq.jpg?1438006792'); }
 .icon-history { background-image: url('../img/icon-history.jpg?1438006696'); }
+.icon-finance { background-image: url('../img/icon-finance.jpg?1438422794'); }
+.icon-profit { background-image: url('../img/icon-profit.jpg?1438422795'); }
+.icon-detail { background-image: url('../img/icon-detail.jpg?1438422795'); }
 .user_sec div span { color: #ddd; padding-left: 20%; font-size: .8em; }
 .user_sec div span em { color: #fe8f86; font-style: normal; }
 .user_sec div label { color: #ddd; }
@@ -81,3 +114,9 @@ html, body { height: 100%; }
 .user_main_btn_hollow { background: #fff; color: #0d8fdb; }
 .user_main_btn_hollow:hover { color: #0d8fdb; }
 .user_main_btn.ab_bottom { position: absolute; bottom: 1.3em; left: 0; width: 88%; margin: 0 6%; }
+
+/* triangle */
+.triangle-up { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 16px solid #0d8fdb; }
+
+.triangle-down { display: inline-block; width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 16px solid #0d8fdb; -moz-transition: all 0.5s linear; -o-transition: all 0.5s linear; -webkit-transition: all 0.5s linear; transition: all 0.5s linear; }
+.triangle-down.rotate { -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; -moz-transform: rotateZ(-180deg); -ms-transform: rotateZ(-180deg); -webkit-transform: rotateZ(-180deg); transform: rotateZ(-180deg); }
