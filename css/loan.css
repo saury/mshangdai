@@ -1,8 +1,13 @@
+@charset "UTF-8";
 * { font-family: "Microsoft YaHei", Arial; color: #666; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; text-decoration: none; margin: 0; border: 0; padding: 0; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; }
+
+.cf { *zoom: 1; }
+.cf:before, .cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
 
 input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms-user-select: auto; user-select: auto; }
 
-.loan_main { text-align: center; width: 100%; }
+.loan_main { text-align: center; width: 100%; /* loan match page start*/ /* loan match page end*/ }
 .loan_main_img { width: 22%; margin: 30px auto 20px; }
 .loan_main p { font-size: .8em; }
 .loan_main > span { color: #fc9c69; font-size: 1.6em; line-height: 1.8em; display: block; }
@@ -10,6 +15,7 @@ input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms
 .loan_main_credit { color: #9b9b9b; margin-bottom: 50px; }
 .loan_main_credit span { color: #0f8fda; }
 .loan_main_btn { background: #0d8fdb; border: 2px solid #0d8fdb; padding: 0; color: #fff; height: 36px; line-height: 32px; display: block; width: 84%; border-radius: 5px; margin: 0 auto 12px; }
+.loan_main_btn_liteblue { background: #44bbdb; border: 2px solid #44bbdb; }
 .loan_main_btn_hollow { background: #fff; color: #0d8fdb; }
 .loan_main form { letter-spacing: normal; text-align: left; width: 88%; margin: 10px auto; }
 .loan_main form p { font-size: 1em; }
@@ -51,6 +57,43 @@ input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms
 .loan_main_comfirmC li a { color: #0d8fdb; }
 .loan_main_checkbox { font-size: .75em; color: #666; padding-left: 22px; background: url(../img/checkbox.jpg) no-repeat; background-position: 0px -14px; background-size: 14px 28px; height: 16px; line-height: 16px; }
 .loan_main_checkbox_on { background-position: 0px 0px; }
+.loan_match { width: 84%; margin: 12px auto 70px; }
+.loan_match_info { font-size: .71em; width: 17.5%; display: inline-block; }
+.loan_match_info dt { color: #0d8fdb; margin: 10px auto; }
+.loan_match_info span { color: #fe8f86; margin-top: 5px; display: inline-block; }
+.loan_match_dots { width: 60%; margin: 10% auto; height: 36px; }
+.loan_match_dots p { font-size: .71em; color: #0d8fdb; }
+.loan_match_dots i { display: inline-block; width: 3.75%; border: 1px solid #44bbdb; margin: 0 .5px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; }
+.loan_match_dots i.active { -moz-animation: dotAni 2s infinite; -webkit-animation: dotAni 2s infinite; animation: dotAni 2s infinite; }
+@-moz-keyframes dotAni { 0% { background: #44bbdb; }
+  30% { background: #44bbdb; }
+  70% { background: #fff; }
+  100% { background: #fff; } }
+@-webkit-keyframes dotAni { 0% { background: #44bbdb; }
+  30% { background: #44bbdb; }
+  70% { background: #fff; }
+  100% { background: #fff; } }
+@keyframes dotAni { 0% { background: #44bbdb; }
+  30% { background: #44bbdb; }
+  70% { background: #fff; }
+  100% { background: #fff; } }
+/* 弹出层 */
+.mask_layer { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; }
+.mask_layer_bg { background: #000; opacity: .5; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.popup { width: 230px; margin: 40% auto; background: #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: 0px 0px 5px #666; -webkit-box-shadow: 0px 0px 5px #666; box-shadow: 0px 0px 5px #666; position: relative; }
+.popup_cnt { width: 230px; padding: 14px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.popup_cnt img { width: 24%; }
+.popup_cnt p { margin: 0 0 10px 0; text-align: center; color: #fe8f86; font-size: .95em; }
+.popup_cnt .pure-button { font-size: .95em; margin: 0 auto; }
+.popup_confirm em { font-size: .95em; font-style: normal; display: block; margin: 0 5%; text-align: left; color: #44bbdb; }
+.popup_confirm span { color: #fe8f86; }
+.popup_confirm p { color: #999; margin: 5px 5%; text-align: left; }
+.popup_confirm .pure-button { width: 40%; float: left; margin: 0 5%; }
+
+.fl { float: left; }
+
+.fr { float: right; }
 
 .ft_red { color: #fe8f86; }
 
@@ -71,3 +114,5 @@ input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms
 .pure-button.loan_main_btn.ab_bottom { position: absolute; bottom: 1.3em; left: 0; width: 88%; margin: 0 6%; }
 
 hr.hr-liteblue { margin: 0 auto; height: 2px; border: none; border-top: 2px dashed #44bbdb; width: 92%; }
+
+@media only screen and (orientation: landscape) { .popup { margin: 12% auto; } }

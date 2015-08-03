@@ -4,6 +4,8 @@ $font_color: #666;
 $btn_blue: #0d8fdb;
 $btn_liteblue: #44bbdb;
 $font_red: #fe8f86;
+@import "compass/css3";
+@import "compass";
 * {
     font-family: "Microsoft YaHei", Arial;
     color: $font_color;
@@ -18,6 +20,19 @@ $font_red: #fe8f86;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+//clear fix
+.cf {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 input,
@@ -72,6 +87,10 @@ textarea {
         width: 84%;
         border-radius: 5px;
         margin: 0 auto 12px;
+        &_liteblue {
+            background: $btn_liteblue;
+            border: 2px solid $btn_liteblue;
+        }
         &_hollow {
             background: #fff;
             color: $btn_blue;
@@ -280,6 +299,146 @@ textarea {
     &_checkbox_on {
         background-position: 0px 0px;
     }
+    /* loan match page start*/
+    @at-root .loan_match {
+        width: 84%;
+        margin: 12px auto 70px;
+        &_info {
+            font-size: .71em;
+            width: 17.5%;
+            display: inline-block;
+            dt {
+                color: $btn_blue;
+                margin: 10px auto;
+            }
+            span {
+                color: $font_red;
+                margin-top: 5px;
+                display: inline-block;
+            }
+        }
+        &_dots {
+            width: 60%;
+            margin: 10% auto;
+            height: 36px;
+            p {
+                font-size: .71em;
+                color: $btn_blue;
+            }
+            i {
+                display: inline-block;
+                width: 3.75%;
+                border: 1px solid $btn_liteblue;
+                margin: 0 .5px;
+                @include box-sizing(border-box);
+                @include border-radius(50%);
+                &.active {
+                    @include animation(dotAni 2s infinite);
+                }
+                @include keyframes(dotAni) {
+                    0% {
+                        background: $btn_liteblue;
+                    }
+                    30% {
+                        background: $btn_liteblue;
+                    }
+                    70% {
+                        background: #fff;
+                    }
+                    100% {
+                        background: #fff;
+                    }
+                }
+            }
+        }
+    }
+    /* loan match page end*/
+}
+
+//弹出层整体宽高
+@mixin popup_width($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+
+/* 弹出层 */
+
+.mask_layer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    &_bg {
+        background: #000;
+        opacity: .5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.popup {
+    width: 230px;
+    margin: 40% auto;
+    background: #fff;
+    @include border-radius(5px);
+    @include box-shadow(0px 0px 5px #666);
+    position: relative;
+    &_cnt {
+        width: 230px;
+        padding: 14px;
+        @include box-sizing(border-box);
+        img {
+            width: 24%;
+        }
+        p {
+            margin: 0 0 10px 0;
+            text-align: center;
+            color: $font_red;
+            font-size: .95em;
+        }
+        .pure-button {
+            font-size: .95em;
+            margin: 0 auto;
+        }
+        @at-root .popup_confirm {
+            em {
+                font-size: .95em;
+                font-style: normal;
+                display: block;
+                margin: 0 5%;
+                text-align: left;
+                color: $btn_liteblue;
+            }
+            span{
+                color: $font_red;
+            }
+            p{
+                color:#999;
+                margin:5px 5%;
+                text-align: left;
+            }
+            .pure-button{
+                width:40%;
+                float: left;
+                margin:0 5%;
+            }
+        }
+    }
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
 }
 
 .ft_red {
@@ -333,4 +492,10 @@ hr.hr-liteblue {
     border: none;
     border-top: 2px dashed $btn_liteblue;
     width: 92%;
+}
+
+@media only screen and (orientation: landscape) {
+    .popup {
+        margin: 12% auto;
+    }
 }

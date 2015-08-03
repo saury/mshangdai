@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta charset="UTF-8">
+    <title>我的优惠券</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body>
+    <header>
+        <nav class="coupon_nav">
+            <ul class="pure-g">
+                <li data-index="0" class="pure-u-1-2 active">未使用</li>
+                <li data-index="1" class="pure-u-1-2">已使用</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="user_main user_coupon" style="display: block;">
+        <div class="coupon">
+            <h3>马力券</h3>
+            <h2>免息券</h2>
+            <p>1000元以下借款可使用&nbsp;&nbsp;&nbsp;&nbsp;有效期2015年10月30日前 </p>
+        </div>
+        <div class="coupon">
+            <h3>马力券</h3>
+            <h2>免息券</h2>
+            <p>1000元以下借款可使用&nbsp;&nbsp;&nbsp;&nbsp;有效期2015年10月30日前 </p>
+        </div>
+        <div class="coupon">
+            <h3>马力券</h3>
+            <h2>免息券</h2>
+            <p>1000元以下借款可使用&nbsp;&nbsp;&nbsp;&nbsp;有效期2015年10月30日前 </p>
+        </div>
+        <div class="coupon">
+            <h3>马力券</h3>
+            <h2>免息券</h2>
+            <p>1000元以下借款可使用&nbsp;&nbsp;&nbsp;&nbsp;有效期2015年10月30日前 </p>
+        </div>
+        <a class="pure-button user_main_btn user_main_btn_hollow" href="javascript:void(0);">返回</a>
+    </div>
+    <div class="user_main user_coupon user_coupon_used">
+        <div class="coupon">
+            <h3>马力券</h3>
+            <h2>免息券</h2>
+            <p>1000元以下借款可使用&nbsp;&nbsp;&nbsp;&nbsp;有效期2015年10月30日前 </p>
+        </div>
+        <div class="coupon">
+            <h3>马力券</h3>
+            <h2>免息券</h2>
+            <p>1000元以下借款可使用&nbsp;&nbsp;&nbsp;&nbsp;有效期2015年10月30日前 </p>
+        </div>
+        <div class="coupon">
+            <h3>马力券</h3>
+            <h2>免息券</h2>
+            <p>1000元以下借款可使用&nbsp;&nbsp;&nbsp;&nbsp;有效期2015年10月30日前 </p>
+        </div>
+        <div class="coupon">
+            <h3>马力券</h3>
+            <h2>免息券</h2>
+            <p>1000元以下借款可使用&nbsp;&nbsp;&nbsp;&nbsp;有效期2015年10月30日前 </p>
+        </div>
+        <a class="pure-button user_main_btn user_main_btn_hollow" href="javascript:void(0);">返回</a>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+    $(".coupon_nav li").click(function(){
+        var index=$(this).attr("data-index");
+        $(".coupon_nav li").removeClass("active");
+        $(this).addClass("active");
+        $(".user_coupon").hide();
+        $(".user_coupon").eq(index).show();
+    })
+    </script>
+</body>
+
+</html>

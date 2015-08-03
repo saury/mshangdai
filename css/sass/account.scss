@@ -52,7 +52,7 @@ body {
     height: 100%;
 }
 
-.bg_gray{
+.bg_gray {
     background: #f4f4f4;
 }
 
@@ -600,6 +600,90 @@ body {
             left: 0;
             width: 88%;
             margin: 0 6%;
+        }
+    }
+    /* coupon page */
+    @at-root .coupon_nav {
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        color: #fff;
+        li {
+            background: #c0edff;
+            &.active {
+                background: #09b2fe;
+            }
+        }
+    }
+    @at-root .coupon {
+        width: 93.75%;
+        height: 80px;
+        @include box-sizing(border-box);
+        padding: 6px;
+        background: #7bd6fe;
+        background-image: image-url("coupon_left.jpg"), image-url("coupon_right.jpg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: top left, top right;
+        background-size: auto 100%;
+        margin: 0 auto 5%;
+        color: #fff;
+        text-align: center;
+        h3 {
+            display: inline-block;
+            width: 13.33%;
+            @include box-sizing(border-box);
+            border-right: 1px solid #fff;
+            line-height: 20.666px;
+            font-weight: normal;
+            float: left;
+            padding: 3px 0;
+            letter-spacing: 6px;
+        }
+        h2 {
+            font-weight: normal;
+            font-size: 2.25em;
+            width: 80%;
+            float: right;
+            margin-right: 3%;
+            border-bottom: 1px solid #fff;
+        }
+        p {
+            font-size: .65em;
+            width: 86.67%;
+            float: right;
+            height: 20px;
+            line-height: 20px;
+        }
+    }
+    &_coupon {
+        background: #fff;
+        display: none;
+        &_used {
+            .coupon {
+                position:relative;
+                background: #5697b2;
+                background-image: image-url("coupon_left_used.jpg"), image-url("coupon_right_used.jpg");
+                background-repeat: no-repeat, no-repeat;
+                background-position: top left, top right;
+                background-size: auto 100%;
+                color: #b2b2b2;
+                h2,
+                h3 {
+                    border-color: #b2b2b2;
+                }
+                &:after{
+                    content:"已过期";
+                    color: #fff;
+                    font-size:2.5em;
+                    @include transform(rotateZ(-15deg));
+                    width:100%;
+                    height:80px;
+                    line-height:80px;
+                    position:absolute;
+                    top: 0;
+                    left:0;
+                }
+            }
         }
     }
 }
