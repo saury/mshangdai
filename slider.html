@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+</head>
+<style type="text/css">
+.canvas_wrap {
+    width: 80%;
+    margin: 0 auto;
+    padding: 6% 0;
+}
+.clickArea{
+  /* display:inline; */
+  position: absolute;
+  left: 50%;
+  margin-left: -40px;
+  top:10%;
+  width:80px;
+  height: 80px;
+  background: #ccc;
+}
+
+canvas {
+    /* border: dashed 2px #CCC; */
+}
+</style>
+
+<body>
+    <div class="canvas_wrap">
+        <canvas id="can"></canvas>
+    </div>
+    <div class="clickArea">123</div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+    ! function($) {
+        window.touchEvent = window.touchEvent || {};
+        $.touchEvent = touchEvent;
+        //Define events
+        touchEvent.touch = {
+            evenList: {
+                touchStart: {
+                    htmlEvent: 'touchstart'
+                },
+                touchMove: {
+                    htmlEvent: 'touchmove'
+                },
+                touchEnd: {
+                    htmlEvent: 'touchend'
+                },
+                tapOrClick: {
+                    eventFunction: function(action) {
+                        $(this).each(function() {
+                            (function(hasTouched) {
+                                $(this).touchEnd(function(e) {
+                                    hasTouched = true;
+                                    action.call(this, e);
+                                });
+                                $(this).click(function(e) {
+                                    if (!hasTouched) {
+                                        action.call(this, e);
+                                    }
+                                });
+                            }).call(this, false);
+                        });
+                        return this;
+                    }
+                },
+                moveOrScroll: {
+                    eventFunction: function(action) {
+                        $(this).each(function() {
+                            (function(hasTouched) {
+                                $(this).touchMove(function(e) {
+                                    hasTouched = true;
+                                    action.call(this, e);
+                                });
+                                $(this).scroll(function(e) {
+                                    if (!hasTouched) {
+                                        action.call(this, e);
+                                    }
+                                });
+                            }).call(this, false);
+                        });
+                        return this;
+                    }
+                }
+            }
+        }
+
+        //Add events into jquery
+        for (var eventName in touchEvent.touch.evenList) {
+            var event = touchEvent.touch.evenList[eventName];
+            $.fn[eventName] = event.eventFunction || (function(eventName, htmlEvent) {
+                return function(action) {
+                    $(this).each(function() {
+                        $(this).bind(htmlEvent, action);
+                        //Add event listener method for IE or others
+                        if (this.attachEvent) {
+                            this.attachEvent('on' + htmlEvent, function(e) {
+                                $(this).on(eventName);
+                            });
+                        } else {
+                            this.addEventListener(htmlEvent, function(e) {
+                                $(this).on(eventName);
+                            });
+                        }
+                    });
+                    return this;
+                }
+            })(eventName, event.htmlEvent);
+        }
+    }(Zepto);
+
+    $(function() {
+        var _move = false; //移动标记  
+        var _x, _y, _docX, _docY; //鼠标离控件左上角的相对位置  
+        $(".clickArea").on("tapOrClick", function() {
+            //alert("click");//点击（松开后触发）  
+        }).touchStart(function(e) {
+            _move = true;
+            var touch = event.touches[0];
+            _x = touch.pageX - parseInt($(".clickArea").css("left"));
+            _y = touch.pageY - parseInt($(".clickArea").css("top"));
+            _docX = $(document).width();
+            _docY = $(document).height();
+            //$(".clickArea").fadeTo(20, 0.5); //点击后开始拖动并透明显示  
+        });
+        $(document).touchMove(function(e) {
+            if (_move) {
+                var touch = event.touches[0];
+                //console.log(touch);
+                var x = touch.pageX - _x; //移动时根据鼠标位置计算控件左上角的绝对位置  
+                var y = touch.pageY - _y;
+                console.log(touch.pageX,touch.pageY);
+                var window_x = _docX - $(".clickArea").width() - 2;
+                var window_y = _docY - $(".clickArea").height() - 2;
+                x = (x < 0) ? 0 : x;
+                y = (y < 0) ? 0 : y;
+                x = (x > window_x) ? window_x : x;
+                y = (y > window_y) ? window_y : y;
+                $(".clickArea").css({
+                    top: y,
+                    left: x
+                }); //控件新位置  
+            }
+        })
+    });
+    </script>
+    <script type="text/javascript">
+
+    function $$(id) {
+        return document.getElementById(id);
+    }
+
+    var can = $$('can');
+    var cans = can.getContext('2d');
+    can.width=$(".canvas_wrap").width();
+    can.height=can.width;
+    var circleCenter=can.width/2;
+    var r= circleCenter*.6;
+    //init
+    drawBg();
+    blueBar(1.5);
+    greenBar(0.5);
+
+    blueBtn(circleCenter+ Math.sin(2*Math.PI / 360*(-120)) * r ,circleCenter- Math.cos(2*Math.PI / 360*(-120)) * r ) ;
+    blueBtn(circleCenter+ Math.sin(2*Math.PI / 360*-60) * r ,circleCenter- Math.cos(2*Math.PI / 360*-60) * r ) ;
+    blueBtn(circleCenter+ Math.sin(2*Math.PI / 360*60) * r ,circleCenter- Math.cos(2*Math.PI / 360*60) * r ) ;
+    blueBtn(circleCenter+ Math.sin(2*Math.PI / 360*120) * r ,circleCenter- Math.cos(2*Math.PI / 360*120) * r ) ;
+    blueBtn(circleCenter+ Math.sin(2*Math.PI / 360*0) * r ,circleCenter- Math.cos(2*Math.PI / 360*0) * r ) ;
+    greenBtn(circleCenter+ Math.sin(2*Math.PI / 360*180) * r ,circleCenter- Math.cos(2*Math.PI / 360*180) * r ) ;
+    //blueBtn(circleCenter-r*Math.cos(0),circleCenter-r*Math.sin(0)) ;
+    //greenBtn(r*Math.cos()+circleCenter,r*Math.sin()+circleCenter);
+
+    function drawBg(center) {
+        //draw bar bg
+        cans.beginPath();
+        cans.arc(circleCenter, circleCenter, r, Math.PI * 0.8, Math.PI * 0.2, 0);
+        cans.strokeStyle = '#ccc';
+        cans.lineWidth = 20;
+        cans.stroke();
+        //draw bar bg
+        cans.beginPath();
+        cans.arc(circleCenter, circleCenter, r, Math.PI * 0.7, Math.PI * 0.3, 1);
+        cans.strokeStyle = '#ccc';
+        cans.lineWidth = 20;
+        cans.stroke();
+    }
+    //draw blue bar 
+    function blueBar(param) {
+        cans.beginPath();
+        cans.arc(circleCenter, circleCenter, r, Math.PI * 0.8, Math.PI * param, 0);
+        cans.strokeStyle = '#43D5FA';
+        cans.lineWidth = 20;
+        cans.stroke();
+    }
+    //draw green bar 
+    function greenBar(param) {
+        cans.beginPath();
+        cans.arc(circleCenter, circleCenter, r, Math.PI * 0.7, Math.PI * param, 1);
+        cans.strokeStyle = '#35E382';
+        cans.lineWidth = 20;
+        cans.stroke();
+    }
+    //draw btn blue
+    function blueBtn(x, y) {
+        cans.beginPath();
+        cans.arc(x, y, 20, 0, Math.PI * 2, 0);
+        cans.fillStyle = "#43D5FA";
+        cans.fill();
+        cans.shadowOffsetX = 2; //设置水平位移
+        cans.shadowOffsetY = 2; //设置垂直位移
+        cans.shadowBlur = 5; //设置模糊度
+        cans.shadowColor = "rgba(0, 0, 0, 0.5)"; //设置阴影颜色
+        cans.strokeStyle = '#fff';
+        cans.lineWidth = 22;
+        cans.stroke();
+    }
+    //draw btn green
+    function greenBtn(x, y) {
+        cans.beginPath();
+        cans.arc(x, y, 20, 0, Math.PI * 2, 0);
+        cans.fillStyle = "#35E382";
+        cans.fill();
+        cans.shadowOffsetX = 2; //设置水平位移
+        cans.shadowOffsetY = 2; //设置垂直位移
+        cans.shadowBlur = 5; //设置模糊度
+        cans.shadowColor = "rgba(0, 0, 0, 0.5)"; //设置阴影颜色
+        cans.strokeStyle = '#fff';
+        cans.lineWidth = 22;
+        cans.stroke();
+    }
+
+    function clearAll() {
+        // body...
+        cans.clearRect(0, 0, 800, 800);
+    }
+    </script>
+</body>
+
+</html>
