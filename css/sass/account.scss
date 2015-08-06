@@ -377,6 +377,9 @@ body {
         padding: 0;
         //background: #fff;
     }
+    &_task {
+        min-height:440px;
+    }
     /* activity history sections under main body */
     &_history {
         font-size: .9em;
@@ -602,6 +605,135 @@ body {
             margin: 0 6%;
         }
     }
+    /* task page */
+    @at-root .task {
+        &_nav {
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            li {
+                background: #fff;
+                color: #09b2fe;
+                border: 1px solid #09b2fe;
+                @include box-sizing(border-box);
+                position: relative;
+                z-index: 999;
+                @include text-shadow(1px 1px 1px #666);
+                font-size: .9em;
+                &.active {
+                    background: #09b2fe;
+                    color: #fff;
+                }
+            }
+        }
+        &_item {
+            position: relative;
+            width: 84%;
+            @include border-radius(5px);
+            color: #fff;
+            text-align: left;
+            text-indent: 1em;
+            margin: 0 auto 5%;
+            font-size: .9em;
+            &:last-of-type{
+                margin-bottom:20%;
+            }
+            &.active .task_title {
+                background: $btn_blue;
+            }
+            &.active .task_cnt {
+                padding: 1em;
+                max-height: 400px;
+                transition: all .5s linear;
+            }
+        }
+        &_title {
+            position: relative;
+            z-index: 9;
+            background: #b8e5ff;
+            @include border-radius(5px);
+            height: 36px;
+            line-height: 36px;
+            @include text-shadow(1px 1px 1px #666);
+            .task_btn {
+                float: right;
+                margin-right: 1em;
+                display: inline-block;
+                background: #fff;
+                height: 20px;
+                line-height: 20px;
+                margin-top: 8px;
+                text-align: center;
+                width: 50px;
+                text-indent: 0;
+                border-radius: 12px;
+                box-shadow: 1px 1px 1px #666;
+                color: $btn_blue;
+                &:active {
+                    color: #fff;
+                    background: $btn_blue;
+                }
+            }
+        }
+        &_stars {
+            display: inline-block;
+            height: 20px;
+            margin-top: 2px;
+            float: right;
+            margin-right: 1em;
+            i {
+                display: inline-block;
+                width: 12px;
+                height: 16px;
+                margin: 0 1px;
+                background: image-url("task_star.png") no-repeat center;
+                background-size: contain;
+            }
+        }
+        &_cnt {
+            text-indent: 0;
+            font-size: .8em;
+            background: #fff;
+            border: 1px solid $btn_blue;
+            @include border-radius(5px);
+            @include box-sizing(border-box);
+            margin-top: -36px;
+            padding: 0 1em;
+            max-height: 0;
+            overflow-y: hidden;
+            width: 100%;
+            transition: all .5s linear;
+            label {
+                display: block;
+                color: $btn_liteblue;
+                margin: 2px 0;
+            }
+            p {
+                color: #666;
+            }
+        }
+        &_bonus {
+            display: inline-block;
+            width: 38px;
+            height: 50px;
+            margin-right: 5px;
+            color: #666;
+            font-size: .82em;
+            text-align: center;
+            &_img {
+                width: 36px;
+                height: 36px;
+                border: 1px solid $btn_liteblue;
+                @include border-radius(4px);
+                text-align: center;
+                img {
+                    height: 90%;
+                    width: auto;
+                    margin: 5%;
+                }
+            }
+        }
+    }
     /* coupon page */
     @at-root .coupon_nav {
         height: 36px;
@@ -660,7 +792,7 @@ body {
         display: none;
         &_used {
             .coupon {
-                position:relative;
+                position: relative;
                 background: #5697b2;
                 background-image: image-url("coupon_left_used.jpg"), image-url("coupon_right_used.jpg");
                 background-repeat: no-repeat, no-repeat;
@@ -671,17 +803,17 @@ body {
                 h3 {
                     border-color: #b2b2b2;
                 }
-                &:after{
-                    content:"已过期";
+                &:after {
+                    content: "已过期";
                     color: #fff;
-                    font-size:2.5em;
+                    font-size: 2.5em;
                     @include transform(rotateZ(-15deg));
-                    width:100%;
-                    height:80px;
-                    line-height:80px;
-                    position:absolute;
+                    width: 100%;
+                    height: 80px;
+                    line-height: 80px;
+                    position: absolute;
                     top: 0;
-                    left:0;
+                    left: 0;
                 }
             }
         }
