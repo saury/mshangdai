@@ -13,7 +13,24 @@ html, body { height: 100%; }
 
 .bg_gray { background: #f4f4f4; }
 
-.user { /* avatar sec */ /* banner section */ /* main body */ /* activity history sections under main body */ /* sections under main body */ /* bankcards list section*/ /* bankcard single item */ /* normal and hollowed button with ab_bottom to locate at the bottom of the page*/ /* task page */ /* coupon page */ }
+/* header progress */
+.header_progress { width: 84%; height: 50px; margin: 20px auto 0; position: relative; }
+
+.progress_2 .progress_item:nth-child(2) { color: #44bbdb; }
+.progress_2 .progress_item:nth-child(2) span { background: #44bbdb; }
+.progress_3 .progress_item:nth-child(2), .progress_3 .progress_item:nth-child(3) { color: #44bbdb; }
+.progress_3 .progress_item:nth-child(2) span, .progress_3 .progress_item:nth-child(3) span { background: #44bbdb; }
+.progress_4 .progress_item:nth-child(2), .progress_4 .progress_item:nth-child(3), .progress_4 .progress_item:nth-child(4) { color: #44bbdb; }
+.progress_4 .progress_item:nth-child(2) span, .progress_4 .progress_item:nth-child(3) span, .progress_4 .progress_item:nth-child(4) span { background: #44bbdb; }
+.progress_bar { width: 98%; height: 6px; background-color: #eee; position: absolute; top: 16px; border-radius: 4px; left: 1px; z-index: 1; }
+.progress_bar_current { position: absolute; left: 0; top: 0; display: block; background-color: #44bbdb; height: 100%; }
+.progress_list { list-style: none; position: relative; z-index: 9; }
+.progress_item { width: 38px; height: 50px; float: left; font-size: 0.58rem; color: #eee; }
+.progress_item:first-child { margin: 0 !important; color: #44bbdb; }
+.progress_item:first-child span { background: #44bbdb; }
+.progress_item span { display: block; font-size: 1rem; background: #eee; color: #fff; width: 38px; height: 38px; line-height: 38px; text-align: center; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; margin-bottom: 5px; }
+
+.user { /* avatar sec */ /* banner section */ /* main body */ /* activity history sections under main body */ /* sections under main body */ /* bankcards list section*/ /* bankcard single item */ /* normal and hollowed button with ab_bottom to locate at the bottom of the page*/ /* credit page */ /* task page */ /* coupon page */ }
 .user_avatar { width: 25%; margin: 0 auto; padding: 10px 0; color: #fff; }
 .user_avatar .pure-img { border: 2px solid #fff; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .user_avatar h3, .user_avatar p { font-weight: normal; text-align: center; width: 200%; margin-left: -50%; }
@@ -73,6 +90,7 @@ html, body { height: 100%; }
 .user_about { height: 100%; }
 .user_reset { height: auto; min-height: inherit; padding: 0; }
 .user_task { min-height: 440px; }
+.user_blank { min-height: 440px; background: #fff; }
 .user_history { font-size: .9em; text-align: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 1.5%; width: 92%; -moz-box-shadow: 0px 0px 3px #666; -webkit-box-shadow: 0px 0px 3px #666; box-shadow: 0px 0px 3px #666; margin: 0 auto 3%; color: #666; }
 .user_history p { margin-top: 1.5%; }
 .user_sec { font-size: .9em; text-align: left; width: 88%; background: #fff; margin: 0 auto 5%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
@@ -116,6 +134,16 @@ html, body { height: 100%; }
 .user_main_btn_hollow { background: #fff; color: #0d8fdb; }
 .user_main_btn_hollow:hover { color: #0d8fdb; }
 .user_main_btn.ab_bottom { position: absolute; bottom: 1.3em; left: 0; width: 88%; margin: 0 6%; }
+.credit_item { position: relative; width: 84%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; color: #666; text-align: left; text-indent: 1em; margin: 0 auto 2%; font-size: .75em; border: 2px solid #b8e5ff; height: 32px; line-height: 32px; }
+.credit_item_title { background: #b8e5ff; color: #fff; font-size: .85em; background: #b8e5ff; margin-top: 5%; }
+.credit_item_title:first-of-type { margin-top: 0; }
+.credit_item_title span.flr { color: #fff; }
+.credit_item:last-of-type { margin-bottom: 10%; }
+.credit_item_select { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; }
+.credit_item_icon { height: 26px; vertical-align: middle; }
+.credit_item_btn { width: 44px; height: 20px; line-height: 20px; background: #b8e5ff; color: #fff; margin-left: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+.credit_item .flr { color: #b8e5ff; float: right; margin-right: 1em; }
+.credit_item .flr img { width: 18px; vertical-align: middle; }
 .task_nav { height: 34px; line-height: 34px; text-align: center; }
 .task_nav li { background: #fff; color: #09b2fe; border: 1px solid #09b2fe; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; position: relative; z-index: 999; text-shadow: 1px 1px 1px #666; font-size: .9em; }
 .task_nav li.active { background: #09b2fe; color: #fff; }

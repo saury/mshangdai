@@ -56,6 +56,101 @@ body {
     background: #f4f4f4;
 }
 
+
+/* header progress */
+
+.header_progress {
+    width: 84%;
+    height: 50px;
+    margin: 20px auto 0;
+    position: relative;
+}
+
+.progress {
+    &_2 {
+        .progress_item {
+            &:nth-child(2) {
+                color: $btn_liteblue;
+                span {
+                    background: $btn_liteblue;
+                }
+            }
+        }
+    }
+    &_3 {
+        .progress_item {
+            &:nth-child(2),
+            &:nth-child(3) {
+                color: $btn_liteblue;
+                span {
+                    background: $btn_liteblue;
+                }
+            }
+        }
+    }
+    &_4 {
+        .progress_item {
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+                color: $btn_liteblue;
+                span {
+                    background: $btn_liteblue;
+                }
+            }
+        }
+    }
+    &_bar {
+        width: 98%;
+        height: 6px;
+        background-color: #eee;
+        position: absolute;
+        top: 16px;
+        border-radius: 4px;
+        left: 1px;
+        z-index: 1;
+        &_current {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            background-color: $btn_liteblue;
+            height: 100%;
+        }
+    }
+    &_list {
+        list-style: none;
+        position: relative;
+        z-index: 9;
+    }
+    &_item {
+        width: 38px;
+        height: 50px;
+        float: left;
+        font-size: 0.58rem;
+        color: #eee;
+        &:first-child {
+            margin: 0 !important;
+            color: $btn_liteblue;
+            span {
+                background: $btn_liteblue;
+            }
+        }
+        span {
+            display: block;
+            font-size: 1rem;
+            background: #eee;
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            @include border-radius(50%);
+            margin-bottom: 5px;
+        }
+    }
+}
+
 .user {
     /* avatar sec */
     &_avatar {
@@ -378,7 +473,11 @@ body {
         //background: #fff;
     }
     &_task {
-        min-height:440px;
+        min-height: 440px;
+    }
+    &_blank {
+        min-height: 440px;
+        background: #fff;
     }
     /* activity history sections under main body */
     &_history {
@@ -605,6 +704,68 @@ body {
             margin: 0 6%;
         }
     }
+    /* credit page */
+    @at-root .credit {
+        &_item {
+            &_title {
+                background: #b8e5ff;
+                color: #fff;
+                font-size: .85em;
+                background: #b8e5ff;
+                margin-top: 5%;
+                &:first-of-type {
+                    margin-top: 0;
+                }
+                span.flr {
+                    color: #fff;
+                }
+            }
+            position: relative;
+            width: 84%;
+            @include border-radius(5px);
+            color: #666;
+            text-align: left;
+            text-indent: 1em;
+            margin: 0 auto 2%;
+            font-size: .75em;
+            border: 2px solid #b8e5ff;
+            height: 32px;
+            line-height: 32px;
+            &:last-of-type {
+                margin-bottom: 10%;
+            }
+            &_select {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+            &_icon {
+                height: 26px;
+                vertical-align: middle;
+            }
+            &_btn{
+                width:44px;
+                height:20px;
+                line-height: 20px;
+                background: #b8e5ff;
+                color:#fff;
+                margin-left: 5px;
+                @include border-radius(5px);
+            }
+            .flr {
+                color: #b8e5ff;
+                float: right;
+                margin-right: 1em;
+                img {
+                    width: 18px;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
     /* task page */
     @at-root .task {
         &_nav {
@@ -635,8 +796,8 @@ body {
             text-indent: 1em;
             margin: 0 auto 5%;
             font-size: .9em;
-            &:last-of-type{
-                margin-bottom:20%;
+            &:last-of-type {
+                margin-bottom: 20%;
             }
             &.active .task_title {
                 background: $btn_blue;
