@@ -12,6 +12,17 @@
 </head>
 
 <body>
+    <header class="header_progress progress_2">
+        <div class="progress_bar">
+            <span class="progress_bar_current"></span>
+        </div>
+        <ul class="progress_list">
+            <li class="progress_item"><span>1</span>身份认证</li>
+            <li class="progress_item"><span>2</span>额度计算</li>
+            <li class="progress_item"><span>3</span>申请借款</li>
+            <li class="progress_item"><span>4</span>拿钱走人</li>
+        </ul>
+    </header>
     <div class="loan_main">
         <div class="loan_main_img">
             <img class="pure-img" src="img/logo.jpg" alt="logo">
@@ -25,6 +36,16 @@
     </div>
     <script src="js/zepto.min.js"></script>
     <script>
+    //init the margin between each progress items
+    $(".progress_item").css("margin-left",($(".progress_list").width()-38*4-4)/3);
+    window.onresize=function(){
+        $(".progress_item").css("margin-left",($(".progress_list").width()-38*4-4)/3);
+    }
+    /*init the progress_bar_current*/
+    var progress_series=$(".header_progress").attr("class").split("_")[2];
+    if(progress_series==4){progress_series=3.5}
+    $(".progress_bar_current").css("width",((parseInt($(".progress_item").css("margin-left"))-1)/2*(2*progress_series-1)+38*progress_series))
+
     $("#data-loan-amount").html(new Number($("#data-loan-amount").attr("data-loan-amount")).toFixed(2) + "元");
     $(".loan_main_credit span").html($(".loan_main_credit span").attr("data-credit-percentage") + "%");
     </script>

@@ -3,7 +3,7 @@
 
 input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit-user-select: auto; user-select: auto; }
 
-a, a:visited, a:hover, a:active { color: inherit; text-decoration: none; }
+a, a:visited, a:hover, a:active { text-decoration: none; }
 
 .cf { *zoom: 1; }
 .cf:before, .cf:after { content: " "; display: table; }
@@ -16,21 +16,21 @@ html, body { height: 100%; }
 /* header progress */
 .header_progress { width: 84%; height: 50px; margin: 20px auto 0; position: relative; }
 
-.progress_2 .progress_item:nth-child(2) { color: #44bbdb; }
-.progress_2 .progress_item:nth-child(2) span { background: #44bbdb; }
-.progress_3 .progress_item:nth-child(2), .progress_3 .progress_item:nth-child(3) { color: #44bbdb; }
-.progress_3 .progress_item:nth-child(2) span, .progress_3 .progress_item:nth-child(3) span { background: #44bbdb; }
-.progress_4 .progress_item:nth-child(2), .progress_4 .progress_item:nth-child(3), .progress_4 .progress_item:nth-child(4) { color: #44bbdb; }
-.progress_4 .progress_item:nth-child(2) span, .progress_4 .progress_item:nth-child(3) span, .progress_4 .progress_item:nth-child(4) span { background: #44bbdb; }
-.progress_bar { width: 98%; height: 6px; background-color: #eee; position: absolute; top: 16px; border-radius: 4px; left: 1px; z-index: 1; }
-.progress_bar_current { position: absolute; left: 0; top: 0; display: block; background-color: #44bbdb; height: 100%; }
+.progress_2 .progress_item:nth-child(2) { color: #0d8fdb; }
+.progress_2 .progress_item:nth-child(2) span { background: #0d8fdb; }
+.progress_3 .progress_item:nth-child(2), .progress_3 .progress_item:nth-child(3) { color: #0d8fdb; }
+.progress_3 .progress_item:nth-child(2) span, .progress_3 .progress_item:nth-child(3) span { background: #0d8fdb; }
+.progress_4 .progress_item:nth-child(2), .progress_4 .progress_item:nth-child(3), .progress_4 .progress_item:nth-child(4) { color: #0d8fdb; }
+.progress_4 .progress_item:nth-child(2) span, .progress_4 .progress_item:nth-child(3) span, .progress_4 .progress_item:nth-child(4) span { background: #0d8fdb; }
+.progress_bar { width: 98%; height: 6px; background-color: #ccc; position: absolute; top: 16px; border-radius: 4px; left: 1px; z-index: 1; }
+.progress_bar_current { position: absolute; left: 0; top: 0; display: block; background-color: #0d8fdb; height: 100%; }
 .progress_list { list-style: none; position: relative; z-index: 9; }
-.progress_item { width: 38px; height: 50px; float: left; font-size: 0.58rem; color: #eee; }
-.progress_item:first-child { margin: 0 !important; color: #44bbdb; }
-.progress_item:first-child span { background: #44bbdb; }
-.progress_item span { display: block; font-size: 1rem; background: #eee; color: #fff; width: 38px; height: 38px; line-height: 38px; text-align: center; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; margin-bottom: 5px; }
+.progress_item { width: 38px; height: 50px; float: left; font-size: 0.58rem; color: #ccc; }
+.progress_item:first-child { margin: 0 !important; color: #0d8fdb; }
+.progress_item:first-child span { background: #0d8fdb; }
+.progress_item span { display: block; font-size: 1rem; background: #ccc; color: #fff; width: 38px; height: 38px; line-height: 38px; text-align: center; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; margin-bottom: 5px; }
 
-.user { /* avatar sec */ /* banner section */ /* main body */ /* activity history sections under main body */ /* sections under main body */ /* bankcards list section*/ /* bankcard single item */ /* normal and hollowed button with ab_bottom to locate at the bottom of the page*/ /* credit page */ /* task page */ /* coupon page */ }
+.user { /* avatar sec */ /* banner section */ /* main body */ /* activity history sections under main body */ /* sections under main body */ /* bankcards list section*/ /* bankcard single item */ /* normal and hollowed button with ab_bottom to locate at the bottom of the page*/ /* credit page */ /* finance all */ /* task page */ /* coupon page */ }
 .user_avatar { width: 25%; margin: 0 auto; padding: 10px 0; color: #fff; }
 .user_avatar .pure-img { border: 2px solid #fff; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .user_avatar h3, .user_avatar p { font-weight: normal; text-align: center; width: 200%; margin-left: -50%; }
@@ -38,13 +38,13 @@ html, body { height: 100%; }
 .user_avatar p { font-size: .75em; }
 .user_banner { background: url('../img/banner_bg.jpg?1436874808') no-repeat 0 0; background-size: 100% 100%; height: 33%; min-height: 187px; position: relative; color: #fff; /* finance page */ /* invite page */ /* param list */ /* dashi logo */ }
 .finance_banner { height: 230px; margin-bottom: 5%; }
-.finance_banner_title { padding: 20px 5%; height: 110px; background: #20aff4; font-size: .95em; color: #fff; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.finance_banner_title { padding: 20px 5%; height: 110px; background: #0d8fdb; font-size: .95em; color: #fff; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .finance_banner_title div { width: 45%; display: inline-block; }
 .finance_banner_title div:nth-child(2) { text-align: right; }
 .finance_banner_title div.finance_banner_tal { width: auto; text-align: left; }
 .auto_toggle { vertical-align: top; text-align: right; }
 .auto_toggle .finance_banner_tac { width: auto; text-align: center; }
-.auto_toggle .finance_banner_tac div { width: 56px; height: 18px; display: block; background: #20aff4; margin: 0 auto; position: relative; -moz-box-shadow: 0px 0px 5px #d4d3d3 inset; -webkit-box-shadow: 0px 0px 5px #d4d3d3 inset; box-shadow: 0px 0px 5px #d4d3d3 inset; }
+.auto_toggle .finance_banner_tac div { width: 56px; height: 18px; display: block; background: #0d8fdb; margin: 0 auto; position: relative; -moz-box-shadow: 0px 0px 5px #d4d3d3 inset; -webkit-box-shadow: 0px 0px 5px #d4d3d3 inset; box-shadow: 0px 0px 5px #d4d3d3 inset; }
 .auto_toggle .finance_banner_tac div.disabled { background: #fff; }
 .auto_toggle .finance_banner_tac div.disabled i { left: 0; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
 .auto_toggle .finance_banner_tac div i { width: 50%; height: 18px; background: #d4d3d3; display: block; position: absolute; top: 0; left: 28px; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
@@ -91,6 +91,7 @@ html, body { height: 100%; }
 .user_reset { height: auto; min-height: inherit; padding: 0; }
 .user_task { min-height: 440px; }
 .user_blank { min-height: 440px; background: #fff; }
+.user_fixed_bottom { padding-bottom: 60px; }
 .user_history { font-size: .9em; text-align: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 1.5%; width: 92%; -moz-box-shadow: 0px 0px 3px #666; -webkit-box-shadow: 0px 0px 3px #666; box-shadow: 0px 0px 3px #666; margin: 0 auto 3%; color: #666; }
 .user_history p { margin-top: 1.5%; }
 .user_sec { font-size: .9em; text-align: left; width: 88%; background: #fff; margin: 0 auto 5%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
@@ -98,7 +99,7 @@ html, body { height: 100%; }
 .user_sec div:first-child { border-top: none; }
 .user_sec div i { height: 36px; width: 30px; background-repeat: no-repeat; background-position: 0 center; background-size: auto 60%; display: inline-block; vertical-align: top; /* &:after { content: ">"; font-style: normal; font-family: "simsun"; color: #ddd; position: absolute; right: 8px;
 } */ }
-.icon-finance { background-image: url('../img/icon8.png?1436876483'); }
+.icon-wealth { background-image: url('../img/icon8.png?1436876483'); }
 .icon-loan { background-image: url('../img/icon9.png?1436876515'); }
 .icon-card { background-image: url('../img/icon5.png?1436876200'); }
 .icon-parameter { background-image: url('../img/icon6.png?1436876240'); }
@@ -112,6 +113,9 @@ html, body { height: 100%; }
 .icon-finance { background-image: url('../img/icon-finance.jpg?1438422794'); }
 .icon-profit { background-image: url('../img/icon-profit.jpg?1438422795'); }
 .icon-detail { background-image: url('../img/icon-detail.jpg?1438422795'); }
+.icon-finance-all { background-image: url('../img/icon_finance.jpg?1439123649'); }
+.icon-finance-all.active { background-image: url('../img/icon_finance_active.jpg?1439123649'); }
+.icon-finance-detail { background-image: url('../img/icon_finance_detail.jpg?1439123744'); }
 .user_sec div span { color: #ddd; padding-left: 20%; font-size: .8em; }
 .user_sec div span em { color: #fe8f86; font-style: normal; }
 .user_sec div label { color: #ddd; }
@@ -134,37 +138,53 @@ html, body { height: 100%; }
 .user_main_btn_hollow { background: #fff; color: #0d8fdb; }
 .user_main_btn_hollow:hover { color: #0d8fdb; }
 .user_main_btn.ab_bottom { position: absolute; bottom: 1.3em; left: 0; width: 88%; margin: 0 6%; }
-.credit_item { position: relative; width: 84%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; color: #666; text-align: left; text-indent: 1em; margin: 0 auto 2%; font-size: .75em; border: 2px solid #b8e5ff; height: 32px; line-height: 32px; }
-.credit_item_title { background: #b8e5ff; color: #fff; font-size: .85em; background: #b8e5ff; margin-top: 5%; }
+.btn_fix_bottom { position: fixed; height: auto; width: 100%; bottom: 0; background: #fff; z-index: 99; }
+.credit_item { position: relative; width: 84%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; color: #666; text-align: left; text-indent: 1em; margin: 0 auto 2%; font-size: .75em; border: 2px solid #0d8fdb; height: 32px; line-height: 32px; }
+.credit_item_title { background: #0d8fdb; color: #fff; font-size: .85em; background: #0d8fdb; margin-top: 5%; }
 .credit_item_title:first-of-type { margin-top: 0; }
 .credit_item_title span.flr { color: #fff; }
 .credit_item:last-of-type { margin-bottom: 10%; }
 .credit_item_select { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; }
 .credit_item_icon { height: 26px; vertical-align: middle; }
-.credit_item_btn { width: 44px; height: 20px; line-height: 20px; background: #b8e5ff; color: #fff; margin-left: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
-.credit_item .flr { color: #b8e5ff; float: right; margin-right: 1em; }
+.credit_item_btn { width: 44px; height: 20px; line-height: 20px; background: #0d8fdb; color: #fff; margin-left: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+.credit_item .flr { color: #0d8fdb; float: right; margin-right: 1em; }
 .credit_item .flr img { width: 18px; vertical-align: middle; }
+.finance_item { position: relative; width: 100%; color: #666; text-align: left; text-indent: 1em; font-size: .85em; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.finance_item i { height: 21px; width: 22px; margin: -3px 3px 0 0; background-repeat: no-repeat; background-position: 0 0; background-size: 100% auto; display: inline-block; vertical-align: middle; }
+.finance_item .icon_down { display: inline-block; }
+.finance_item .icon_up { display: none; }
+.finance_item .flr { float: right; margin-right: 1em; }
+.finance_item .flr img { width: 18px; vertical-align: middle; margin-left: 1em; }
+.finance_item .flr span { margin: 0 2em; color: #fe8f86; }
+.finance_item .flr span:before { content: "￥"; color: #666; }
+.finance_item.active .icon-finance-all { background-image: url('../img/icon_finance_active.jpg?1439123649'); }
+.finance_item.active .icon_down { display: none; }
+.finance_item.active .icon_up { display: inline-block; }
+.finance_item.active .finance_title { color: #7bd6fe; background: #e2f6ff; }
+.finance_item.active .finance_cnt { max-height: 600px; transition: all .5s; }
+.finance_title, .finance_cnt_title { position: relative; z-index: 9; border-bottom: 1px solid #dedede; height: 43px; line-height: 43px; }
+.finance_cnt { background: #fff; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin-top: -36px; max-height: 0; overflow-y: hidden; width: 100%; transition: all .5s; }
 .task_nav { height: 34px; line-height: 34px; text-align: center; }
-.task_nav li { background: #fff; color: #09b2fe; border: 1px solid #09b2fe; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; position: relative; z-index: 999; text-shadow: 1px 1px 1px #666; font-size: .9em; }
-.task_nav li.active { background: #09b2fe; color: #fff; }
+.task_nav li { background: #fff; color: #0d8fdb; border: 1px solid #0d8fdb; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; position: relative; z-index: 999; text-shadow: 1px 1px 1px #666; font-size: .9em; }
+.task_nav li.active { background: #0d8fdb; color: #fff; }
 .task_item { position: relative; width: 84%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; color: #fff; text-align: left; text-indent: 1em; margin: 0 auto 5%; font-size: .9em; }
 .task_item:last-of-type { margin-bottom: 20%; }
 .task_item.active .task_title { background: #0d8fdb; }
 .task_item.active .task_cnt { padding: 1em; max-height: 400px; transition: all .5s linear; }
-.task_title { position: relative; z-index: 9; background: #b8e5ff; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; height: 36px; line-height: 36px; text-shadow: 1px 1px 1px #666; }
+.task_title { position: relative; z-index: 9; background: #0d8fdb; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; height: 36px; line-height: 36px; text-shadow: 1px 1px 1px #666; }
 .task_title .task_btn { float: right; margin-right: 1em; display: inline-block; background: #fff; height: 20px; line-height: 20px; margin-top: 8px; text-align: center; width: 50px; text-indent: 0; border-radius: 12px; box-shadow: 1px 1px 1px #666; color: #0d8fdb; }
 .task_title .task_btn:active { color: #fff; background: #0d8fdb; }
 .task_stars { display: inline-block; height: 20px; margin-top: 2px; float: right; margin-right: 1em; }
 .task_stars i { display: inline-block; width: 12px; height: 16px; margin: 0 1px; background: url('../img/task_star.png?1438614260') no-repeat center; background-size: contain; }
 .task_cnt { text-indent: 0; font-size: .8em; background: #fff; border: 1px solid #0d8fdb; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin-top: -36px; padding: 0 1em; max-height: 0; overflow-y: hidden; width: 100%; transition: all .5s linear; }
-.task_cnt label { display: block; color: #44bbdb; margin: 2px 0; }
+.task_cnt label { display: block; color: #7bd6fe; margin: 2px 0; }
 .task_cnt p { color: #666; }
 .task_bonus { display: inline-block; width: 38px; height: 50px; margin-right: 5px; color: #666; font-size: .82em; text-align: center; }
-.task_bonus_img { width: 36px; height: 36px; border: 1px solid #44bbdb; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; text-align: center; }
+.task_bonus_img { width: 36px; height: 36px; border: 1px solid #7bd6fe; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; text-align: center; }
 .task_bonus_img img { height: 90%; width: auto; margin: 5%; }
 .coupon_nav { height: 36px; line-height: 36px; text-align: center; color: #fff; }
-.coupon_nav li { background: #c0edff; }
-.coupon_nav li.active { background: #09b2fe; }
+.coupon_nav li { background: #7bd6fe; }
+.coupon_nav li.active { background: #0d8fdb; }
 .coupon { width: 93.75%; height: 80px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 6px; background: #7bd6fe; background-image: url('../img/coupon_left.jpg?1438443161'), url('../img/coupon_right.jpg?1438443161'); background-repeat: no-repeat, no-repeat; background-position: top left, top right; background-size: auto 100%; margin: 0 auto 5%; color: #fff; text-align: center; }
 .coupon h3 { display: inline-block; width: 13.33%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; border-right: 1px solid #fff; line-height: 20.666px; font-weight: normal; float: left; padding: 3px 0; letter-spacing: 6px; }
 .coupon h2 { font-weight: normal; font-size: 2.25em; width: 80%; float: right; margin-right: 3%; border-bottom: 1px solid #fff; }

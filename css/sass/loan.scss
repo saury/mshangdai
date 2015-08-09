@@ -44,6 +44,101 @@ textarea {
     user-select: auto;
 }
 
+
+/* header progress */
+
+.header_progress {
+    width: 84%;
+    height: 50px;
+    margin: 20px auto 0;
+    position: relative;
+}
+
+.progress {
+    &_2 {
+        .progress_item {
+            &:nth-child(2) {
+                color: $btn_blue;
+                span {
+                    background: $btn_blue;
+                }
+            }
+        }
+    }
+    &_3 {
+        .progress_item {
+            &:nth-child(2),
+            &:nth-child(3) {
+                color: $btn_blue;
+                span {
+                    background: $btn_blue;
+                }
+            }
+        }
+    }
+    &_4 {
+        .progress_item {
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+                color: $btn_blue;
+                span {
+                    background: $btn_blue;
+                }
+            }
+        }
+    }
+    &_bar {
+        width: 98%;
+        height: 6px;
+        background-color: #ccc;
+        position: absolute;
+        top: 16px;
+        border-radius: 4px;
+        left: 1px;
+        z-index: 1;
+        &_current {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            background-color: $btn_blue;
+            height: 100%;
+        }
+    }
+    &_list {
+        list-style: none;
+        position: relative;
+        z-index: 9;
+    }
+    &_item {
+        width: 38px;
+        height: 50px;
+        float: left;
+        font-size: 0.58rem;
+        color: #ccc;
+        &:first-child {
+            margin: 0 !important;
+            color: $btn_blue;
+            span {
+                background: $btn_blue;
+            }
+        }
+        span {
+            display: block;
+            font-size: 1rem;
+            background: #ccc;
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            @include border-radius(50%);
+            margin-bottom: 5px;
+        }
+    }
+}
+
 .loan_main {
     //background: url(../img/理财信息确认.jpg) no-repeat center -65px;
     //background-size: 100% auto;
@@ -328,7 +423,7 @@ textarea {
             i {
                 display: inline-block;
                 width: 3.75%;
-                border: 1px solid $btn_liteblue;
+                border: 1px solid $btn_blue;
                 margin: 0 .5px;
                 @include box-sizing(border-box);
                 @include border-radius(50%);
@@ -337,10 +432,10 @@ textarea {
                 }
                 @include keyframes(dotAni) {
                     0% {
-                        background: $btn_liteblue;
+                        background: $btn_blue;
                     }
                     30% {
-                        background: $btn_liteblue;
+                        background: $btn_blue;
                     }
                     70% {
                         background: #fff;
@@ -353,6 +448,55 @@ textarea {
         }
     }
     /* loan match page end*/
+}
+
+
+/* loan agreement */
+
+.loan_agreement {
+    width: 94%;
+    margin: 18px auto;
+    @include box-shadow(0px 0px 3px 3px #ccc);
+    &_title {
+        height: 38px;
+        line-height: 38px;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        font-size: 0.925rem;
+        background: #eaeaea;
+        border-bottom:2px solid #ddd;
+        span {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 28px;
+            height: 28px;
+            line-height: 24px;
+            font-size: 1.8em;
+            border: 3px solid #fff;
+            color: #fff;
+            background: #a2a2a2;
+            @include border-radius(50%);
+            @include box-sizing(border-box);
+        }
+    }
+    p {
+        padding: 12px 8px;
+        text-align: justify;
+        font-size: 0.4em;
+        line-height: 1.5em;
+        text-indent: 2em;
+    }
+    &_footer {
+        height: 38px;
+        line-height: 38px;
+        text-align: left;
+        font-size: 0.7rem;
+        background: #eaeaea;
+        border-bottom:2px solid #ddd;
+        text-indent:0.8em;
+    }
 }
 
 //弹出层整体宽高
@@ -416,18 +560,18 @@ textarea {
                 text-align: left;
                 color: $btn_liteblue;
             }
-            span{
+            span {
                 color: $font_red;
             }
-            p{
-                color:#999;
-                margin:5px 5%;
+            p {
+                color: #999;
+                margin: 5px 5%;
                 text-align: left;
             }
-            .pure-button{
-                width:40%;
+            .pure-button {
+                width: 40%;
                 float: left;
-                margin:0 5%;
+                margin: 0 5%;
             }
         }
     }

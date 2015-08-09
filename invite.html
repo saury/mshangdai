@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="css/account.css">
 </head>
 
-<body>
+<body class="bg_gray">
     <header class="user_banner user_banner_invite">
-        <div class="invite_code">邀请码 <span>7713</span></div>
+        <div data-href="qr2.html" class="invite_code">邀请码 <span>7713</span></div>
     </header>
     <div class="user_main user_reset">
         <div class="cf">
@@ -39,12 +39,19 @@
     <script>
     //兼容ios下active伪类
     document.body.addEventListener('touchstart', function() {});
+    // init the datas
+    $("*").click(function() {
+        var linkHref = $(this).attr("data-href");
+        if (linkHref) window.location.href = linkHref;
+    });
     /*btn change the banner*/
     $(".invite_btn_l").click(function(){
-        $(".user_banner_invite").removeClass("user_banner_invite_blue")
+        $(".user_banner_invite").removeClass("user_banner_invite_blue");
+        $(".user_banner_invite").attr("data-href","qr2.html");
     });
     $(".invite_btn_r").click(function(){
-        $(".user_banner_invite").addClass("user_banner_invite_blue")
+        $(".user_banner_invite").addClass("user_banner_invite_blue");
+        $(".user_banner_invite").attr("data-href","qr1.html");
     });
     /*expand the record*/
     $(".invite_record dt").click(function(){

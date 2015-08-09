@@ -7,6 +7,23 @@
 
 input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms-user-select: auto; user-select: auto; }
 
+/* header progress */
+.header_progress { width: 84%; height: 50px; margin: 20px auto 0; position: relative; }
+
+.progress_2 .progress_item:nth-child(2) { color: #0d8fdb; }
+.progress_2 .progress_item:nth-child(2) span { background: #0d8fdb; }
+.progress_3 .progress_item:nth-child(2), .progress_3 .progress_item:nth-child(3) { color: #0d8fdb; }
+.progress_3 .progress_item:nth-child(2) span, .progress_3 .progress_item:nth-child(3) span { background: #0d8fdb; }
+.progress_4 .progress_item:nth-child(2), .progress_4 .progress_item:nth-child(3), .progress_4 .progress_item:nth-child(4) { color: #0d8fdb; }
+.progress_4 .progress_item:nth-child(2) span, .progress_4 .progress_item:nth-child(3) span, .progress_4 .progress_item:nth-child(4) span { background: #0d8fdb; }
+.progress_bar { width: 98%; height: 6px; background-color: #ccc; position: absolute; top: 16px; border-radius: 4px; left: 1px; z-index: 1; }
+.progress_bar_current { position: absolute; left: 0; top: 0; display: block; background-color: #0d8fdb; height: 100%; }
+.progress_list { list-style: none; position: relative; z-index: 9; }
+.progress_item { width: 38px; height: 50px; float: left; font-size: 0.58rem; color: #ccc; }
+.progress_item:first-child { margin: 0 !important; color: #0d8fdb; }
+.progress_item:first-child span { background: #0d8fdb; }
+.progress_item span { display: block; font-size: 1rem; background: #ccc; color: #fff; width: 38px; height: 38px; line-height: 38px; text-align: center; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; margin-bottom: 5px; }
+
 .loan_main { text-align: center; width: 100%; /* loan match page start*/ /* loan match page end*/ }
 .loan_main_img { width: 22%; margin: 30px auto 20px; }
 .loan_main p { font-size: .8em; }
@@ -63,20 +80,27 @@ input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms
 .loan_match_info span { color: #fe8f86; margin-top: 5px; display: inline-block; }
 .loan_match_dots { width: 60%; margin: 10% auto; height: 36px; }
 .loan_match_dots p { font-size: .71em; color: #0d8fdb; }
-.loan_match_dots i { display: inline-block; width: 3.75%; border: 1px solid #44bbdb; margin: 0 .5px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; }
+.loan_match_dots i { display: inline-block; width: 3.75%; border: 1px solid #0d8fdb; margin: 0 .5px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; }
 .loan_match_dots i.active { -moz-animation: dotAni 2s infinite; -webkit-animation: dotAni 2s infinite; animation: dotAni 2s infinite; }
-@-moz-keyframes dotAni { 0% { background: #44bbdb; }
-  30% { background: #44bbdb; }
+@-moz-keyframes dotAni { 0% { background: #0d8fdb; }
+  30% { background: #0d8fdb; }
   70% { background: #fff; }
   100% { background: #fff; } }
-@-webkit-keyframes dotAni { 0% { background: #44bbdb; }
-  30% { background: #44bbdb; }
+@-webkit-keyframes dotAni { 0% { background: #0d8fdb; }
+  30% { background: #0d8fdb; }
   70% { background: #fff; }
   100% { background: #fff; } }
-@keyframes dotAni { 0% { background: #44bbdb; }
-  30% { background: #44bbdb; }
+@keyframes dotAni { 0% { background: #0d8fdb; }
+  30% { background: #0d8fdb; }
   70% { background: #fff; }
   100% { background: #fff; } }
+/* loan agreement */
+.loan_agreement { width: 94%; margin: 18px auto; -moz-box-shadow: 0px 0px 3px 3px #ccc; -webkit-box-shadow: 0px 0px 3px 3px #ccc; box-shadow: 0px 0px 3px 3px #ccc; }
+.loan_agreement_title { height: 38px; line-height: 38px; font-weight: bold; text-align: center; position: relative; font-size: 0.925rem; background: #eaeaea; border-bottom: 2px solid #ddd; }
+.loan_agreement_title span { position: absolute; top: 5px; left: 5px; width: 28px; height: 28px; line-height: 24px; font-size: 1.8em; border: 3px solid #fff; color: #fff; background: #a2a2a2; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.loan_agreement p { padding: 12px 8px; text-align: justify; font-size: 0.4em; line-height: 1.5em; text-indent: 2em; }
+.loan_agreement_footer { height: 38px; line-height: 38px; text-align: left; font-size: 0.7rem; background: #eaeaea; border-bottom: 2px solid #ddd; text-indent: 0.8em; }
+
 /* 弹出层 */
 .mask_layer { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; }
 .mask_layer_bg { background: #000; opacity: .5; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }

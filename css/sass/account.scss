@@ -2,7 +2,7 @@
 ///*init*/
 $font_color: #666;
 $btn_blue: #0d8fdb;
-$btn_liteblue: #44bbdb;
+$btn_liteblue: #7bd6fe;
 $font_red: #fe8f86;
 @import "compass/css3";
 @import "compass";
@@ -30,7 +30,6 @@ a,
 a:visited,
 a:hover,
 a:active {
-    color: inherit;
     text-decoration: none;
 }
 
@@ -70,9 +69,9 @@ body {
     &_2 {
         .progress_item {
             &:nth-child(2) {
-                color: $btn_liteblue;
+                color: $btn_blue;
                 span {
-                    background: $btn_liteblue;
+                    background: $btn_blue;
                 }
             }
         }
@@ -81,9 +80,9 @@ body {
         .progress_item {
             &:nth-child(2),
             &:nth-child(3) {
-                color: $btn_liteblue;
+                color: $btn_blue;
                 span {
-                    background: $btn_liteblue;
+                    background: $btn_blue;
                 }
             }
         }
@@ -93,9 +92,9 @@ body {
             &:nth-child(2),
             &:nth-child(3),
             &:nth-child(4) {
-                color: $btn_liteblue;
+                color: $btn_blue;
                 span {
-                    background: $btn_liteblue;
+                    background: $btn_blue;
                 }
             }
         }
@@ -103,7 +102,7 @@ body {
     &_bar {
         width: 98%;
         height: 6px;
-        background-color: #eee;
+        background-color: #ccc;
         position: absolute;
         top: 16px;
         border-radius: 4px;
@@ -114,7 +113,7 @@ body {
             left: 0;
             top: 0;
             display: block;
-            background-color: $btn_liteblue;
+            background-color: $btn_blue;
             height: 100%;
         }
     }
@@ -128,18 +127,18 @@ body {
         height: 50px;
         float: left;
         font-size: 0.58rem;
-        color: #eee;
+        color: #ccc;
         &:first-child {
             margin: 0 !important;
-            color: $btn_liteblue;
+            color: $btn_blue;
             span {
-                background: $btn_liteblue;
+                background: $btn_blue;
             }
         }
         span {
             display: block;
             font-size: 1rem;
-            background: #eee;
+            background: #ccc;
             color: #fff;
             width: 38px;
             height: 38px;
@@ -193,7 +192,7 @@ body {
             &_title {
                 padding: 20px 5%;
                 height: 110px;
-                background: #20aff4;
+                background: $btn_blue;
                 font-size: .95em;
                 color: #fff;
                 @include box-sizing(border-box);
@@ -217,7 +216,7 @@ body {
                                 width: 56px;
                                 height: 18px;
                                 display: block;
-                                background: #20aff4;
+                                background: $btn_blue;
                                 margin: 0 auto;
                                 position: relative;
                                 @include box-shadow(0px 0px 5px #d4d3d3 inset);
@@ -479,6 +478,9 @@ body {
         min-height: 440px;
         background: #fff;
     }
+    &_fixed_bottom{
+        padding-bottom:60px;
+    }
     /* activity history sections under main body */
     &_history {
         font-size: .9em;
@@ -522,7 +524,7 @@ body {
                 background-size: auto 60%;
                 display: inline-block;
                 vertical-align: top;
-                @at-root .icon-finance {
+                @at-root .icon-wealth {
                     background-image: image-url("icon8.png");
                 }
                 @at-root .icon-loan {
@@ -563,6 +565,15 @@ body {
                 }
                 @at-root .icon-detail {
                     background-image: image-url("icon-detail.jpg");
+                }
+                @at-root .icon-finance-all {
+                    background-image: image-url("icon_finance.jpg");
+                }
+                @at-root .icon-finance-all.active {
+                    background-image: image-url("icon_finance_active.jpg");
+                }
+                @at-root .icon-finance-detail {
+                    background-image: image-url("icon_finance_detail.jpg");
                 }
                 /* &:after {
                     content: ">";
@@ -703,15 +714,23 @@ body {
             width: 88%;
             margin: 0 6%;
         }
+        @at-root .btn_fix_bottom {
+            position: fixed;
+            height:auto;
+            width:100%;
+            bottom: 0;
+            background: #fff;
+            z-index:99;
+        }
     }
     /* credit page */
     @at-root .credit {
         &_item {
             &_title {
-                background: #b8e5ff;
+                background: $btn_blue;
                 color: #fff;
                 font-size: .85em;
-                background: #b8e5ff;
+                background: $btn_blue;
                 margin-top: 5%;
                 &:first-of-type {
                     margin-top: 0;
@@ -728,7 +747,7 @@ body {
             text-indent: 1em;
             margin: 0 auto 2%;
             font-size: .75em;
-            border: 2px solid #b8e5ff;
+            border: 2px solid $btn_blue;
             height: 32px;
             line-height: 32px;
             &:last-of-type {
@@ -746,17 +765,17 @@ body {
                 height: 26px;
                 vertical-align: middle;
             }
-            &_btn{
-                width:44px;
-                height:20px;
+            &_btn {
+                width: 44px;
+                height: 20px;
                 line-height: 20px;
-                background: #b8e5ff;
-                color:#fff;
+                background: $btn_blue;
+                color: #fff;
                 margin-left: 5px;
                 @include border-radius(5px);
             }
             .flr {
-                color: #b8e5ff;
+                color: $btn_blue;
                 float: right;
                 margin-right: 1em;
                 img {
@@ -764,6 +783,87 @@ body {
                     vertical-align: middle;
                 }
             }
+        }
+    }
+    /* finance all */
+    @at-root .finance {
+        &_item {
+            position: relative;
+            width: 100%;
+            color: #666;
+            text-align: left;
+            text-indent: 1em;
+            font-size: .85em;
+            @include box-sizing(border-box);
+            i {
+                height: 21px;
+                width: 22px;
+                margin: -3px 3px 0 0;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-size: 100% auto;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .icon_down {
+                display: inline-block;
+            }
+            .icon_up {
+                display: none;
+            }
+            .flr {
+                float: right;
+                margin-right: 1em;
+                img {
+                    width: 18px;
+                    vertical-align: middle;
+                    margin-left: 1em;
+                }
+                span {
+                    margin: 0 2em;
+                    color: $font_red;
+                    &:before {
+                        content: "￥";
+                        color: #666;
+                    }
+                }
+            }
+            &.active {
+                .icon-finance-all {
+                    background-image: image-url("icon_finance_active.jpg");
+                }
+                .icon_down {
+                    display: none;
+                }
+                .icon_up {
+                    display: inline-block;
+                }
+                .finance_title {
+                    color: $btn_liteblue;
+                    background: #e2f6ff;
+                }
+                .finance_cnt {
+                    max-height: 600px;
+                    transition: all .5s;
+                }
+            }
+        }
+        &_title,
+        &_cnt_title {
+            position: relative;
+            z-index: 9;
+            border-bottom: 1px solid #dedede;
+            height: 43px;
+            line-height: 43px;
+        }
+        &_cnt {
+            background: #fff;
+            @include box-sizing(border-box);
+            margin-top: -36px;
+            max-height: 0;
+            overflow-y: hidden;
+            width: 100%;
+            transition: all .5s;
         }
     }
     /* task page */
@@ -774,15 +874,15 @@ body {
             text-align: center;
             li {
                 background: #fff;
-                color: #09b2fe;
-                border: 1px solid #09b2fe;
+                color: $btn_blue;
+                border: 1px solid $btn_blue;
                 @include box-sizing(border-box);
                 position: relative;
                 z-index: 999;
                 @include text-shadow(1px 1px 1px #666);
                 font-size: .9em;
                 &.active {
-                    background: #09b2fe;
+                    background: $btn_blue;
                     color: #fff;
                 }
             }
@@ -811,7 +911,7 @@ body {
         &_title {
             position: relative;
             z-index: 9;
-            background: #b8e5ff;
+            background: $btn_blue;
             @include border-radius(5px);
             height: 36px;
             line-height: 36px;
@@ -902,9 +1002,9 @@ body {
         text-align: center;
         color: #fff;
         li {
-            background: #c0edff;
+            background: $btn_liteblue;
             &.active {
-                background: #09b2fe;
+                background: $btn_blue;
             }
         }
     }

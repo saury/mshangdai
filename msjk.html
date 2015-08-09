@@ -12,6 +12,17 @@
 </head>
 
 <body>
+    <header class="header_progress progress_3">
+        <div class="progress_bar">
+            <span class="progress_bar_current"></span>
+        </div>
+        <ul class="progress_list">
+            <li class="progress_item"><span>1</span>身份认证</li>
+            <li class="progress_item"><span>2</span>额度计算</li>
+            <li class="progress_item"><span>3</span>申请借款</li>
+            <li class="progress_item"><span>4</span>拿钱走人</li>
+        </ul>
+    </header>
     <div class="loan_main">
         <form class="pure-form pure-g">
             <label>选择信用卡</label>
@@ -49,6 +60,16 @@
     </div>
     <script src="js/zepto.min.js"></script>
     <script>
+    //init the margin between each progress items
+    $(".progress_item").css("margin-left",($(".progress_list").width()-38*4-4)/3);
+    window.onresize=function(){
+        $(".progress_item").css("margin-left",($(".progress_list").width()-38*4-4)/3);
+    }
+    /*init the progress_bar_current*/
+    var progress_series=$(".header_progress").attr("class").split("_")[2];
+    if(progress_series==4){progress_series=3.5}
+    $(".progress_bar_current").css("width",((parseInt($(".progress_item").css("margin-left"))-1)/2*(2*progress_series-1)+38*progress_series))
+
     $(document).ready(function() {
         var data_loan_list = ["single", "poundage", "max", "used", "left"];
         for (var i = 0; i < data_loan_list.length; i++) {

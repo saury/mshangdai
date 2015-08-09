@@ -12,6 +12,17 @@
 </head>
 
 <body>
+    <header class="header_progress progress_4">
+        <div class="progress_bar">
+            <span class="progress_bar_current"></span>
+        </div>
+        <ul class="progress_list">
+            <li class="progress_item"><span>1</span>身份认证</li>
+            <li class="progress_item"><span>2</span>额度计算</li>
+            <li class="progress_item"><span>3</span>申请借款</li>
+            <li class="progress_item"><span>4</span>拿钱走人</li>
+        </ul>
+    </header>
     <div class="loan_main">
         <div class="loan_match cf">
             <dl class="loan_match_info fl" style="width:17.5%;">
@@ -35,13 +46,23 @@
                 <div class="popup_cnt">
                     <img src="img/check.jpg" alt="success">
                     <p>匹配成功</p>
-                    <a class="pure-button loan_main_btn loan_main_btn_liteblue" href="javascript:void(0);">查看我的借款</a>
+                    <a class="pure-button loan_main_btn" href="javascript:void(0);">查看我的借款</a>
                 </div>
             </div>
         </div>
     </div>
     <script src="js/zepto.min.js"></script>
     <script>
+    //init the margin between each progress items
+    $(".progress_item").css("margin-left",($(".progress_list").width()-38*4-4)/3);
+    window.onresize=function(){
+        $(".progress_item").css("margin-left",($(".progress_list").width()-38*4-4)/3);
+    }
+    /*init the progress_bar_current*/
+    var progress_series=$(".header_progress").attr("class").split("_")[2];
+    if(progress_series==4){progress_series=3.5}
+    $(".progress_bar_current").css("width",((parseInt($(".progress_item").css("margin-left"))-1)/2*(2*progress_series-1)+38*progress_series))
+
     /*init height of dots*/
     function initDotH() {
         var dot_height = $(".loan_match_dots i").width() + "px";
