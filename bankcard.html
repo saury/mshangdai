@@ -30,13 +30,20 @@
             <button class="option2 active">可提现</button>
             <button>删除</button>
         </div>
-        <div class="user_card_add">
+        <div data-href="addcard.html" class="user_card_add">
             <span>+</span>添加银行卡
         </div>
         <p class="user_card_tip">银行卡处于理财中或担保中状态时无法删除。</p>
-        <a class="pure-button user_main_btn ab_bottom" href="javascript:void(0);">返回</a>
+        <a class="pure-button user_main_btn ab_bottom" href="javascript:history.back();">返回</a>
     </div>
     <script src="js/zepto.min.js"></script>
+    <script>
+        // init the datas
+    $("*").click(function() {
+        var linkHref = $(this).attr("data-href");
+        if (linkHref) window.location.href = linkHref;
+    });
+    </script>
 </body>
 
 </html>
