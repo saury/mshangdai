@@ -1,0 +1,74 @@
+@charset "utf-8";
+///*variables*/
+$theme:#17ab92;
+
+///* mixins */
+// Placeholder text
+// --------------------------------------------------
+@mixin placeholder($color: $input-color-placeholder, $text-indent: 0) {
+  &::-moz-placeholder { // Firefox 19+
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+    // Safari placeholder margin issue
+    text-indent: $text-indent;
+  }
+}
+
+///* compass component */
+@import "compass/css3";
+@import "compass";
+
+//import pixeled font face
+//@include font-face("Pixel Font", font-files("XPDR_02.ttf"));
+body {
+    -webkit-touch-callout: none;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    font-family: normal 14px/20px "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+    word-wrap: break-word;
+    text-decoration: none;
+    -webkit-user-drag: none;
+    overflow: hidden;
+    text-rendering: optimizeLegibility;
+    -ms-content-zooming: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    @include user-select(none);
+}
+
+input,
+select,
+textarea {
+    @include user-select(auto);
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+//clear fix
+.cf {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
