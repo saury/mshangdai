@@ -1,0 +1,42 @@
+body { -webkit-touch-callout: none; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; text-size-adjust: none; -webkit-tap-highlight-color: transparent; -webkit-tap-highlight-color: transparent; font-family: normal 14px/20px "Helvetica Neue", "Roboto", "Segoe UI", sans-serif; word-wrap: break-word; text-decoration: none; -webkit-user-drag: none; text-rendering: optimizeLegibility; -ms-content-zooming: none; margin: 0; border: 0; padding: 0; position: absolute; top: 0; left: 0; right: 0; bottom: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
+
+input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit-user-select: auto; user-select: auto; }
+
+a, a:visited, a:hover, a:active { text-decoration: none; }
+
+.cf { *zoom: 1; }
+.cf:before, .cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
+
+.fll { float: left; }
+
+.flr { float: right; }
+
+.bg_gray { background: #f4f4f4; }
+
+html, body { height: 100%; }
+
+.signin { background: #292c2b url('../img/signin_bg.jpg?1439531863') no-repeat top center; background-size: 100% auto; position: relative; width: 100%; max-width: 640px; min-height: 480px; max-height: 1000px; margin: 0 auto; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 2em 0; height: 100%; }
+.signin_logo { width: 40%; height: auto; margin: 0 auto 5em; }
+.signin_form { width: 68.5%; margin: 0 auto; text-align: left; }
+.signin_form_sec { heigth: 36px; line-height: 36px; -moz-border-radius: 18px; -webkit-border-radius: 18px; border-radius: 18px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0 1em; background: rgba(255, 255, 255, 0.5); margin: 1.5em 0; color: #666; position: relative; }
+.signin_form_sec em { display: none; position: absolute; padding-left: 1.4em; color: #F9544E; width: 50%; top: 0; left: 0; text-align: left; }
+.signin_form_sec input { width: 100%; border: none; padding: 0 .5em; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background: transparent; }
+.signin_form_sec input::-moz-placeholder { color: #fff; }
+.signin_form_sec input:-ms-input-placeholder { color: #fff; }
+.signin_form_sec input::-webkit-input-placeholder { color: #fff; text-indent: 0; }
+.signin_btn { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-border-radius: 18px; -webkit-border-radius: 18px; border-radius: 18px; margin: 0 auto 1em; height: 36px; line-height: 36px; font-size: 1.2rem; display: block; width: 100%; text-align: center; background: #17ab92; font-weight: bold; color: #fff; text-decoration: none; }
+.signin_btn:active { -moz-box-shadow: inset 0 0 3px #666; -webkit-box-shadow: inset 0 0 3px #666; box-shadow: inset 0 0 3px #666; }
+.signin_link { color: #fff; font-size: .9rem; text-decoration: underline; }
+
+/* sign up page */
+.ahoy_main { text-align: center; width: 100%; }
+.ahoy_main_btn { background: #17ab92; border: 2px solid #17ab92; padding: 0; color: #fff; height: 36px; line-height: 32px; font-size: 1.2rem; display: block; width: 100%; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; margin: 0 auto 12px; }
+.ahoy_main_btn_hollow { background: #fff; color: #17ab92; }
+.ahoy_main form { letter-spacing: normal; text-align: left; width: 88%; margin: 10px auto; }
+.ahoy_main_doubleInput { -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; background: #fff; width: 100%; margin: 1em 0 5em; font-size: .9em; color: #666; }
+.ahoy_main_doubleInput div { margin: 0 !important; position: relative; }
+.ahoy_main_doubleInput hr { height: 1px; border: none; border-top: 1px solid #e4e4e4; width: 98%; margin: 0 auto; }
+.ahoy_main_doubleInput label { display: inline-block; float: left; margin: 0; height: 36px; line-height: 36px; padding-left: 1em; }
+.ahoy_main_doubleInput input { width: 65%; border: none !important; box-shadow: none !important; margin: 0 !important; height: 36px; line-height: 36px; }
+.identity_btn { background: #17ab92; color: #fff; font-size: .8rem; position: absolute; top: .3em; right: 1em; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
