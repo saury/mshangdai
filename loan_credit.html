@@ -27,9 +27,9 @@
     <div class="user_main user_blank">
 
         <div class="credit_item credit_item_title">1 基本认证<span class="flr">+￥1000.00</span></div>
-        <div class="credit_item">身份证号码<span class="flr"><img src="img/icon_photo.jpg"></span></div>
-        <div class="credit_item">身份证有效期<span class="flr"><img src="img/icon_photo.jpg"></span></div>
-        <div class="credit_item">手持身份证照片<span class="flr"><img src="img/icon_photo.jpg"></span></div>
+        <div class="credit_item">身份证号码<span role="id_front" class="flr"><img src="img/icon_photo.jpg"></span></div>
+        <div class="credit_item">身份证有效期<span role="id_back" class="flr"><img src="img/icon_photo.jpg"></span></div>
+        <div class="credit_item">手持身份证照片<span role="id_hold" class="flr"><img src="img/icon_photo.jpg"></span></div>
         <div class="credit_item">学历<span class="flr"><img src="img/icon_down.jpg"></span>
             <select  class="credit_item_select">
                 <option value="1">小学</option>
@@ -53,6 +53,27 @@
 
         <a class="pure-button user_main_btn" href="loan_limit.html">下一步</a>
     </div>
+    <!-- 弹出框 -->
+    <div class="mask_layer">
+        <div class="mask_layer_bg"></div>
+        <div class="popup">
+            <div id="id_front" class="popup_cnt">
+                <p>温馨提示：请将手机横向拍摄，并尽量使身份证对其边缘。（推荐图片大小<4M）</p>
+                <div class="id_img"><img class="pure-img" src="img/id_front.jpg" alt="id_front"></div>
+                <a class="pure-button user_main_btn" href="javascript:void(0);">确定</a>
+            </div>
+            <div id="id_back" class="popup_cnt">
+                <p>温馨提示：请将手机横向拍摄，并尽量使身份证对其边缘。（推荐图片大小<4M）</p>
+                <div class="id_img"><img class="pure-img" src="img/id_back.jpg" alt="id_back"></div>
+                <a class="pure-button user_main_btn" href="javascript:void(0);">确定</a>
+            </div>
+            <div id="id_hold" class="popup_cnt">
+                <p>温馨提示：请按以下示例拍摄手持身份证照片。（若本人操作，请使用前置摄像头）</p>
+                <div class="id_img"><img height="120" src="img/id_hold.jpg" alt="id_hold"></div>
+                <a class="pure-button user_main_btn" href="javascript:void(0);">确定</a>
+            </div>
+        </div>
+    </div>
     <script src="js/zepto.min.js"></script>
     <script>
     //兼容ios下active伪类
@@ -72,7 +93,24 @@
     $(".task_item").click(function() {
         $(".task_item").removeClass("active");
         $(this).addClass("active");
-    })
+    });
+    /*show/hide mask layer*/
+    $(".flr").click(function(){
+        if(!$(this).attr("role")){return false;}
+        var role_vlue=$(this).attr("role");
+        $(".mask_layer").show();
+        $(".popup_cnt").hide();
+        $("#"+role_vlue).show();
+        setTimeout(function(){$(".popup").addClass("active");},1);
+    });
+    $(".mask_layer_bg").click(function(){
+        $(".popup").removeClass("active");
+        setTimeout(function(){$(".mask_layer").hide();},400);
+    });
+    $(".popup_cnt .user_main_btn").click(function(){
+        $(".popup").removeClass("active");
+        setTimeout(function(){$(".mask_layer").hide();},400);
+    });
     </script>
 </body>
 

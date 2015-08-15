@@ -194,8 +194,22 @@ html, body { height: 100%; }
 .user_coupon_used .coupon h2, .user_coupon_used .coupon h3 { border-color: #b2b2b2; }
 .user_coupon_used .coupon:after { content: "已过期"; color: #fff; font-size: 2.5em; -moz-transform: rotateZ(-15deg); -ms-transform: rotateZ(-15deg); -webkit-transform: rotateZ(-15deg); transform: rotateZ(-15deg); width: 100%; height: 80px; line-height: 80px; position: absolute; top: 0; left: 0; }
 
+/* 弹出层 */
+.mask_layer { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; }
+.mask_layer_bg { background: #000; opacity: .5; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.popup { opacity: 0; width: 230px; margin: 30% auto; background: #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: 0px 0px 5px #666; -webkit-box-shadow: 0px 0px 5px #666; box-shadow: 0px 0px 5px #666; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; position: relative; }
+.popup.active { margin-top: 40%; opacity: 1; -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+.popup_cnt { width: 230px; display: none; padding: 14px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.popup_cnt p { margin: 0 6px; text-align: justify; color: #fe8f86; font-size: .9em; }
+.id_img { width: 84%; margin: 12px auto; text-align: center; }
+.popup_cnt .pure-button { font-size: .95em; margin: 0 auto; }
+
 /* triangle */
 .triangle-up { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 16px solid #0d8fdb; }
 
 .triangle-down { display: inline-block; width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 16px solid #0d8fdb; -moz-transition: all 0.5s linear; -o-transition: all 0.5s linear; -webkit-transition: all 0.5s linear; transition: all 0.5s linear; }
 .triangle-down.rotate { -moz-transition: all 0.5s; -o-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; -moz-transform: rotateZ(-180deg); -ms-transform: rotateZ(-180deg); -webkit-transform: rotateZ(-180deg); transform: rotateZ(-180deg); }
+
+@media only screen and (orientation: landscape) { .popup { margin: 0% auto; }
+  .popup.active { margin-top: 2%; } }
