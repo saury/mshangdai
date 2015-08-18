@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta charset="UTF-8">
+    <title>我的借款</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body class="bg_gray">
+    <div class="user_main user_about">
+        <section class="user_sec">
+            <div data-href="loan_limit.html">授信额度<em class="flr">0.00</em></div>
+        </section>
+        <section class="user_sec">
+            <div data-href="#">借款中金额<em class="flr">0.00</em></div>
+        </section>
+        <section class="user_sec">
+            <div data-href="#">剩余可用额度<em class="flr">0.00</em></div>
+        </section>
+        <section class="user_sec">
+            <div data-href="#">借款明细</div>
+        </section>
+        <a class="pure-button user_main_btn user_main_btn_hollow ab_bottom" href="javascript:history.back();">返回</a>
+    </div>
+    <script src="js/zepto.min.js"></script>
+    <script>
+        // init the datas
+    $("*").click(function() {
+        var linkHref = $(this).attr("data-href");
+        if (linkHref) window.location.href = linkHref;
+    });
+    </script>
+</body>
+
+</html>

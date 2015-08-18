@@ -503,6 +503,12 @@ body {
         background: #fff;
         margin: 0 auto 5%;
         @include border-radius(5px);
+        em.flr {
+            float: right;
+            margin-right: 2em;
+            color: $font_red;
+            font-style: normal;
+        }
         div {
             border-top: 1px solid #f4f4f4;
             color: #666;
