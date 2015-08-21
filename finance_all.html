@@ -181,7 +181,6 @@
             <a class="pure-button user_main_btn user_main_btn_hollow fix_bottom" href="javascript:history.back();">返回</a>
         </div>
     </div>
-    <script src="http://192.168.1.5:8082/target/target-script-min.js#anonymous"></script>
     <script src="js/zepto.min.js"></script>
     <script>
     //setTimeout(function(){window.location.href=window.location.href;},3000)
@@ -189,9 +188,12 @@
     document.body.addEventListener('touchstart', function() {});
     /*task item toggle*/
     $(".finance_item").click(function() {
+        if($(this).attr("class").indexOf("active")<0){
         $(".finance_item").removeClass("active");
         var that=this;
-        timeout_finance=setTimeout(function(){$(that).addClass("active");},600);
+        timeout_finance=setTimeout(function(){$(that).addClass("active");},100);
+        }
+        else{$(".finance_item").removeClass("active");}
     })
     </script>
 </body>

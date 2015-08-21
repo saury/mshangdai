@@ -478,8 +478,8 @@ body {
         min-height: 440px;
         background: #fff;
     }
-    &_fixed_bottom{
-        padding-bottom:60px;
+    &_fixed_bottom {
+        padding-bottom: 60px;
     }
     /* activity history sections under main body */
     &_history {
@@ -580,6 +580,12 @@ body {
                 }
                 @at-root .icon-finance-detail {
                     background-image: image-url("icon_finance_detail.jpg");
+                }
+                @at-root .icon-medal {
+                    background-image: image-url("icon_medal.png");
+                    height: 28px !important;
+                    width: 18px !important;
+                    margin: 0 10px;
                 }
                 /* &:after {
                     content: ">";
@@ -722,11 +728,11 @@ body {
         }
         @at-root .btn_fix_bottom {
             position: fixed;
-            height:auto;
-            width:100%;
+            height: auto;
+            width: 100%;
             bottom: 0;
             background: #fff;
-            z-index:99;
+            z-index: 99;
         }
     }
     /* credit page */
@@ -772,10 +778,12 @@ body {
                 vertical-align: middle;
             }
             &_btn {
-                width: 44px;
+                //width: 44px;
                 height: 20px;
+                padding:0 8px;
                 line-height: 20px;
                 background: $btn_blue;
+                font-size:0.75rem;
                 color: #fff;
                 margin-left: 5px;
                 @include border-radius(5px);
@@ -1001,6 +1009,56 @@ body {
             }
         }
     }
+    /* vip page */
+    @at-root .vip {
+        &_item{
+            /* margin-top:1px; */
+            background: $btn_blue;
+            &.active {
+                .icon-finance-all {
+                    background-image: image-url("icon_finance_active.jpg");
+                }
+                .icon_down {
+                    display: none;
+                }
+                .icon_up {
+                    display: inline-block;
+                }
+                .vip_title {
+                    color: #fff;
+                    background: $btn_blue;
+                }
+                .finance_cnt_title {
+                    background: $btn_blue;
+                    color:#fff;
+                }
+            }
+        }
+        /* &_item:first-child{
+            margin-top:0;
+        } */
+        &_item:last-of-type{
+            margin-bottom: 20px;
+        }
+        &_title {
+            background: $btn_liteblue;
+            color: $btn_blue;
+            font-size: 1rem;
+            border-top:1px solid $btn_blue;
+            border-bottom:1px solid $btn_blue;
+        }
+        &_cnt_title{
+            height:auto;
+            line-height: 16px;
+            background: $btn_liteblue;
+            color:$btn_blue;
+            padding: 6px 44px 12px;
+            span{
+                font-size:.8rem;
+                display:block;
+            }
+        }
+    }
     /* coupon page */
     @at-root .coupon_nav {
         height: 36px;
@@ -1087,6 +1145,7 @@ body {
     }
 }
 
+
 /* 弹出层 */
 
 .mask_layer {
@@ -1109,7 +1168,7 @@ body {
 }
 
 .popup {
-    opacity:0;
+    opacity: 0;
     width: 230px;
     margin: 30% auto;
     background: #fff;
@@ -1117,14 +1176,14 @@ body {
     @include box-shadow(0px 0px 5px #666);
     @include transition(all .5s);
     position: relative;
-    &.active{
-        margin-top:40%;
-        opacity:1;
+    &.active {
+        margin-top: 40%;
+        opacity: 1;
         @include transition(all .5s);
     }
     &_cnt {
         width: 230px;
-        display:none;
+        display: none;
         padding: 14px;
         @include box-sizing(border-box);
         p {
@@ -1133,9 +1192,9 @@ body {
             color: $font_red;
             font-size: .9em;
         }
-        @at-root .id_img{
-            width:84%;
-            margin:12px auto;
+        @at-root .id_img {
+            width: 84%;
+            margin: 12px auto;
             text-align: center;
         }
         .pure-button {
@@ -1144,6 +1203,7 @@ body {
         }
     }
 }
+
 
 /* triangle */
 
@@ -1169,11 +1229,10 @@ body {
     }
 }
 
-
 @media only screen and (orientation: landscape) {
     .popup {
         margin: 0% auto;
-        &.active{
+        &.active {
             margin-top: 2%;
         }
     }
