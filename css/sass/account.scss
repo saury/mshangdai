@@ -6,8 +6,9 @@ $btn_liteblue: #7bd6fe;
 $font_red: #fe8f86;
 @import "compass/css3";
 @import "compass";
-//import pixeled font face
-//@include font-face("Pixel Font", font-files("XPDR_02.ttf"));
+//import glyphicons font face
+@import "_variables.scss";
+@import "_glyphicons.scss";
 * {
     font-family: "Microsoft YaHei", Arial;
     -moz-osx-font-smoothing: grayscale;
@@ -505,7 +506,7 @@ body {
         @include border-radius(5px);
         em.flr {
             float: right;
-            margin-right: 2em;
+            margin-right: 10%;
             color: $font_red;
             font-style: normal;
         }
@@ -808,6 +809,9 @@ body {
             text-align: left;
             text-indent: 1em;
             font-size: .85em;
+            height: auto;
+            display:block;
+            min-height:44px;
             @include box-sizing(border-box);
             i {
                 height: 21px;
@@ -858,6 +862,7 @@ body {
                 }
                 .finance_cnt {
                     max-height: 600px;
+                    margin-top: 0;
                     transition: all .5s;
                 }
             }
@@ -1031,6 +1036,7 @@ body {
                 .finance_cnt_title {
                     background: $btn_blue;
                     color:#fff;
+                    margin-bottom: -1px;
                 }
             }
         }
@@ -1235,5 +1241,38 @@ body {
         &.active {
             margin-top: 2%;
         }
+    }
+    .user_avatar {
+          width: 11%;
+    }
+    .user_banner ul li {
+      padding-top: 5%;
+    }
+    .user_main_btn.ab_bottom {
+        position: static;
+        margin: 1.3em auto;
+    }
+    .coupon h3 {
+        width:9%;
+    }
+}
+
+  @media screen and (min-width: 360px) {
+     body{
+        font-size:19px;
+    }
+
+    .user_avatar {
+          width: 23%;
+    }
+    .coupon h3 {
+      line-height: 23px;
+      padding:0;
+    }
+  }
+
+@media screen and (min-width: 560px) and (orientation: landscape) {
+    body{
+        font-size:20px;
     }
 }

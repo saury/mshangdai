@@ -13,43 +13,52 @@
 
 <body>
     <div class="doughnut_header">
-        <div class="bar-main">
-            <label>基本收益</label>
-            <span class="bar-parameter">7.0</span>
-            <div class="bar-wrap">
-                <span class="bar mint" data-percent="8"></span>
+        <div class="bar-main-wrap">
+            <div class="bar-main">
+                <label>基本收益</label>
+                <div class="bar-main-sec">
+                    <span class="bar-parameter">7.0</span>
+                    <div class="bar-wrap">
+                        <span class="bar mint" data-percent="8"></span>
+                    </div>
+                    <span>8.0</span>
+                </div>
+                <em style="visibility:hidden;">**天后失效 ></em>
             </div>
-            <span>8.0</span>
-            <em style="visibility:hidden;">**天后失效 ></em>
-        </div>
-        <div class="bar-main">
-            <label>特权收益</label>
-            <span class="bar-parameter">1.0</span>
-            <div class="bar-wrap">
-                <span class="bar mint" data-percent="2.5"></span>
+            <div class="bar-main">
+                <label>特权收益</label>
+                <div class="bar-main-sec">
+                    <span class="bar-parameter">1.0</span>
+                    <div class="bar-wrap">
+                        <span class="bar mint" data-percent="2.5"></span>
+                    </div>
+                    <span>2.5</span>
+                </div>
+                <em>8天后失效 ></em>
             </div>
-            <span>2.5</span>
-            <em><a href="#">16天后失效 ></a></em>
-        </div>
-        <div class="bar-main">
-            <label>会员收益</label>
-            <span class="bar-parameter">2.0</span>
-            <div class="bar-wrap">
-                <span class="bar mint" data-percent="2.5"></span>
+            <div class="bar-main">
+                <label>会员收益</label>
+                <div class="bar-main-sec">
+                    <span class="bar-parameter">2.0</span>
+                    <div class="bar-wrap">
+                        <span class="bar mint" data-percent="2.5"></span>
+                    </div>
+                    <span>2.5</span>
+                </div>
+                <em>21天后失效 ></em>
             </div>
-            <span>2.5</span>
-            <em><a href="#">21天后失效 ></a></em>
+            <div class="doughnut_description">
+                结合活动最高<span>15</span>%
+            </div>
         </div>
         <div id="doughnutChart" class="doughnut_Chart"></div>
         <div class="doughnut_title">
             2015年第1期21天理财<em>年化收益</em>
         </div>
         <a href="#" class="doughnut_title_right">
-            往期收益>
-        </a>
-        <div class="doughnut_description">
-            结合活动最高<span>15</span>%
-        </div>
+                往期收益>
+            </a>
+        
     </div>
     <div class="loan_main">
         <form class="pure-form pure-g">
@@ -77,14 +86,23 @@
     <script src="js/doughnut.js"></script>
     <script>
     $(function() {
-        /*doughnut*/
+        //reload if onorientation of window changed
+        window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+        if (window.orientation === 180 || window.orientation === 0) { 
+            location.reload()
+        } 
+        if (window.orientation === 90 || window.orientation === -90 ){ 
+            location.reload()
+        }  
+        }, false); 
+            /*doughnut*/
         $("#doughnutChart").drawDoughnutChart([{
             title: "percentage",
             value: parseFloat($(".bar-parameter").eq(0).html()) + parseFloat($(".bar-parameter").eq(1).html()) + parseFloat($(".bar-parameter").eq(2).html()),
             color: "#ffd35c"
         }]);
         /*bar width*/
-        $(".bar-main").each(function() {
+        $(".bar-main-sec").each(function() {
             $(this).children().children(".bar").addClass("active");
             var numerator = $(this).children(".bar-parameter").html();
             //console.log(numerator);

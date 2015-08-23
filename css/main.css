@@ -111,11 +111,17 @@ body {
 
 #marquee0 ul li {
     display: block;
-    font-size: .8em;
+    font-size: .8rem;
     height: 22px;
     line-height: 22px;
     text-align: center;
     color: #fff;
+}
+
+#marquee0 ul li span,
+#marquee0 ul li time
+ {
+    font-size: .8rem;
 }
 
 .msd_entrance {
@@ -264,5 +270,17 @@ body {
     }
     .msd_entrance_inner {
         padding-top: 22%;
+    }
+}
+
+  @media screen and (min-width: 360px) {
+     body{
+        font-size:19px;
+    }
+  }
+
+@media screen and (min-width: 560px) and (orientation: landscape) {
+    body{
+        font-size:20px;
     }
 }

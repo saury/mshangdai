@@ -1,21 +1,18 @@
-@charset "UTF-8";
-@font-face { font-family: "Pixel Font"; src: url('../fonts/XPDR_02.ttf?1008550186') format('truetype'); }
-* { font-family: "Microsoft YaHei", Arial; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; text-decoration: none; margin: 0; border: 0; padding: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
+@font-face { font-family: "Pixel Font"; src: url('../fonts/XPDR_02.ttf?1439516875') format('truetype'); }
+* { font-size: 16px; font-family: "Microsoft YaHei", Arial; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: subpixel-antialiased; font-smoothing: subpixel-antialiased; text-decoration: none; margin: 0; border: 0; padding: 0; -moz-user-select: -moz-none; -ms-user-select: none; -webkit-user-select: none; user-select: none; }
 
 html, body { height: 100%; }
 
 input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit-user-select: auto; user-select: auto; }
 
-.doughnut_header { background: #0d8fdb; height: 48%; min-height: 272px; padding-top: 45%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.doughnut_header { background: #0d8fdb; height: 48%; min-height: 272px; padding-top: 45%; position: relative; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .doughnut_header * { color: #fff; }
 .doughnut_title { position: absolute; top: 10px; left: 6%; font-size: .65em; }
 .doughnut_title em { display: block; font-style: normal; font-size: 1.4em; }
 .doughnut_title_right { position: absolute; top: 10px; right: 6%; font-size: .65em; }
-.doughnut_description { position: absolute; top: 23%; right: 6%; font-size: .75em; }
+.doughnut_description { position: absolute; top: -40px; right: 6%; font-size: .75rem; }
 .doughnut_description span { font-size: 1.4em; }
 
-@media screen and (max-height: 480px) { /*当屏幕高度小于500px时，应用下面的CSS样式*/
-  .doughnut_description { top: 130px; } }
 .doughnut_Chart { position: absolute; width: 42%; height: 28%; min-height: 160px; top: 0; left: 50%; margin-left: -21%; }
 
 .doughnutSummary { position: absolute; top: 50%; left: 50%; margin-left: -25%; color: #000; text-align: center; text-shadow: 1px 1px 2px #111; }
@@ -23,16 +20,18 @@ input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit
 .doughnutSummaryNumber { position: absolute; top: 25%; width: 100%; font-size: 2em; font-weight: lighter; color: #fff; }
 .doughnutSummaryNumber:after { content: "%"; font-size: .5em; }
 
-.bar-wrap { width: 100px; display: inline-block; border-radius: 9px; padding: 0; height: 14px; background: #fff; vertical-align: top; }
+.bar-wrap { width: 25%; display: inline-block; border-radius: 9px; padding: 0; height: 14px; background: #fff; vertical-align: top; }
 
 .bar { height: 14px; width: 0%; position: relative; border-radius: 8px; display: block; }
 .bar-parameter { color: #ffd35c; }
-.bar-main { height: 14px; margin: 25px 6% 0; text-align: center; }
+.bar-main { height: 14px; margin: 20px 6% 0; text-align: center; }
+.bar-main-wrap { position: absolute; bottom: 20px; left: 0; width: 100%; }
 .bar-main:first-child { margin-top: 0; }
-.bar-main > span { font-size: .75em; height: 14px; display: inline-block; line-height: 14px; vertical-align: top; }
-.bar-main > span:after { content: "%"; }
+.bar-main-sec { width: 100%; position: absolute; left: 50%; margin-left: -50%; }
+.bar-main-sec > span { font-size: .75em; height: 14px; display: inline-block; line-height: 14px; vertical-align: top; }
+.bar-main-sec > span:after { content: "%"; }
 .bar-main label { font-size: .75em; float: left; height: 14px; display: inline-block; line-height: 14px; }
-.bar-main em { font-style: normal; font-size: .55em; float: right; height: 14px; display: inline-block; line-height: 14px; }
+.bar-main em { font-style: normal; font-size: .6em; float: right; height: 14px; display: inline-block; line-height: 14px; }
 
 .bar.active { -moz-transition: width 2s; -o-transition: width 2s; -webkit-transition: width 2s; transition: width 2s; }
 
@@ -51,5 +50,8 @@ input, select, textarea { -moz-user-select: auto; -ms-user-select: auto; -webkit
 .loan_main_predict h3 { color: #0d8fdb; font-size: .95em; }
 .loan_main_predict p { color: #aaa; font-weight: lighter; font-size: .6em; line-height: 1.8em; }
 .loan_main_shield { margin: 0; padding: 8px 0; text-align: center; }
-.loan_main_shield h3 { margin: 0 auto; width: 40%; color: #0d8fdb; font-size: .95em; padding-left: 15px; background: url('../img/shield.jpg?1437404234') no-repeat center left; background-size: auto 80%; }
+.loan_main_shield h3 { margin: 0 auto; width: 40%; color: #0d8fdb; font-size: .95em; padding-left: 15px; background: url('../img/shield.jpg?1439516875') no-repeat center left; background-size: auto 80%; }
 .loan_main_shield p { color: #aaa; font-weight: lighter; font-size: .6em; line-height: 1.8em; }
+
+@media screen and (min-width: 360px) { * { font-size: 19px; } }
+@media screen and (min-width: 560px) and (orientation: landscape) { * { font-size: 20px; } }

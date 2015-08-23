@@ -18,7 +18,7 @@
             <dt class="finance_title vip_title">
                 <i class="icon-medal"></i>
                 当前等级 : VIP1
-                <div class="flr"><img class="icon_down" src="img/icon_down_inactive.jpg"><img class="icon_up" src="img/icon_up.jpg"></div>
+                <div class="flr"><i class="glyphicon glyphicon-menu-down"></i></div>
             </dt>
             <dd class="finance_cnt">
                 <ul>
@@ -34,7 +34,7 @@
             <dt class="finance_title vip_title">
                 <i class="icon-medal"></i>
                 VIP2
-                <div class="flr"><button class="credit_item_btn">充值开通</button><img class="icon_down" src="img/icon_down_inactive.jpg"><img class="icon_up" src="img/icon_up.jpg"></div>
+                <div class="flr"><button class="credit_item_btn">充值开通</button><i class="glyphicon glyphicon-menu-down"></i></div>
             </dt>
             <dd class="finance_cnt">
                 <ul>
@@ -50,7 +50,7 @@
             <dt class="finance_title vip_title">
                 <i class="icon-medal"></i>
                 VIP3
-                <div class="flr"><button class="credit_item_btn">充值开通</button><img class="icon_down" src="img/icon_down_inactive.jpg"><img class="icon_up" src="img/icon_up.jpg"></div>
+                <div class="flr"><i class="glyphicon glyphicon-menu-down"></i></div>
             </dt>
             <dd class="finance_cnt">
                 <ul>
@@ -66,7 +66,7 @@
             <dt class="finance_title vip_title">
                 <i class="icon-medal"></i>
                 VIP4
-                <div class="flr"><button class="credit_item_btn">充值开通</button><img class="icon_down" src="img/icon_down_inactive.jpg"><img class="icon_up" src="img/icon_up.jpg"></div>
+                <div class="flr"><i class="glyphicon glyphicon-menu-down"></i></div>
             </dt>
             <dd class="finance_cnt">
                 <ul>
@@ -82,7 +82,7 @@
             <dt class="finance_title vip_title">
                 <i class="icon-medal"></i>
                 VIP5
-                <div class="flr"><button class="credit_item_btn">充值开通</button><img class="icon_down" src="img/icon_down_inactive.jpg"><img class="icon_up" src="img/icon_up.jpg"></div>
+                <div class="flr"><i class="glyphicon glyphicon-menu-down"></i></div>
             </dt>
             <dd class="finance_cnt">
                 <ul>
@@ -108,10 +108,12 @@
     $(".finance_item").click(function() {
         if($(this).attr("class").indexOf("active")<0){
         $(".finance_item").removeClass("active");
+        $(".finance_item").find(".glyphicon").attr("class","glyphicon glyphicon-menu-down");
+        $(this).find(".glyphicon").attr("class","glyphicon glyphicon-menu-up");
         var that=this;
         timeout_finance=setTimeout(function(){$(that).addClass("active");},100);
         }
-        else{$(".finance_item").removeClass("active");}
+        else{$(".finance_item").removeClass("active");$(this).find(".glyphicon").attr("class","glyphicon glyphicon-menu-down");}
     })
     </script>
 </body>

@@ -218,6 +218,7 @@ textarea {
             font-size: .65em;
             color: #bfbfbf;
             margin-bottom: 1.8em;
+            width:100%;
         }
         label {
             font-size: .74em;
@@ -641,5 +642,21 @@ hr.hr-liteblue {
 @media only screen and (orientation: landscape) {
     .popup {
         margin: 12% auto;
+    }
+    .pure-button.loan_main_btn.ab_bottom {
+        position: static;
+        margin: 1.3em auto;
+    }
+}
+
+  @media screen and (min-width: 360px) {
+     body{
+        font-size:19px;
+    }
+  }
+
+@media screen and (min-width: 560px) and (orientation: landscape) {
+    body{
+        font-size:20px;
     }
 }

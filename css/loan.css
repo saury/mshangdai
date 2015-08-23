@@ -40,7 +40,7 @@ input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms
 .loan_main form p.ft_red { margin: 6px 0; }
 .loan_main form .loan_main_btn { width: 100%; }
 .loan_main form .ft_xs { font-size: .7em; color: #bfbfbf; margin: 5px 3px 28px; }
-.loan_main form .ft_xxs { font-size: .65em; color: #bfbfbf; margin-bottom: 1.8em; }
+.loan_main form .ft_xxs { font-size: .65em; color: #bfbfbf; margin-bottom: 1.8em; width: 100%; }
 .loan_main form label { font-size: .74em; }
 .loan_main form label.lab_finance { margin-bottom: 1em; }
 .loan_main form mark { background: transparent; font-size: .7em; color: #fe8f86; margin-bottom: 4px; width: 100%; }
@@ -139,4 +139,7 @@ input, select, textarea { -moz-user-select: auto; -webkit-user-select: auto; -ms
 
 hr.hr-liteblue { margin: 0 auto; height: 2px; border: none; border-top: 2px dashed #44bbdb; width: 92%; }
 
-@media only screen and (orientation: landscape) { .popup { margin: 12% auto; } }
+@media only screen and (orientation: landscape) { .popup { margin: 12% auto; }
+  .pure-button.loan_main_btn.ab_bottom { position: static; margin: 1.3em auto; } }
+@media screen and (min-width: 360px) { body { font-size: 19px; } }
+@media screen and (min-width: 560px) and (orientation: landscape) { body { font-size: 20px; } }

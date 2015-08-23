@@ -29,15 +29,25 @@
         <img src="img/qr1_footer.jpg">
     </footer>
     <script>
+    //reload if onorientation of window changed
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+    if (window.orientation === 180 || window.orientation === 0) { 
+        location.reload()
+    } 
+    if (window.orientation === 90 || window.orientation === -90 ){ 
+        location.reload()
+    }  
+    }, false); 
     window.onload=function(){
     var banner_height = document.getElementById("qr_banner1").offsetHeight,
         footer_height = document.getElementById("qr1_footer").offsetHeight,
         body_height = window.document.body.offsetHeight;
-    document.getElementById("qr1_main").style.height = (body_height - banner_height - footer_height) + "px";
-    document.getElementById("qr_section1").style.height = "100%";
-    document.getElementById("qr_section2").style.height = "100%";
-    document.getElementById("qr_img1").style.height = "80%";
-    document.getElementById("qr_img2").style.height = "80%";}
+        document.getElementById("qr1_main").style.height = (body_height - banner_height - footer_height) + "px";
+        document.getElementById("qr_section1").style.height = "100%";
+        document.getElementById("qr_section2").style.height = "100%";
+        document.getElementById("qr_img1").style.height = "80%";
+        document.getElementById("qr_img2").style.height = "80%";
+    }
     </script>
 </body>
 

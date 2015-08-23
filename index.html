@@ -92,6 +92,17 @@
     var header_height = document.getElementById('slide').offsetHeight,
         body_height = window.document.body.offsetHeight;
     $(".msd_entrance").css("height", body_height - header_height);
+
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+        if (window.orientation === 180 || window.orientation === 0) { 
+            header_height = document.getElementById('slide').offsetHeight,
+            body_height = window.document.body.offsetHeight;
+            $(".msd_entrance").css("height", body_height - header_height);
+        } 
+        if (window.orientation === 90 || window.orientation === -90 ){ 
+            $(".msd_entrance").css("height", "510px");
+        }  
+    }, false); 
     // init the datas
     $("*").click(function() {
         var linkHref = $(this).attr("data-href");
