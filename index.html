@@ -15,13 +15,13 @@
     <header id="slide" class="slide">
         <ul>
             <li>
-                <a href="#"><img src="img/slider1.jpg" alt="slider1"></a>
+                <a href="#" target="_blank"><img src="img/slider1.jpg" alt="slider1"></a>
             </li>
             <li>
-                <a href="#"><img src="img/slider2.jpg" alt="slider2"></a>
+                <a href="#" target="_blank"><img src="img/slider2.jpg" alt="slider2"></a>
             </li>
             <li>
-                <a href="#"><img src="img/slider3.jpg" alt="slider3"></a>
+                <a href="#" target="_blank"><img src="img/slider3.jpg" alt="slider3"></a>
             </li>
         </ul>
         <!-- <div class="dot">
@@ -124,6 +124,7 @@
     // Marquee
     var Mymarquee = {
         speed: 80,
+        pause: 1000, //暂停时间
         marquee0: document.getElementById('marquee0'),
         marquee1: document.getElementById('marquee1'),
         marquee2: document.getElementById('marquee2')
@@ -132,9 +133,13 @@
 
     function marqueeRun() {
         if (Mymarquee.marquee2.offsetHeight - Mymarquee.marquee0.scrollTop <= 0)
-            Mymarquee.marquee0.scrollTop -= Mymarquee.marquee1.offsetHeight
+            Mymarquee.marquee0.scrollTop -= Mymarquee.marquee1.offsetHeight;
         else {
-            Mymarquee.marquee0.scrollTop++
+            Mymarquee.marquee0.scrollTop++;
+            if(Mymarquee.marquee0.scrollTop%22 == 0){
+                clearInterval(MyMar1);
+                setTimeout(function(){MyMar1 = setInterval(marqueeRun, Mymarquee.speed);},Mymarquee.pause);
+            }
         }
     }
     var MyMar1 = setInterval(marqueeRun, Mymarquee.speed);
